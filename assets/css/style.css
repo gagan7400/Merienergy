@@ -1,5 +1,209 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+}
+
+:root {
+    --Dark: #050E14;
+    --White: #FFFFFF
+}
+
+/* navbar css */
+.navbar {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0px;
+    z-index: 10;
+
+}
+
+.navbar .nav {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 170px;
+}
+
+.nav .logo {
+    width: 108px;
+    height: 80px;
+}
+
+.nav .logo img {
+    width: 100%;
+    height: auto;
+    filter: brightness(0, invert(0));
+}
+
+.nav .nav_btns {
+    width: 415px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+}
+
+.nav .nav_btns>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.nav_btns div p,
+.nav .language div p {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.nav_btns div img,
+.nav .language div img {
+    filter: brightness(1, invert(0));
+}
+
+.nav .nav_btns img {
+    width: 13px;
+    height: 13px;
+    aspect-ratio: 1/1;
+}
+
+.nav .language div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--White, #FFF);
+    text-align: center;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Navbar css end  */
+
+/* home page css start */
+.hero_banner {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    background: url("../imgs/herobanner.jpg") center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero_content {
+    margin-top: 100px;
+    width: 80%;
+    height: 100%;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Dark blur on TOP */
+.hero_banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* adjust how much top fade you want */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);
+    pointer-events: none;
+}
+
+/* Dark blur on BOTTOM */
+.hero_banner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    /* adjust how much bottom fade you want */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    pointer-events: none;
+}
+
+
+
+.hero_content .upper_section {
+    text-align: center;
+}
+
+.hero_content .upper_section h3 {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 54px;
+    letter-spacing: 2px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.hero_content .upper_section p {
+    color: var(--White, #FFF);
+    font-family: "Rethink Sans";
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+
+}
+
+button {
+    width: 250px;
+    height: auto;
+    padding: 10px 24px;
+    margin: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--White, #FFF);
+    background: white;
+    color: var(--Dark, #050E14);
+    text-align: center;
+    font-family: "Rethink Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.btn_white {
+    background: white;
+    color: var(--Dark, #050E14);
+}
+
+.btn.btn_plain {
+    background-color: transparent;
+    color: var(--White, #FFF);
 }
