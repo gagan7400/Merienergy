@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    transition: all 0.5s ease;
 }
 
 :root {
@@ -11,37 +12,38 @@
     --White: #FFFFFF
 }
 
-/* navbar css */
-.navbar {
-    width: 100%;
-    height: 100px;
+/* nav-bar css */
+.nav-bar {
     position: fixed;
     top: 0px;
+    right: 0px;
+    left: 0px;
     z-index: 10;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
 }
 
-.navbar .nav {
-    width: 100%;
+.nav-bar .navs {
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 170px;
 }
 
-.nav .logo {
+.navs .logo {
     width: 108px;
     height: 80px;
 }
 
-.nav .logo img {
+.navs .logo img {
     width: 100%;
     height: auto;
     filter: brightness(0, invert(0));
 }
 
-.nav .nav_btns {
+.navs .nav_btns {
     width: 415px;
     display: flex;
     justify-content: center;
@@ -50,7 +52,7 @@
 
 }
 
-.nav .nav_btns>div {
+.navs .nav_btns>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +61,7 @@
 }
 
 .nav_btns div p,
-.nav .language div p {
+.navs .language div p {
     color: var(--White, #FFF);
     text-align: center;
     font-feature-settings: 'liga' off, 'clig' off;
@@ -68,20 +70,21 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0;
 }
 
 .nav_btns div img,
-.nav .language div img {
+.navs .language div img {
     filter: brightness(1, invert(0));
 }
 
-.nav .nav_btns img {
+.navs .nav_btns img {
     width: 13px;
     height: 13px;
     aspect-ratio: 1/1;
 }
 
-.nav .language div {
+.navs .language div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,16 +98,39 @@
     line-height: normal;
 }
 
-/* Navbar css end  */
+/* nav-bar css end  */
+.whatsapp_icon {
+    width: 112px;
+    height: 112px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+}
+
+.whatsapp_icon img {
+    width: 112px;
+    height: 112px;
+    flex-shrink: 0;
+}
 
 /* home page css start */
+.container {
+    width: 1576px;
+    height: auto;
+    max-width: 1576px;
+    margin: auto;
+}
+
 .hero_banner {
-    width: 100%;
-    height: 100vh;
-    min-height: 600px;
     position: relative;
     background: url("../imgs/herobanner.jpg") center/cover no-repeat;
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,10 +139,9 @@
 }
 
 .hero_content {
-    margin-top: 100px;
-    width: 80%;
-    height: 100%;
-    padding: 80px;
+    width: 100%;
+    height: 900px;
+    padding-top: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -163,7 +188,7 @@
     text-align: center;
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
-    font-size: 54px;
+    font-size: 56px;
     letter-spacing: 2px;
     font-style: normal;
     font-weight: 500;
@@ -174,14 +199,14 @@
 .hero_content .upper_section p {
     color: var(--White, #FFF);
     font-family: "Rethink Sans";
-    font-size: 21px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
 
 }
 
-button {
+.hero_content button {
     width: 250px;
     height: auto;
     padding: 10px 24px;
@@ -203,7 +228,237 @@ button {
     color: var(--Dark, #050E14);
 }
 
-.btn.btn_plain {
-    background-color: transparent;
+.btn_plain {
+    background-color: transparent !important;
     color: var(--White, #FFF);
 }
+
+/* hero section css end */
+
+/* details section css start */
+.details_section {
+    display: flex;
+    height: 110px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.details_section .details_card img {
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1/1;
+}
+
+
+.details_cards {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 48px;
+    width: 1310px;
+    margin: auto;
+}
+
+.mid_line {
+    width: 1px;
+    height: 100px;
+    padding: 0px;
+    background: linear-gradient(0deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white);
+    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 50%, rgba(0, 0, 0, 0.00) 100%); */
+}
+
+.details_section p {
+    color: var(--Gray-gray--10, #2B3237);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+/* details section css end */
+/* Batteries section css start */
+
+.product-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.product-section .heading {
+    color: var(--Dark, #050E14);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.product-section h2 {
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.tabs {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+}
+
+.tabs .mid_line {
+    height: 48px;
+}
+
+.tabs button {
+    background: none;
+    border: none;
+    margin: 0 10px;
+    cursor: pointer;
+    color: var(--Gray-gray--8, #5D6266);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.tabs .tab-btn.active {
+    color: var(--Dark, #050E14);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.product-slider .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: auto;
+    overflow: visible;
+}
+.tab-content{
+    padding: 50px 0px;
+}
+
+.product-slider img {
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+}
+.product-slider img:hover{
+     scale: 1.1;
+}
+.owl-carousel .owl-item img{
+    width: auto;
+    overflow: visible;
+} 
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+
+/* Custom nav arrows */
+.owl-prev-custom,
+.owl-next-custom {
+    font-size: 32px;
+    color: #333;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.owl-prev-custom {
+    left: -40px;
+}
+
+.owl-next-custom {
+    right: -40px;
+}
+
+/* Tabs */
+
+/* Features text */
+.features p {
+    font-size: 14px;
+    margin: 0;
+    color: #555;
+}
+
+.product-details {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.product-details h5 {
+    font-weight: 600;
+}
+
+.products_categories {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    text-align: start;
+}
+
+.features_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.features {
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.features p {
+    font-size: 18px;
+    color: var(--Gray-gray--8, #5D6266);
+    text-align: start;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.action-buttons .btn {
+    border-radius: 4px;
+    margin: 0 10px;
+    width: 151px;
+    padding: 16px 24px;
+    border-radius: 4px;
+}
+
+.action-buttons .btn-dark {
+    border: 1px solid var(--Dark, #050E14);
+    background: var(--Dark, #050E14);
+}
+
+.action-buttons .btn-outline-dark {
+    border: 1px solid var(--Dark, #050E14)
+}
+
+/* Batteries section css end */

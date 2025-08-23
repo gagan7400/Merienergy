@@ -6,73 +6,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Meri Energy</title>
     <link rel="icon" href="./assets/imgs/nav_logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="nav">
-            <div class="logo">
-                <img src="./assets/imgs/logo_nav.png" alt="">
-            </div>
-            <div class="nav_btns">
-                <div class="batteries_btn">
-                    <p>Batteries</p>
-                    <img src="./assets/icons/chevron-down.svg" alt="">
+    <div class="nav-bar">
+        <div class="container">
+            <div class="navs">
+                <div class="logo">
+                    <img src="./assets/imgs/logo_nav.png" alt="">
                 </div>
-                <div class="inverters_btn">
-                    <p>Inverters</p>
-                    <img src="./assets/icons/chevron-down.svg" alt="">
+                <div class="nav_btns">
+                    <div class="batteries_btn">
+                        <p>Batteries</p>
+                        <img src="./assets/icons/chevron-down.svg" alt="">
+                    </div>
+                    <div class="inverters_btn">
+                        <p>Inverters</p>
+                        <img src="./assets/icons/chevron-down.svg" alt="">
+                    </div>
+                    <div class="contact_btn">
+                        <p>Contact</p>
+                    </div>
                 </div>
-                <div class="contact_btn">
-                    <p>Contact</p>
-                </div>
-            </div>
-            <div class="language">
-                <div class="language_btn">
-                    <img src="./assets/icons/globe.svg" alt="">
-                    <p>English </p>
-                    <img src="./assets/icons/chevron-down.svg" alt="">
+                <div class="language">
+                    <div class="language_btn">
+                        <img src="./assets/icons/globe.svg" alt="">
+                        <p>English </p>
+                        <img src="./assets/icons/chevron-down.svg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="whatsapp_icon">
+        <img src="./assets/icons/whatsapp.svg" alt="">
+    </div>
     <section class="hero_banner">
-        <div class="hero_content">
-            <div class="upper_section">
-                <h3>Smart Energy. Swiss Expertise.</h3>
-                <p>Premium storage solution for total independence</p>
-            </div>
-            <div class="lower_section">
-                <button class="btn btn_white">Explore Products</button>
-                <button class="btn btn_plain">Contact Us</button>
+        <div class="container">
+            <div class="hero_content  ">
+                <div class="upper_section">
+                    <h3>Smart Energy. Swiss Expertise.</h3>
+                    <p>Premium storage solution for total independence</p>
+                </div>
+                <div class="lower_section">
+                    <button class="btn btn_white bg-white p-3 m-4">Explore Products</button>
+                    <button class="btn btn_plain border text-white  p-3">Contact Us</button>
+                </div>
             </div>
         </div>
     </section>
-    <section class="hero_banner">
-        <div class="hero_content">
-            <div class="upper_section">
-                <h3>Smart Energy. Swiss Expertise.</h3>
-                <p>Premium storage solution for total independence</p>
-            </div>
-            <div class="lower_section">
-                <button class="btn btn_white">Explore Products</button>
-                <button class="btn btn_plain">Contact Us</button>
+    <section class="details_section">
+        <div class="container">
+            <div class="row details_cards">
+                <div class="col">
+                    <div class="details_card d-flex justify-content-center align-items-start gap-2">
+                        <img src="./assets/icons/cleanenergy.svg" alt="">
+                        <p>Clean <br> Energy</p>
+                    </div>
+                </div>
+                <div class="mid_line">
+                </div>
+                <div class="col">
+                    <div class="details_card d-flex justify-content-center align-items-start gap-2">
+                        <img src="./assets/icons/energyindependence.svg" alt="">
+                        <p>Energy <br> independence</p>
+                    </div>
+                </div>
+                <div class="mid_line ">
+                </div>
+                <div class="col">
+                    <div class="details_card d-flex justify-content-center align-items-start gap-2">
+                        <img src="./assets/icons/protection.svg" alt="">
+                        <p>Protection from <br> Power Outages</p>
+                    </div>
+                </div>
+                <div class="mid_line ">
+                </div>
+                <div class="col">
+                    <div class="details_card d-flex justify-content-center align-items-start gap-2">
+                        <img src="./assets/icons/energysaving.svg" alt="">
+                        <p>Energy <br> Savings</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <section class="hero_banner">
-        <div class="hero_content">
-            <div class="upper_section">
-                <h3>Smart Energy. Swiss Expertise.</h3>
-                <p>Premium storage solution for total independence</p>
+    <section class="product-section">
+        <div class="container py-5">
+            <h2 class="heading text-center">Meri Energy Products</h2>
+
+            <!-- Tabs -->
+            <div class="tabs d-flex justify-content-center align-items-center gap-3    ">
+                <button class="tab-btn active" data-target="#batteries">Batteries</button>
+                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                <button class="tab-btn" data-target="#inverters">Inverters</button>
             </div>
-            <div class="lower_section">
-                <button class="btn btn_white">Explore Products</button>
-                <button class="btn btn_plain">Contact Us</button>
+
+            <!-- Batteries Slider -->
+            <div id="batteries" class="tab-content active">
+                <div class="owl-carousel product-slider">
+                    <div class="item"><img src="./assets/imgs/battery.png" alt="Battery"></div>
+                    <div class="item"><img src="./assets/imgs/battery_stackable.png" height="500px" alt="Battery"></div>
+                </div>
+
+                <div class="product-details text-center">
+                    <div class="products_categories">
+                        <h5>5kWh Battery</h5>
+                        <p>5kWh Stackable Battery</p>
+                    </div>
+                    <div class="features_container">
+                        <div class="features">
+                            <p>Expandable <br> to 75kWh</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Fast charging with <br> 100A max discharge</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Safety with built-in <br> fire extinguisher</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Modern <br> design</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Self-heating for cold climates <br>
+                                (in seconds models)</p>
+                        </div>
+                        <div class="action-buttons text-center">
+                            <a href="#" class="btn btn-dark">Contact Us</a>
+                            <a href="#" class="btn  btn-outline-dark">More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Inverters Slider -->
+            <div id="inverters" class="tab-content d-none">
+                <div class="owl-carousel product-slider">
+                    <div class="item"><img src="./assets/imgs/inverter1phase.png" alt="Inverter"></div>
+                    <div class="item"><img src="./assets/imgs/inverter3phase.png" alt="Inverter"></div>
+                </div>
+
+                <div class="product-details text-center">
+                    <div class="products_categories">
+                        <h5>Single Phase Hybrid Inverters 3-6 kW</h5>
+                        <p>Three Phase Hybrid Inverters 6-30 kW</p>
+                    </div>
+                    <div class="features_container">
+                        <div class="features">
+                            <p>For homes with <br> single-phase power</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Energy <br> Monitoring  app</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Power <br> backups</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Weatherproof <br> and dust resistant</p>
+                            <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
+                            <p>Over-the-air <br>
+                                upgrades</p>
+                        </div>
+                        <div class="action-buttons text-center">
+                            <a href="#" class="btn btn-dark">Contact Us</a>
+                            <a href="#" class="btn  btn-outline-dark">More Details</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- jQuery + Owl Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Initialize carousel
+            $(".product-slider").owlCarousel({
+                items: 1,
+                loop: true,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 3777000,
+                navText: [
+                    "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+                    "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+                ]
+            });
+
+            // Tabs switching
+            $(".tab-btn").click(function () {
+                $(".tab-btn").removeClass("active");
+                $(this).addClass("active");
+
+                $(".tab-content").addClass("d-none").removeClass("active");
+                $($(this).data("target")).removeClass("d-none").addClass("active");
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
