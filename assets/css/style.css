@@ -765,6 +765,11 @@ h5 {
     min-height: 250px;
 }
 
+.testimonial-section h2,
+.testimonial-section p {
+    color: var(--Dark, #050E14);
+}
+
 .testimonial-card img {
     width: 50px;
     height: 50px;
