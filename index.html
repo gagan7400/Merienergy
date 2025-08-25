@@ -17,35 +17,139 @@
 </head>
 
 <body>
-    <div class="nav-bar">
+    <nav class="nav-bar">
         <div class="container">
             <div class="navs">
+                <!-- Logo -->
                 <div class="logo">
-                    <img src="./assets/imgs/logo_nav.png" alt="">
+                    <img src="./assets/imgs/logo_nav.png" alt="Logo">
                 </div>
+
+                <!-- Desktop Navigation -->
                 <div class="nav_btns">
-                    <div class="batteries_btn">
-                        <p>Batteries</p>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
+                    <div class="dropdown">
+                        <div class="nav-link">
+                            <p>Batteries</p>
+                            <img src="./assets/icons/chevron-down.svg" alt="">
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="#">5kWh Battery</a>
+                            <a href="#">5kWh Stackable Battery</a>
+                        </div>
                     </div>
-                    <div class="inverters_btn">
-                        <p>Inverters</p>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
+
+                    <div class="dropdown">
+                        <div class="nav-link">
+                            <p>Inverters</p>
+                            <img src="./assets/icons/chevron-down.svg" alt="">
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="#">Single Phase Hybrid Inverter</a>
+                            <a href="#">Three Phase Hybrid Inverter</a>
+                        </div>
                     </div>
+
                     <div class="contact_btn">
                         <p>Contact</p>
                     </div>
                 </div>
-                <div class="language">
+
+                <!-- Language Dropdown -->
+                <div class="language dropdown">
                     <div class="language_btn">
                         <img src="./assets/icons/globe.svg" alt="">
-                        <p>English </p>
+                        <p>English</p>
                         <img src="./assets/icons/chevron-down.svg" alt="">
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#">English</a>
+                        <a href="#">Hindi</a>
+                        <a href="#">Spanish</a>
+                    </div>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <div class="menu-icon">
+                    <img src="./assets/icons/menu.svg" alt="Menu">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="mobile-menu">
+            <div class="close-icon">
+                <div class="logo">
+                    <img src="./assets/imgs/nav_logo.png" alt="Logo">
+                </div>
+                <img src="./assets/icons/close.svg" alt="Close">
+            </div>
+            <div class="mobile-nav">
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <p>Batteries</p>
+                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/battery.png" alt="">
+                            </div>
+                            <span>5kWh Battery</span>
+                        </div>
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/battery_stackable.png" alt="">
+                            </div>
+                            <span>5kWh Stackable Battery</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <p>Inverters</p>
+                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/inverter1phase.png" alt="">
+                            </div>
+                            <span>Single Phase Hybrid Inverters 3-6 kW</span>
+                        </div>
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/inverter3phase.png" alt="">
+                            </div>
+                            <span>Three Phase Hybrid Inverters 6-30 kW</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="collapsible">
+                    <p>Contact</p>
+                </div>
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <div class="mobile_language_btn">
+                            <img src="./assets/icons/globe.svg" alt="">
+                            <p>English</p>
+                        </div>
+                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="item">
+                            <span>Hindi</span>
+                        </div>
+                        <div class="item">
+                            <span>French</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
     <div class="whatsapp_icon">
         <img src="./assets/icons/whatsapp.svg" alt="">
     </div>
@@ -65,35 +169,73 @@
     </section>
     <section class="details_section">
         <div class="container">
-            <div class="row details_cards">
-                <div class="col">
+            <div class="row details_cards flex-lg-row flex-column align-items-center">
+                <div class="col-auto d-flex flex-column flex-lg-row align-items-center gap-2">
                     <div class="details_card d-flex justify-content-center align-items-start gap-2">
                         <img src="./assets/icons/cleanenergy.svg" alt="">
                         <p>Clean <br> Energy</p>
                     </div>
                 </div>
-                <div class="mid_line">
-                </div>
-                <div class="col">
+                <div class="mid_line"></div>
+                <div class="col-auto d-flex flex-column flex-lg-row align-items-center gap-2">
                     <div class="details_card d-flex justify-content-center align-items-start gap-2">
                         <img src="./assets/icons/energyindependence.svg" alt="">
                         <p>Energy <br> independence</p>
                     </div>
                 </div>
-                <div class="mid_line ">
-                </div>
-                <div class="col">
+                <div class="mid_line"></div>
+                <div class="col-auto d-flex flex-column flex-lg-row align-items-center gap-2">
                     <div class="details_card d-flex justify-content-center align-items-start gap-2">
                         <img src="./assets/icons/protection.svg" alt="">
                         <p>Protection from <br> Power Outages</p>
                     </div>
                 </div>
-                <div class="mid_line ">
-                </div>
-                <div class="col">
+                <div class="mid_line"></div>
+                <div class="col-auto d-flex flex-column flex-lg-row align-items-center gap-2">
                     <div class="details_card d-flex justify-content-center align-items-start gap-2">
                         <img src="./assets/icons/energysaving.svg" alt="">
                         <p>Energy <br> Savings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mobile_details_section ">
+        <div class="container">
+            <div class="row details_cards flex-column align-items-center">
+                <div class="d-flex flex-row align-items-center justify-content-evenly gap-2">
+                    <div class="col-5 d-flex flex-column   align-items-center gap-2">
+                        <div
+                            class="details_card d-flex justify-content-center align-items-center text-center flex-column gap-2">
+                            <img src="./assets/icons/cleanenergy.svg" alt="">
+                            <p>Clean <br> Energy</p>
+                        </div>
+                    </div>
+                    <div class="mid_line"></div>
+                    <div class="col-5 d-flex flex-column   align-items-center gap-2">
+                        <div
+                            class="details_card d-flex justify-content-center align-items-center text-center flex-column gap-2 ">
+                            <img src="./assets/icons/energyindependence.svg" alt="">
+                            <p>Energy <br> independence</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="horizontal"></div>
+                <div class="d-flex flex-row align-items-center justify-content-evenly gap-2">
+                    <div class="col-5 d-flex flex-column   align-items-center gap-2">
+                        <div
+                            class="details_card d-flex justify-content-center align-items-center text-center flex-column gap-2">
+                            <img src="./assets/icons/protection.svg" alt="">
+                            <p>Protection from <br> Power Outages</p>
+                        </div>
+                    </div>
+                    <div class="mid_line"></div>
+                    <div class="col-5 d-flex flex-column align-items-center gap-2">
+                        <div
+                            class="details_card d-flex justify-content-center align-items-center text-center flex-column gap-2">
+                            <img src="./assets/icons/energysaving.svg" alt="">
+                            <p>Energy <br> Savings</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -160,7 +302,7 @@
                         <div class="features">
                             <p>For homes with <br> single-phase power</p>
                             <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
-                            <p>Energy <br> Monitoring  app</p>
+                            <p>Energy <br> Monitoring app</p>
                             <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
                             <p>Power <br> backups</p>
                             <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" style="height:20px;">
@@ -178,37 +320,120 @@
             </div>
         </div>
     </section>
+    <section class="key_benefits">
+        <div class="container">
+            <div class="key_benefits_content">
+                <div class="content">
+                    <h2>Key Benefits</h2>
+                    <p>Discover How Meri Energy empowers your home with safety <br>
+                        savings, and complete energy inpendence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="benefits_panel">
+        <div class="container">
+            <div class="content">
+                <div class="left_panel">
+                    <h2>Save with reduced/zero electricity bills</h2>
+                    <p>Meri Energy's battery system pays itself back in less than 4 years</p>
+                    <div><span><sup>*</sup>Assumptions </span><img src="./assets/icons/chevron-down.svg" alt=""></div>
+                    <ul>
+                        <li>Achieve energy independence</li>
+                        <li>feel confident with best in class after-sales support</li>
+                        <li>Make earth a better place</li>
+                    </ul>
+                </div>
+                <div class="right_panel">
+                    <img src="./assets/imgs/right_panel.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 class="mb-3">What Our Customers Say</h2>
+            <p class="mb-5">Stories from people who’ve made the switch to energy freedom.</p>
+
+            <div class="row">
+                <!-- Google Rating -->
+                <div class="col-lg-3 col-md-12 mb-4">
+                    <div class="google-rating">
+                        <h6>Rated 5 Stars on Google</h6>
+                        <div class="d-flex align-items-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                                alt="Google Logo">
+                            <span class="fs-4"><i class="fa fa-star text-warning"></i> 5</span>
+                        </div>
+                        <p>33 Reviews</p>
+                        <a href="#" class="btn btn-dark mt-2">View all Reviews</a>
+                    </div>
+                </div>
+
+                <!-- Testimonials Slider -->
+                <div class="col-lg-9 col-md-12">
+                    <div class="owl-carousel owl-theme">
+
+                        <!-- Review 1 -->
+                        <div class="testimonial-card">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                                <div>
+                                    <h6 class="mb-0">Matilde Raimondi</h6>
+                                    <small>Installer</small>
+                                </div>
+                            </div>
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <p>I highly recommend this company to anyone who is interested in cutting-edge energy
+                                solutions and wants reliable, professional service.</p>
+                            <a href="#" class="see-review">See full review</a>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="testimonial-card">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                                <div>
+                                    <h6 class="mb-0">DE CARO Giovanni</h6>
+                                    <small>Installer</small>
+                                </div>
+                            </div>
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <p>Meri Energy’s phone support is top-tier, making this an ideal solution for installers who
+                                want to have a good impression on their customers.</p>
+                            <a href="#" class="see-review">See full review</a>
+                        </div>
+
+                        <!-- Review 3 -->
+                        <div class="testimonial-card">
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="">
+                                <div>
+                                    <h6 class="mb-0">Dario R.</h6>
+                                    <small>Customer</small>
+                                </div>
+                            </div>
+                            <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div>
+                            <p>Even months after installation, Meri Energy kept assisting me with guidance—always
+                                professional, kind, and ready to help.</p>
+                            <a href="#" class="see-review">See full review</a>
+                        </div>
+
+                        <!-- Add more reviews here -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- jQuery + Owl Carousel -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // Initialize carousel
-            $(".product-slider").owlCarousel({
-                items: 1,
-                loop: true,
-                nav: true,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 3777000,
-                navText: [
-                    "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
-                    "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-                ]
-            });
-
-            // Tabs switching
-            $(".tab-btn").click(function () {
-                $(".tab-btn").removeClass("active");
-                $(this).addClass("active");
-
-                $(".tab-content").addClass("d-none").removeClass("active");
-                $($(this).data("target")).removeClass("d-none").addClass("active");
-            });
-        });
-    </script>
+    <script src="./assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>

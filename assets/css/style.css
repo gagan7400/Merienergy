@@ -12,91 +12,246 @@
     --White: #FFFFFF
 }
 
+p {
+    color: var(--White, #FFF);
+    font-family: "Rethink Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+    color: var(--White, #FFF);
+    font-family: "Rethink Sans";
+    margin: 0;
+}
+
 /* nav-bar css */
+/* Basic navbar styling */
 .nav-bar {
     position: fixed;
-    top: 0px;
-    right: 0px;
-    left: 0px;
+    top: 0;
+    right: 0;
+    left: 0;
     z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    padding: 10px 0px;
 }
 
 .nav-bar .navs {
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.navs .logo {
-    width: 108px;
-    height: 80px;
+    width: 90%;
+    margin: auto;
 }
 
 .navs .logo img {
-    width: 100%;
-    height: auto;
-    filter: brightness(0, invert(0));
+    width: 108px;
 }
 
-.navs .nav_btns {
-    width: 415px;
+.nav_btns {
     display: flex;
-    justify-content: center;
+    gap: 40px;
     align-items: center;
-    gap: 60px;
-
 }
 
-.navs .nav_btns>div {
+.nav_btns div,
+.language_btn {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-
+    gap: 8px;
+    color: #fff;
+    cursor: pointer;
 }
 
-.nav_btns div p,
-.navs .language div p {
-    color: var(--White, #FFF);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.nav_btns p,
+.language_btn p {
     margin: 0;
+    font-size: 16px;
+    font-family: "Rethink Sans";
 }
 
-.nav_btns div img,
-.navs .language div img {
-    filter: brightness(1, invert(0));
+/* Dropdown */
+.dropdown {
+    position: relative;
 }
 
-.navs .nav_btns img {
-    width: 13px;
-    height: 13px;
-    aspect-ratio: 1/1;
+.dropdown-menu {
+    position: absolute;
+    top: 40px;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 8px;
+    opacity: 0;
+    /* transform: translateY(-10px); */
+    transition: all 0.3s ease;
 }
 
-.navs .language div {
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 30px;
+}
+
+/* Mobile Menu Sidebar */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.2s ease-in-out;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.close-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.close-icon img {
+    width: 30px;
+}
+
+.close-icon .logo img {
+    width: 100px;
+}
+
+/* Collapsible Sections */
+.collapsible {
+    padding: 15px 10px 0px;
+}
+
+.mobile_language_btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000;
+    cursor: pointer;
+}
+
+.mobile_language_btn p {
+    margin-bottom: 0px;
+}
+
+.mobile_language_btn img {
+    filter: invert(1);
+    width: 30px;
+}
+
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.collapsible-header>img {
+    transition: transform 0.3s ease;
+}
+
+.collapsible.open .collapsible-header>img {
+    transform: rotate(180deg);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+}
+
+.collapsible-content .item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.collapsible-content .img_box {
+    width: 150px;
+    height: 100px;
+    background: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    color: var(--White, #FFF);
-    text-align: center;
-    font-family: "Rethink Sans";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    object-fit: fill;
 }
+
+.collapsible-content img {
+    width: 80%;
+    /* or any custom size */
+    height: 80%;
+    object-fit: contain;
+}
+
+.collapsible.open .collapsible-content {
+    max-height: 400px;
+    /* enough space for items */
+    padding: 15px 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+
+    .nav_btns,
+    .language {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon img {
+        width: 30px;
+    }
+}
+
 
 /* nav-bar css end  */
 .whatsapp_icon {
@@ -141,6 +296,7 @@
 .hero_content {
     width: 100%;
     height: 900px;
+    max-height: 100vh;
     padding-top: 80px;
     display: flex;
     justify-content: space-between;
@@ -203,7 +359,6 @@
     font-style: normal;
     font-weight: 100;
     line-height: normal;
-
 }
 
 .hero_content button {
@@ -236,48 +391,68 @@
 /* hero section css end */
 
 /* details section css start */
-.details_section {
-    display: flex;
-    height: 110px;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 100px;
+.mobile_details_section {
+    display: none;
 }
 
-.details_section .details_card img {
+.details_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 70px;
+}
+
+.details_cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.details_card p {
+    color: var(--Dark, #050E14);
+}
+
+.details_card img {
     width: 32px;
     height: 32px;
     aspect-ratio: 1/1;
 }
 
-
-.details_cards {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 48px;
-    width: 1310px;
-    margin: auto;
-}
-
+/* Default (Desktop) */
 .mid_line {
     width: 1px;
+    padding: 0;
     height: 100px;
-    padding: 0px;
     background: linear-gradient(0deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white);
-    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 50%, rgba(0, 0, 0, 0.00) 100%); */
 }
 
-.details_section p {
-    color: var(--Gray-gray--10, #2B3237);
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
+/* Responsive for < 800px */
+@media (max-width: 1024px) {
+    .mobile_details_section {
+        display: block;
+        padding: 40px 20px;
+    }
 
+    .details_cards {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .horizontal {
+        width: 300px;
+        padding: 1px;
+        height: 1px;
+        background: linear-gradient(90deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white);
+    }
+
+    .details_section {
+        display: none;
+    }
+}
 
 /* details section css end */
 /* Batteries section css start */
@@ -309,7 +484,6 @@
     justify-content: center;
     align-items: center;
     gap: 32px;
-
 }
 
 .tabs .mid_line {
@@ -349,7 +523,8 @@
     min-height: auto;
     overflow: visible;
 }
-.tab-content{
+
+.tab-content {
     padding: 50px 0px;
 }
 
@@ -358,13 +533,16 @@
     width: auto;
     object-fit: contain;
 }
-.product-slider img:hover{
-     scale: 1.1;
+
+.product-slider img:hover {
+    scale: 1.1;
 }
-.owl-carousel .owl-item img{
+
+.owl-carousel .owl-item img {
     width: auto;
     overflow: visible;
-} 
+}
+
 .owl-carousel .owl-stage-outer {
     position: relative;
     overflow: hidden;
@@ -462,3 +640,193 @@
 }
 
 /* Batteries section css end */
+/* key_benefits section css start */
+.key_benefits {
+    width: 100%;
+    height: 100vh;
+    background:
+        linear-gradient(to bottom, rgb(255, 255, 255, 0)48%, rgb(0, 0, 0, 0.1) 62%, rgba(0, 0, 0) 85%),
+        url('../imgs/benefits.jpg') center / cover no-repeat;
+    position: relative;
+}
+
+.key_benefits_content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    padding-bottom: 50px;
+    /* Add some space at bottom */
+}
+
+.key_benefits_content .content {
+    width: 100%;
+    color: #fff;
+    background: transparent;
+    /* No extra background, let gradient show */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.benefits_panel {
+    background: #000;
+}
+
+.benefits_panel .content {
+    display: flex;
+    height: 550px;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 20px;
+    gap: 72px;
+}
+
+.benefits_panel .content .left_panel {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+}
+
+.benefits_panel .content .left_panel p {
+    font-size: 16px;
+    margin: 0px;
+}
+
+.benefits_panel .content .left_panel div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font: 12px;
+    color: var(--White);
+}
+
+.benefits_panel .content .left_panel h2 {
+    margin-bottom: 10px;
+    color: var(--White);
+    font-size: 24px;
+}
+
+.benefits_panel .content .left_panel ul {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.benefits_panel .content .left_panel ul li {
+    list-style-type: none;
+    color: var(--Gray-gray--8, #5D6266);
+    text-align: start;
+    font-size: 24px;
+}
+
+.benefits_panel .content .right_panel {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefits_panel .content .right_panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* key_benefits section css end */
+/* reviews section css start */
+
+.testimonial-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.testimonial-card {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    min-height: 250px;
+}
+
+.testimonial-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.stars {
+    color: #f4c542;
+    margin: 10px 0;
+}
+
+.see-review {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: underline;
+    font-weight: 500;
+    color: #000;
+}
+
+.google-rating {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.google-rating img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.owl-nav button {
+    position: absolute;
+    top: 40%;
+    background: #000 !important;
+    color: #fff !important;
+    border-radius: 50%;
+    padding: 10px 15px !important;
+}
+
+.owl-nav .owl-prev {
+    left: -40px;
+}
+
+.owl-nav .owl-next {
+    right: -40px;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        min-height: auto;
+    }
+}
+
+/* revirews section css end */
+
+@media only screen and (max-width:1576px) {
+    .container {
+        width: 90%;
+        height: auto;
+        max-width: 1576px;
+        margin: auto;
+    }
+
+
+}
