@@ -77,4 +77,20 @@ $(document).ready(function () {
         $($(this).data("target")).removeClass("d-none").addClass("active");
     });
 });
+$(document).ready(function () {
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [
+            "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+            "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+        ],   // customize arrow icons
+        responsive: {
+            0: { items: 1 },    // 1 card on mobile
+            768: { items: 2 },  // 2 cards on tablets
+            992: { items: 3 }   // 3 cards on desktops
+        }
+    });
+});
 // slider code end
