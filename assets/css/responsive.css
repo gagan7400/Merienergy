@@ -1,0 +1,99 @@
+@media only screen and (min-width: 1440px) and (max-width: 1600px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1320px;
+    }
+
+    /*  details section*/
+    .details_section .details_cards {
+        padding: 50px !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+
+
+    /*  details section*/
+    .details_section .details_cards {
+        padding: 30px 0px !important;
+    }
+
+    .details_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 30px;
+    }
+
+    .details_cards {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {}
+
+@media only screen and (max-width: 767px) {
+    .hero_content {
+        width: 100%;
+        height: 100vh;
+        min-height: fit-content;
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .hero_content .upper_section h3 {
+        color: var(--White, #FFF);
+        font-size: 42px;
+        width: 60%;
+        margin: auto;
+    }
+
+    .hero_content .upper_section p {
+        color: var(--White, #FFF);
+        font-family: "Rethink Sans";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 100;
+        line-height: normal;
+    }
+
+    .hero_content .lower_section {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .hero_content .lower_section button {
+        width: 100%;
+        height: auto;
+        padding: 10px 24px;
+        margin: 0px !important;
+        border-radius: 4px;
+        border: 1px solid var(--White, #FFF);
+        background: white;
+        color: var(--Dark, #050E14);
+        text-align: center;
+        font-family: "Rethink Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+
+}
+
+@media only screen and (max-width: 375px) {}

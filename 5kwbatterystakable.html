@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5kWh Stackable Battery</title>
+    <link rel="icon" href="./assets/imgs/nav_logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+</head>
+
+<body>
+<nav class="nav-bar">
+        <div class="container">
+            <div class="navs">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="/index.html"><img id="logo" src="./assets/imgs/logo_nav.png" alt="Logo"></a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav_btns">
+                    <div class="dropdown">
+                        <div class="nav-link">
+                            <p>Batteries</p>
+                            <img src="./assets/icons/chevron-down.svg" alt="">
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="/5kwbattery.html">5kWh Battery</a>
+                            <a href="/5kwbatterystakable.html">5kWh Stackable Battery</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <div class="nav-link">
+                            <p>Inverters</p>
+                            <img src="./assets/icons/chevron-down.svg" alt="">
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="/onephaseinverter.html">Single Phase Hybrid Inverter</a>
+                            <a href="/threephaseinverter.html">Three Phase Hybrid Inverter</a>
+                        </div>
+                    </div>
+
+                    <div class="contact_btn">
+                        <a href="/contact-us.html" class="text-decoration-none">
+                            <p>Contact</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Language Dropdown -->
+                <div class="language dropdown">
+                    <div class="language_btn">
+                        <img src="./assets/icons/globe.svg" alt="">
+                        <p>English</p>
+                        <img src="./assets/icons/chevron-down.svg" alt="">
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="#">English</a>
+                        <a href="#">Hindi</a>
+                        <a href="#">Spanish</a>
+                    </div>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <div class="menu-icon">
+                    <img src="./assets/icons/menu.svg" alt="Menu">
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <div class="mobile-menu">
+            <div class="close-icon">
+                <div class="logo">
+                    <img src="./assets/imgs/nav_logo.png" alt="Logo">
+                </div>
+                <img src="./assets/icons/close.svg" alt="Close">
+            </div>
+            <div class="mobile-nav">
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <p>Batteries</p>
+                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/battery.png" alt="">
+                            </div>
+                            <span>5kWh Battery</span>
+                        </div>
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/battery_stackable.png" alt="">
+                            </div>
+                            <span>5kWh Stackable Battery</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <p>Inverters</p>
+                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/inverter1phase.png" alt="">
+                            </div>
+                            <span>Single Phase Hybrid Inverters 3-6 kW</span>
+                        </div>
+                        <div class="item">
+                            <div class="img_box">
+                                <img src="./assets/imgs/inverter3phase.png" alt="">
+                            </div>
+                            <span>Three Phase Hybrid Inverters 6-30 kW</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="collapsible">
+                     
+                        <a href="/contact-us.html" class="text-decoration-none">
+                            <p>Contact</p>
+                        </a>
+                     
+                </div>
+                <div class="collapsible">
+                    <div class="collapsible-header">
+                        <div class="mobile_language_btn">
+                            <img src="./assets/icons/globe.svg" alt="">
+                            <p>English</p>
+                        </div>
+                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="item">
+                            <span>Hindi</span>
+                        </div>
+                        <div class="item">
+                            <span>French</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="whatsapp_icon">
+        <a href="https://wa.me/+917400660415"><img src="./assets/icons/whatsapp.svg" alt=""></a>
+    </div>
+    <section class="stackable_battery_herobanner">
+        <div class="container">
+            <div class="col">
+                <div class="content">
+                    <div class="upper_content">
+                        <h2>5kwh Stackable Battery</h2>
+                        <p>Expandable,Weatherproof,& build to last --rady to power your home and EV</p>
+                    </div>
+                    <div class="feature_highlights">
+                        <div class="row  feature_cards">
+                            <div class="col-md-2 col-6">
+                                <div class="feature_item">
+                                    <img src="./assets/imgs/battery1.png" alt="">
+                                    <span>Upto <br> 120kWh</span>
+                                </div>
+                            </div>
+                            <div class="mid_line"></div>
+                            <div class="col-md-2 col-6">
+                                <div class="feature_item">
+                                    <img src="./assets/imgs/battery2.png" alt="">
+                                    <span>Fast Charging <br> (100 A max)</span>
+                                </div>
+                            </div>
+                            <div class="mid_line"></div>
+                            <div class="col-md-2 col-6">
+                                <div class="feature_item">
+                                    <img src="./assets/imgs/battery3.png" alt="">
+                                    <span>Built-in Fire <br> Safety</span>
+                                </div>
+                            </div>
+                            <div class="mid_line"></div>
+                            <div class="col-md-2 col-6">
+                                <div class="feature_item">
+                                    <img src="./assets/imgs/battery5.png" alt="">
+                                    <span>Modern <br> Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container p-0">
+            <div class="row align-items-center justify-content-start p-0">
+                <div class="col-lg-6 d-flex flex-column justify-content-start  align-items-start gap-4 pe-5">
+                    <h2 class="section-title">Expandable Capacity</h2>
+                    <p class="section-text pe-5">Connect up to 4 towers of 30 kwh each (6 modules in each tower )
+                        ,reaching a
+                        total storage capacity of up to 120 kWh to meet all your energy
+                        needs.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="./assets/imgs/expandable_stackable_battery.png" alt="Two 5kWh Batteries"
+                            class="section-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="battery_slider_section">
+        <div class="container">
+            <div class="battery_slide"></div>
+        </div>
+    </section>
+    <section class="section-padding beautiful_section">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-lg-6 order-lg-2 ps-5 d-flex flex-column justify-content-center gap-4">
+                    <h2 class="section-title">Beautiful Aesthetics</h2>
+                    <p class="section-text">The battery system features a sleek, space-effiecent stackable tower format
+                        that blends seamlessly into both residentail and commercial settings </p>
+                </div>
+                <div class="col-lg-6 order-lg-1 ">
+                    <div class="image-container">
+                        <img src="./assets/imgs/beautifulstackable.png" alt="Modern Design Battery"
+                            class="section-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Warranty Section -->
+    <section class="section-padding  ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 d-flex p-5 flex-column justify-content-center align-items-start gap-3 ">
+                    <h2 class="section-title">10-Year Warranty & Product Liability Insurance</h2>
+                    <p class="section-text">Backed by a 10-year warranty for your peace of mind. Covered by product
+                        liability insurance from a leading Swiss insurer — ensuring your safety and trust.</p>
+                    <p class="text-muted small"><sup>*</sup>Refer warranty and product liability insurance document for
+                        detailed terms and conditions.
+                    </p>
+                    <button class="btn_warranty">
+                        Contact Us <img src="./assets/icons/arrow-up-right.svg" alt="">
+                    </button>
+                </div>
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <img src="./assets/imgs/warrenty.png" alt="Warranty Document" class="section-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-padding document_section">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Download Documents</h2>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="document-card">
+                        <div class="document_info">
+                            <img src="./assets/icons/pdf.svg" alt="">
+                            <h5>Limited Warranty</h5>
+                        </div>
+                        <a href="#">
+                            <img src="./assets/icons/download.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="document-card">
+                        <div class="document_info">
+                            <img src="./assets/icons/pdf.svg" alt="">
+                            <h5>User's Manual</h5>
+                        </div>
+                        <a href="#">
+                            <img src="./assets/icons/download.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="document-card">
+                        <div class="document_info">
+                            <img src="./assets/icons/pdf.svg" alt="">
+                            <h5>Quick Installation Guide</h5>
+                        </div>
+                        <a href="#">
+                            <img src="./assets/icons/download.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="document-card">
+                        <div class="document_info">
+                            <img src="./assets/icons/pdf.svg" alt="">
+                            <h5>Data Sheet</h5>
+                        </div>
+                        <a href="#">
+                            <img src="./assets/icons/download.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <!-- Logo & Social -->
+                <div class="col-md-4 mb-4 footer-logo">
+                    <img src="./assets/imgs/nav_logo.png" alt="Logo">
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col mb-4 footer-links">
+                            <h6 class="text-white mb-3">Home</h6>
+                        </div>
+
+                        <div class="col mb-4 footer-links">
+                            <h6 class="text-white mb-3">Batteries</h6>
+                            <a href="#">5kWh Battery</a>
+                            <a href="#">5kWh Stackable Battery</a>
+                        </div>
+
+                        <div class="col mb-4 footer-links">
+                            <h6 class="text-white mb-3">Inverters</h6>
+                            <a href="#">Single Phase Hybrid Inverter 3–6 kW</a>
+                            <a href="#">Three Phase Hybrid Inverters 6–30 kW</a>
+                        </div>
+
+                        <div class="col mb-4 footer-links">
+                            <h6 class="text-white mb-3">Installer</h6>
+                        </div>
+
+                        <div class="col mb-4 footer-links">
+                            <h6 class="text-white mb-3">Contact Us</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row text-center text-md-start">
+                <div class="col-md-6 bottom-text">
+                    <p>Copyright © 2025. All rights reserved to Meri energy</p>
+                </div>
+                <div class="col-md-6 text-md-end bottom-text">
+                    <a href="#" class="text-decoration-none   me-3">Privacy Policy</a> |
+                    <a href="#" class="text-decoration-none   ms-3">Terms & Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery + Owl Carousel -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

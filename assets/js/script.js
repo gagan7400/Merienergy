@@ -4,6 +4,19 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const closeIcon = document.querySelector('.close-icon');
 const collapsibles = document.querySelectorAll('.collapsible');
 
+const navbar = document.querySelector('.nav-bar');
+const logo = document.getElementById('logo');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+         logo.src = './assets/imgs/nav_logo.png'; // Change logo
+    } else {
+        navbar.classList.remove('scrolled');
+         logo.src = './assets/imgs/logo_nav.png'; // Change logo
+    }
+});
+
 menuIcon.addEventListener('click', () => {
     mobileMenu.classList.add('active');
 });
@@ -78,10 +91,11 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {
-    $(".owl-carousel").owlCarousel({
+    $(".testimonial-section .owl-carousel").owlCarousel({
         loop: true,
         margin: 20,
         nav: true,
+        dots: false,
         navText: [
             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
@@ -92,5 +106,34 @@ $(document).ready(function () {
             992: { items: 3 }   // 3 cards on desktops
         }
     });
+
 });
+$('.blog_slider .owl-carousel').owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: true,
+    center: true,
+    items: 1,
+    stagePadding: ($(window).width() * 0.15), // 15% each side for half cards
+    responsive: {
+        0: {
+            items: 1,
+            stagePadding: 50
+        },
+        768: {
+            items: 1,
+            stagePadding: $(window).width() * 0.1
+        },
+        1200: {
+            items: 1,
+            stagePadding: $(window).width() * 0.15
+        }
+    },
+    navText: [
+        "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+        "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+    ],
+});
+
+
 // slider code end

@@ -9,7 +9,8 @@
 
 :root {
     --Dark: #050E14;
-    --White: #FFFFFF
+    --White: #FFFFFF;
+    --Gray: #8F9395
 }
 
 p {
@@ -46,6 +47,19 @@ h5 {
     padding: 10px 0px;
 }
 
+.nav-bar {
+    background: transparent;
+    transition: background 0.3s ease;
+    /* Smooth transition */
+}
+
+.nav-bar.scrolled {
+    background: rgba(255, 255, 255, 0.62);
+    backdrop-filter: blur(17px);
+}
+
+
+
 .nav-bar .navs {
     height: 80px;
     display: flex;
@@ -65,8 +79,8 @@ h5 {
     align-items: center;
 }
 
-.nav_btns div,
-.language_btn {
+.nav-bar .nav_btns div,
+.nav-bar .language_btn {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -74,11 +88,23 @@ h5 {
     cursor: pointer;
 }
 
-.nav_btns p,
-.language_btn p {
+.nav-bar .nav_btns p,
+.nav-bar .language_btn p {
     margin: 0;
     font-size: 16px;
     font-family: "Rethink Sans";
+}
+
+.nav-bar.scrolled .nav_btns div,
+.nav-bar.scrolled .nav_btns .nav-link p,
+.nav-bar.scrolled .contact_btn p,
+.nav-bar.scrolled .language_btn p {
+    color: var(--Dark, #050E14) !important;
+}
+
+.nav-bar.scrolled .nav_btns .nav-link img,
+.nav-bar.scrolled .language_btn img {
+    filter: invert(1);
 }
 
 /* Dropdown */
@@ -297,7 +323,8 @@ h5 {
     width: 100%;
     height: 900px;
     max-height: 100vh;
-    padding-top: 80px;
+    padding-top: 150px;
+    padding-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -411,6 +438,7 @@ h5 {
 }
 
 .details_card p {
+    font-size: 21px;
     color: var(--Dark, #050E14);
 }
 
@@ -428,6 +456,7 @@ h5 {
     background: linear-gradient(0deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white);
 }
 
+
 /* Responsive for < 800px */
 @media (max-width: 1024px) {
     .mobile_details_section {
@@ -440,6 +469,12 @@ h5 {
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        padding: 20px !important;
+    }
+
+    .details_cards p {
+        font-size: 16px;
+
     }
 
     .horizontal {
@@ -538,20 +573,25 @@ h5 {
     scale: 1.1;
 }
 
-.owl-carousel .owl-item img {
+.product-slider .owl-carousel .owl-item img {
     width: auto;
     overflow: visible;
 }
 
-.owl-carousel .owl-stage-outer {
+.product-slider .owl-carousel .owl-stage-outer {
     position: relative;
     overflow: hidden;
     height: 500px;
 }
 
+.product-slider .owl-prev-custom img,
+.product-slider .owl-next-custom img {
+    filter: invert(1);
+}
+
 /* Custom nav arrows */
-.owl-prev-custom,
-.owl-next-custom {
+.product-slider .owl-prev-custom,
+.product-slider .owl-next-custom {
     font-size: 32px;
     color: #333;
     position: absolute;
@@ -561,11 +601,11 @@ h5 {
     z-index: 1000;
 }
 
-.owl-prev-custom {
+.product-slider .owl-prev-custom {
     left: -40px;
 }
 
-.owl-next-custom {
+.product-slider .owl-next-custom {
     right: -40px;
 }
 
@@ -764,9 +804,9 @@ h5 {
     padding: 20px;
     text-align: left;
     min-height: 150px;
-    height: 200px;
+    height: 281px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
     flex-direction: column;
 }
@@ -774,18 +814,28 @@ h5 {
 .testimonial-section h2,
 .testimonial-section p {
     color: var(--Dark, #050E14);
+
 }
 
 .testimonial-card p {
-    font-size: 12px;
-    margin: 0px;
+    overflow: hidden;
+    color: var(--Gray-gray--8, #5D6266);
+    font-feature-settings: 'liga' off, 'clig' off;
+    text-overflow: ellipsis;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+
+    line-height: normal;
+    height: 100px;
 }
 
 .testimonial-card img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50% !important;
+
 }
 
 .testimonial-section .owl-carousel {
@@ -794,31 +844,57 @@ h5 {
 
 }
 
-.owl-carousel .owl-stage-outer {
+.testimonial-section .owl-carousel .owl-stage-outer {
     height: fit-content;
 }
 
-.owl-nav button {
+.testimonial-section .owl-nav button {
     position: absolute;
 }
 
-.owl-carousel .owl-nav button.owl-prev {
-    left: -20px;
-    top: 45%;
-    z-index: 1;
-    padding: 0px !important;
+
+.testimonial-section .owl-carousel .owl-nav .owl-next-custom>img,
+.testimonial-section .owl-carousel .owl-nav .owl-prev-custom>img {
+    filter: invert(1);
 }
 
-.owl-carousel .owl-nav .owl-prev-custom,
-.owl-carousel .owl-nav .owl-next-custom {
+.testimonial-section .owl-carousel .owl-nav .owl-prev-custom,
+.testimonial-section .owl-carousel .owl-nav .owl-next-custom {
     padding: 0px !important;
+    background: transparent !important;
+    display: flex;
+    align-items: center;
 }
 
-.owl-carousel .owl-nav button.owl-next {
+.testimonial-section .owl-carousel .owl-nav button.owl-prev {
+    left: -50px;
+    top: calc(50% - 58px / 2);
     z-index: 1;
-    top: 45%;
-    right: -20px;
     padding: 0px !important;
+    background: transparent !important;
+}
+
+.testimonial-section .owl-carousel .owl-nav button.owl-next {
+    z-index: 1;
+    top: calc(50% - 58px / 2);
+    right: -50px;
+    padding: 0px !important;
+    background: transparent !important;
+}
+
+
+.testimonial-section .owl-carousel .owl-nav .owl-prev-custom:hover,
+.testimonial-section .owl-carousel .owl-nav .owl-next-custom:hover {
+    background: black !important;
+    border-radius: 100px;
+}
+
+.testimonial-section .owl-carousel .owl-nav .owl-next-custom:hover img {
+    filter: invert(0);
+}
+
+.testimonial-section .owl-carousel .owl-nav .owl-prev-custom:hover img {
+    filter: invert(0);
 }
 
 .stars {
@@ -826,28 +902,81 @@ h5 {
     margin: 10px 0;
 }
 
+
 .stars i {
     font-size: 10px;
+}
+
+.testimonial-card small {
+    color: var(--Gray-gray--7, #8F9395);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.testimonial-card h6 {
+    color: var(--Dark, #050E14);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .see-review {
     display: inline-block;
     margin-top: 10px;
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom: 1px solid var(--Gray-gray--12, #192127);
+    overflow: hidden;
+    color: var(--Gray-gray--12, #192127);
+    text-overflow: ellipsis;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
     font-weight: 500;
-    color: #000;
+    line-height: normal;
 }
 
 .google-rating {
     text-align: left;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 14px;
 }
 
-.google-rating img {
-    width: 40px;
-    margin-right: 10px;
+.google-rating .review_btn {
+    display: flex;
+    padding: 16px 24px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: var(--Dark, #050E14);
 }
 
+.google_logo {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.google_logo img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+}
 
 @media (max-width: 768px) {
     .testimonial-card {
@@ -855,8 +984,658 @@ h5 {
     }
 }
 
-/* revirews section css end */
+/* reviews section css end */
+/* blog section css start */
+.blog_slider {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0;
+}
 
+/* Main card styling */
+.blog_slider .blog_card {
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+/* Gradient effect for text readability */
+.blog_slider .blog_card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+/* Card text */
+.blog_slider .card_text p {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.blog_slider .card_text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    padding: 15px;
+    z-index: 2;
+}
+
+/* Navigation arrows - positioned between cards */
+.blog_slider .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+}
+
+.blog_slider .owl-nav button {
+    color: #fff !important;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: all;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    background: none !important;
+    ;
+}
+
+.blog_slider .owl-nav .owl-prev {
+    left: calc(5% + 30px);
+}
+
+.blog_slider .owl-nav .owl-next {
+    right: calc(5% + 30px);
+}
+
+
+.blog_slider .owl-dots {
+    display: none;
+}
+
+/* blog section css end */
+/* footer css start */
+footer {
+    background-color: #0a1116;
+    color: #ccc;
+    padding: 40px 0;
+    margin: 0px 20px;
+    border-radius: 8px;
+}
+
+footer .footer-logo img {
+    max-width: 140px;
+    margin-bottom: 15px;
+}
+
+footer .social-icons a {
+    color: #ccc;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #0d6efd;
+    /* Bootstrap primary color */
+}
+
+footer .footer-links h6 {
+    color: var(--White, #FFF);
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+footer .footer-links a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: color 0.3s;
+    color: var(--Gray-gray--7, #8F9395);
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+footer .footer-links a:hover {
+    color: #fff;
+}
+
+footer hr {
+    border-top: 1px solid #e1d1d1;
+    margin: 20px 0;
+}
+
+footer .bottom-text p,
+footer .bottom-text a {
+    color: var(--Gray-gray--7, #8F9395);
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 163.5%;
+    /* 29.43px */
+    letter-spacing: 0.36px;
+}
+
+/* footer css end */
+
+
+/*5 kwh battery page  css start  */
+/* herobanner css start */
+
+.battery_herobanner {
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    background-image: url('../imgs/battery_herobanner.png');
+    background-size: 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Dark blur on TOP */
+.battery_herobanner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+/* Dark blur on BOTTOM */
+.battery_herobanner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+.battery_herobanner .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 20px 50px 20px;
+    gap: 100px;
+}
+
+.feature_highlights {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.feature_highlights .feature_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.feature_item {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.feature_item span {
+    color: var(--White, #FFF);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: start;
+    line-height: normal;
+}
+
+.feature_cards .mid_line {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(200, 200, 200, 0.6) 40%,
+            rgba(200, 200, 200, 0.6) 60%,
+            rgba(255, 255, 255, 0) 100%);
+}
+
+.battery_details {
+    width: 100%;
+    height: 100vh
+}
+
+.section-padding {
+    padding: 6rem 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.section-title {
+    color: var(--Dark, #050E14);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.section-text {
+    color: var(--Gray-gray--12, #192127);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.image-container {
+    text-align: center;
+    position: relative;
+}
+
+.btn_warranty {
+    display: flex;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--Dark, #050E14);
+}
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.section-image:hover {
+    transform: scale(1.02);
+}
+
+.battery_slider_section {
+    width: 100%;
+    height: 100vh;
+    background: grey;
+}
+
+.beautiful_section {
+    background: var(--Gray-gray--3, #F5F5F6);
+}
+
+
+/* Document Cards start */
+.document_section {
+    background: var(--Gray-gray--3, #F5F5F6);
+    height: fit-content;
+}
+
+.document-card {
+    background: #ffffff;
+    border: 2px solid #e9ecef;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.document-card .document_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+.document-card .document_info h5 {
+    color: var(--Gray-gray--12, #192127);
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 124%;
+    /* 22.32px */
+    text-transform: capitalize;
+}
+
+.document-card:hover {
+
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.document-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+
+
+/* Document Cards end*/
+/*5kwh stakable battery css start  */
+.stackable_battery_herobanner {
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    background-image: url('../imgs/5kwhstackable_herobanner_image.png');
+    background-size: 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark blur on TOP */
+.stackable_battery_herobanner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+/* Dark blur on BOTTOM */
+.stackable_battery_herobanner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+.stackable_battery_herobanner .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 20px 50px 20px;
+    gap: 100px;
+}
+
+
+/*5kwh stakable battery css end  */
+/*onephase inverter css start  */
+.onephase_herobanner {
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    background-image: url('../imgs/1phaseinverter/hero_banner.png');
+    background-size: 100%;
+    background-position: 0px -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark blur on TOP */
+.onephase_herobanner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+/* Dark blur on BOTTOM */
+.onephase_herobanner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+.onephase_herobanner .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 20px 50px 20px;
+    gap: 100px;
+}
+
+.onephase_herobanner .content .upper_content h2 {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.onephase_herobanner .content .upper_content p {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.section-padding.power_section {
+    background: var(--Gray-gray--3, #F5F5F6);
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.smart_wifi_section .details_box {
+    padding: 0px 100px 0px 0px;
+}
+
+.onephase_herobanner .section-image {
+    width: 100%;
+    height: 600px;
+}
+
+.onephase_warrenty_section {
+    padding: 100px 40px;
+    height: fit-content;
+}
+
+/*onephase inverter css end  */
+/*threephase inverter css start  */
+.threephase_herobanner {
+    width: 100%;
+    height: 100vh;
+    min-height: fit-content;
+    background-image: url('../imgs/3phaseinverter/herobanner.jpg');
+    background-size: 133%;
+    background-position: -21px -308px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Dark blur on TOP */
+.threephase_herobanner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+/* Dark blur on BOTTOM */
+.threephase_herobanner::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    pointer-events: none;
+}
+
+.threephase_herobanner .content p {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    text-shadow: 4px -1px 16px rgba(0, 0, 0, 0.25);
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.threephase_herobanner .content h2 {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    text-shadow: 4px -1px 42px rgba(0, 0, 0, 0.25);
+    font-family: "Rethink Sans";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.threephase_herobanner .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 150px 20px 50px 20px;
+    gap: 100px;
+}
+
+/*threephase inverter css end  */
+
+/* contact_us start */
+.contact_us {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.contact_us .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+    gap: 50px;
+}
+
+.contact_us .content .left_panel img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* contact_us end */
+
+/* herobanner css end */
 @media only screen and (max-width:1576px) {
     .container {
         width: 90%;
