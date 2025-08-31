@@ -20,35 +20,64 @@
 </head>
 
 <body>
-    <nav class="nav-bar">
+    <nav class="nav-bar  contact_nav ">
         <div class="container">
             <div class="navs">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="/index.html"><img id="logo" src="./assets/imgs/logo_nav.png" alt="Logo"></a>
+                    <a href="/index.html"><img src="./assets/imgs/nav_logo.png" alt="Logo"></a>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="nav_btns">
                     <div class="dropdown">
-                        <div class="nav-link">
+                        <div class="nav-link batteries">
                             <p>Batteries</p>
-                            <img src="./assets/icons/chevron-down.svg" alt="">
+                            <div style="width: 18px;display: flex;justify-content: center;align-items: center;">
+                                <img class="nav-dropicon" src="./assets/icons/chevron-down18X18.svg" alt="">
+                            </div>
                         </div>
-                        <div class="dropdown-menu">
-                            <a href="/5kwbattery.html">5kWh Battery</a>
-                            <a href="/5kwbatterystakable.html">5kWh Stackable Battery</a>
+                        <div class="dropdown-menu wide-dropdown batterydropdown">
+                            <div class="dropdown-content">
+                                <a href="/5kwbattery.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/battery-drop1.png" alt="5kWh Battery">
+                                    </div>
+                                    <p class="normal_text">5kWh Battery</p>
+                                </a>
+                                <a href="/5kwbatterystakable.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/battery-drop2.png" alt="5kWh Stackable Battery">
+                                    </div>
+                                    <p class="normal_text">5kWh Stackable Battery</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-
                     <div class="dropdown">
-                        <div class="nav-link">
+                        <div class="nav-link inverters">
                             <p>Inverters</p>
-                            <img src="./assets/icons/chevron-down.svg" alt="">
+                            <div style="width: 18px;display: flex;justify-content: center;align-items: center;">
+
+                                <img class="nav-dropicon" src="./assets/icons/chevron-down18X18.svg" alt="">
+                            </div>
                         </div>
-                        <div class="dropdown-menu">
-                            <a href="/onephaseinverter.html">Single Phase Hybrid Inverter</a>
-                            <a href="/threephaseinverter.html">Three Phase Hybrid Inverter</a>
+                        <div class="dropdown-menu wide-dropdown inverterdropdown">
+                            <div class="dropdown-content">
+
+                                <a href="/5kwbattery.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/inverterdrop1.png" alt="5kWh Battery">
+                                    </div>
+                                    <p class="normal_text">5kWh Battery</p>
+                                </a>
+                                <a href="/5kwbatterystakable.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/inverterdrop2.png" alt="5kWh Stackable Battery">
+                                    </div>
+                                    <p class="normal_text">5kWh Stackable Battery</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -60,18 +89,19 @@
                 </div>
 
                 <!-- Language Dropdown -->
-                <div class="language dropdown">
-                    <div class="language_btn">
+                <div class="language">
+                    <div class="language-toggle language_btn">
                         <img src="./assets/icons/globe.svg" alt="">
-                        <p>English</p>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
+                        <p class="selected-language">English</p>
+                        <img src="./assets/icons/chevron-down18X18.svg" alt="" class="language-dropdown-icon">
                     </div>
-                    <div class="dropdown-menu">
-                        <a href="#">English</a>
-                        <a href="#">Hindi</a>
-                        <a href="#">Spanish</a>
+                    <div class="language-options">
+                        <a href="#" data-lang="English">English</a>
+                        <a href="#" data-lang="Hindi">Hindi</a>
+                        <a href="#" data-lang="Spanish">Spanish</a>
                     </div>
                 </div>
+
 
                 <!-- Hamburger Menu -->
                 <div class="menu-icon">
@@ -81,78 +111,79 @@
         </div>
 
         <!-- Sidebar Menu -->
+
         <div class="mobile-menu">
-            <div class="close-icon">
-                <div class="logo">
-                    <img src="./assets/imgs/nav_logo.png" alt="Logo">
+            <div class="container">
+                <div class="close-icon">
+                    <div class="logo">
+                        <img src="./assets/imgs/nav_logo.png" alt="Logo">
+                    </div>
+                    <img src="./assets/icons/close.svg" alt="Close">
                 </div>
-                <img src="./assets/icons/close.svg" alt="Close">
-            </div>
-            <div class="mobile-nav">
-                <div class="collapsible">
-                    <div class="collapsible-header">
-                        <p>Batteries</p>
-                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
-                    </div>
-                    <div class="collapsible-content">
-                        <div class="item">
-                            <div class="img_box">
-                                <img src="./assets/imgs/battery.png" alt="">
+                <div class="mobile-nav">
+                    <div class="collapsible">
+                        <div class="collapsible-header">
+                            <p>Batteries</p>
+                            <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="item">
+                                <div class="img_box">
+                                    <img src="./assets/imgs/battery.png" alt="">
+                                </div>
+                                <span>5kWh Battery</span>
                             </div>
-                            <span>5kWh Battery</span>
-                        </div>
-                        <div class="item">
-                            <div class="img_box">
-                                <img src="./assets/imgs/battery_stackable.png" alt="">
+                            <div class="item">
+                                <div class="img_box">
+                                    <img src="./assets/imgs/battery_stackable.png" alt="">
+                                </div>
+                                <span>5kWh Stackable Battery</span>
                             </div>
-                            <span>5kWh Stackable Battery</span>
                         </div>
                     </div>
-                </div>
 
 
-                <div class="collapsible">
-                    <div class="collapsible-header">
-                        <p>Inverters</p>
-                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
-                    </div>
-                    <div class="collapsible-content">
-                        <div class="item">
-                            <div class="img_box">
-                                <img src="./assets/imgs/inverter1phase.png" alt="">
+                    <div class="collapsible">
+                        <div class="collapsible-header">
+                            <p>Inverters</p>
+                            <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                        </div>
+                        <div class="collapsible-content">
+                            <div class="item">
+                                <div class="img_box">
+                                    <img src="./assets/imgs/inverter1phase.png" alt="">
+                                </div>
+                                <span>Single Phase Hybrid Inverters 3-6 kW</span>
                             </div>
-                            <span>Single Phase Hybrid Inverters 3-6 kW</span>
-                        </div>
-                        <div class="item">
-                            <div class="img_box">
-                                <img src="./assets/imgs/inverter3phase.png" alt="">
+                            <div class="item">
+                                <div class="img_box">
+                                    <img src="./assets/imgs/inverter3phase.png" alt="">
+                                </div>
+                                <span>Three Phase Hybrid Inverters 6-30 kW</span>
                             </div>
-                            <span>Three Phase Hybrid Inverters 6-30 kW</span>
                         </div>
+
                     </div>
-
-                </div>
-                <div class="collapsible">
-
-                    <a href="/contact-us.html" class="text-decoration-none">
-                        <p>Contact</p>
-                    </a>
-
-                </div>
-                <div class="collapsible">
-                    <div class="collapsible-header">
-                        <div class="mobile_language_btn">
-                            <img src="./assets/icons/globe.svg" alt="">
-                            <p>English</p>
-                        </div>
-                        <img class="icon-drop" src="./assets/icons/down.svg" alt="">
+                    <div class="collapsible">
+                        <a href="/contact-us.html" class="text-decoration-none">
+                            <p>Contact</p>
+                        </a>
                     </div>
-                    <div class="collapsible-content">
-                        <div class="item">
-                            <span>Hindi</span>
+                    <div class="collapsible">
+                        <div class="collapsible-header">
+                            <div class="mobile_language_btn">
+                                <img src="./assets/icons/globe.svg" alt="">
+                                <p>English</p>
+                            </div>
+                            <img class="icon-drop" src="./assets/icons/down.svg" alt="">
                         </div>
-                        <div class="item">
-                            <span>French</span>
+                        <div class="collapsible-content">
+                            <div class="item">
+                                <span>Hindi</span>
+                            </div>
+                            <div class="item">
+                                <span>French</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -162,16 +193,137 @@
     <div class="whatsapp_icon">
         <a href="https://wa.me/+917400660415"><img src="./assets/icons/whatsapp.svg" alt=""></a>
     </div>
-    <section class="contact_us">
-        <div class="content">
-            <div class="left_panel">
-                <img src="./assets/imgs/contactimage.png" alt="">
-            </div>
-            <div class="form">
-
+    <div class="contact-section">
+        <!-- Left Section with Image and Contact Info -->
+        <div class="contact-left">
+            <div class="data">
+                <div class="contact-info-box">
+                    <div class="contact_data">
+                        <div class="top">
+                            <div class="col-3">
+                                <p>Email</p>
+                                <h3>contact@merienergy.com</h3>
+                            </div>
+                            <div class="col-6">
+                                <p> Phone Number</p>
+                                <h3>+32 389 991 0322</h3>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="col-3">
+                                <p>Swiss VAT Number</p>
+                                <h3>CH-E-123.456.789MWST</h3>
+                            </div>
+                            <div class="col-3">
+                                <p>Germany VAT Number</p>
+                                <h3>DE352884790</h3>
+                            </div>
+                            <div class="col-3">
+                                <p>Italy VAT Number</p>
+                                <h3>IT12685470960</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+
+        <!-- Right Section with Form -->
+        <div class="contact-right">
+            <h2>Get in touch</h2>
+            <p class="form-text normal_text">If you would like to try our products or become our partner, please
+                fill
+                out the form
+                below and we will contact you back.</p>
+            <p class="form-text normal_text">If you need support, please click this link for service issues: <a
+                    href="#">Contact
+                    Support</a></p>
+            <form id="contactForm" class="contact_form">
+                <div class="mb-3">
+                    <div class="custom-dropdown">
+                        <div class="dropdown-selected"> Installer* </div>
+                        <div class="dropdown-list">
+                            <div class="dropdown-item">Installer*</div>
+                            <div class="dropdown-item">Home Owner*</div>
+                            <div class="dropdown-item">Distributor/Reseller</div>
+                            <div class="dropdown-item">Job Seeker</div>
+                            <div class="dropdown-item">Others</div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row mb-3" id="extraFields" style="display: none;">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="City*" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Province*" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="First Name*" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Last Name*" required>
+                    </div>
+                </div>
+                <div class="mb-3 d-flex">
+                    <select class="form-select" style="width: 100px;">
+                        <option value="+1">+1</option>
+                        <option value="+91">+91</option>
+                    </select>
+                    <input type="tel" class="form-control ms-2" placeholder="Enter your mobile*" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Enter your mail" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="1" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="send-btn">Send <img src="./assets/icons/arrow-up-right.svg" alt="">
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const dropdown = document.querySelector('.custom-dropdown');
+        const selected = dropdown.querySelector('.dropdown-selected');
+        const list = dropdown.querySelector('.dropdown-list');
+        const items = dropdown.querySelectorAll('.dropdown-item');
+        const extraFields = document.getElementById('extraFields');
+
+        // Toggle dropdown
+        selected.addEventListener('click', () => {
+            list.classList.toggle('open');
+        });
+
+        // Select an item
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                selected.textContent = item.textContent;
+                list.classList.remove('open');
+
+                // Show extra fields only if "Home Owner" selected
+                if (item.textContent === 'Home Owner*') {
+                    console.log("object")
+                    extraFields.style.display = 'flex';
+                } else {
+                    console.log("ss")
+                    extraFields.style.display = 'none';
+                }
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                list.classList.remove('open');
+            }
+        });
+    </script>
+
     <footer>
         <div class="container">
             <div class="row text-center text-md-start">

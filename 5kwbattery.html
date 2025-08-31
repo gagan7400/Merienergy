@@ -31,24 +31,55 @@
                 <!-- Desktop Navigation -->
                 <div class="nav_btns">
                     <div class="dropdown">
-                        <div class="nav-link">
+                        <div class="nav-link batteries">
                             <p>Batteries</p>
-                            <img src="./assets/icons/chevron-down.svg" alt="">
+                            <div style="width: 18px;display: flex;justify-content: center;align-items: center;">
+                                <img class="nav-dropicon" src="./assets/icons/chevron-down18X18.svg" alt="">
+                            </div>
                         </div>
-                        <div class="dropdown-menu">
-                            <a href="/5kwbattery.html">5kWh Battery</a>
-                            <a href="/5kwbatterystakable.html">5kWh Stackable Battery</a>
+                        <div class="dropdown-menu wide-dropdown batterydropdown">
+                            <div class="dropdown-content">
+                                <a href="/5kwbattery.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/battery-drop1.png" alt="5kWh Battery">
+                                    </div>
+                                    <p class="normal_text">5kWh Battery</p>
+                                </a>
+                                <a href="/5kwbatterystakable.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/battery-drop2.png" alt="5kWh Stackable Battery">
+                                    </div>
+                                    <p class="normal_text">5kWh Stackable Battery</p>
+                                </a>
+                            </div>
                         </div>
                     </div>
-
                     <div class="dropdown">
-                        <div class="nav-link">
+                        <div class="nav-link inverters">
                             <p>Inverters</p>
-                            <img src="./assets/icons/chevron-down.svg" alt="">
+                            <div style="width: 18px;display: flex;justify-content: center;align-items: center;">
+
+                                <img class="nav-dropicon" src="./assets/icons/chevron-down18X18.svg" alt="">
+                            </div>
                         </div>
-                        <div class="dropdown-menu">
-                            <a href="/onephaseinverter.html">Single Phase Hybrid Inverter</a>
-                            <a href="/threephaseinverter.html">Three Phase Hybrid Inverter</a>
+                        <div class="dropdown-menu wide-dropdown inverterdropdown">
+                            <div class="dropdown-content">
+
+                                <a href="/5kwbattery.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/inverterdrop1.png" alt="5kWh Battery">
+                                    </div>
+                                    <p class="normal_text">Single Phase Hybrid Inverter</p>
+                                    <h5>3-6 kw</h5>
+                                </a>
+                                <a href="/5kwbatterystakable.html" class="dropdown-item">
+                                    <div class="dropdown-img">
+                                        <img src="./assets/imgs/inverterdrop2.png" alt="5kWh Stackable Battery">
+                                    </div>
+                                    <p class="normal_text">Three Phase Hybrid Inverter</p>
+                                    <h5>6-30 kW</h5>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -58,21 +89,19 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Language Dropdown -->
-                <div class="language dropdown">
-                    <div class="language_btn">
+                <div class="language">
+                    <div class="language-toggle language_btn">
                         <img src="./assets/icons/globe.svg" alt="">
-                        <p>English</p>
-                        <img src="./assets/icons/chevron-down.svg" alt="">
+                        <p class="selected-language">English</p>
+                        <img src="./assets/icons/chevron-down18X18.svg" alt="" class="language-dropdown-icon">
                     </div>
-                    <div class="dropdown-menu">
-                        <a href="#">English</a>
-                        <a href="#">Hindi</a>
-                        <a href="#">Spanish</a>
+                    <div class="language-options">
+                        <a href="#" data-lang="English">English</a>
+                        <a href="#" data-lang="Hindi">Hindi</a>
+                        <a href="#" data-lang="Spanish">Spanish</a>
                     </div>
                 </div>
-
+             
                 <!-- Hamburger Menu -->
                 <div class="menu-icon">
                     <img src="./assets/icons/menu.svg" alt="Menu">
@@ -133,11 +162,11 @@
 
                 </div>
                 <div class="collapsible">
-                     
-                        <a href="/contact-us.html" class="text-decoration-none">
-                            <p>Contact</p>
-                        </a>
-                     
+
+                    <a href="/contact-us.html" class="text-decoration-none">
+                        <p>Contact</p>
+                    </a>
+
                 </div>
                 <div class="collapsible">
                     <div class="collapsible-header">

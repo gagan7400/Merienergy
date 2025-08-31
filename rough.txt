@@ -5,7 +5,7 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const closeIcon = document.querySelector('.close-icon');
 const collapsibles = document.querySelectorAll('.collapsible');
 const navbar = document.querySelector('.nav-bar');
-const contactnavbar = document.querySelector('.contact_nav');
+const contactnavbar = document.querySelector('.nav-bar.contact_nav');
 const logo = document.getElementById('logo');
 const navdropicon_battery = document.querySelector('.batteries .nav-dropicon');
 const navdropicon_inverter = document.querySelector('.inverters .nav-dropicon');
@@ -14,49 +14,10 @@ const inverterDropdown = document.querySelector('.wide-dropdown.inverterdropdown
 let drop = document.querySelectorAll(".nav-bar .wide-dropdown");
 let dropopen = false;
 
-const dropdownContainer = document.querySelector('.language');
-const dropdownToggle = document.querySelector('.language-toggle');
-const dropdownMenu = document.querySelector('.language-options');
-const selectedLang = document.querySelector('.selected-language');
-const langdropicon = document.querySelector('.language-dropdown-icon');
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const batteryToggle = document.querySelector('.nav-link.batteries');
     const inverterToggle = document.querySelector('.nav-link.inverters');
-
-    dropdownToggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent immediate close
-        // Close both first
-        const isActive = dropdownMenu.classList.contains('show');
-        closeAllDropdowns()
-
-        if (!isActive) {
-            dropdownMenu.classList.toggle('show');
-            langdropicon.classList.toggle('rotate');
-        }
-
-    });
-
-    // Change language text on click
-    dropdownMenu.querySelectorAll('a').forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.preventDefault();
-            selectedLang.textContent = option.dataset.lang;
-            dropdownMenu.classList.remove('show');
-            langdropicon.classList.remove('rotate');
-        });
-    });
-
-    // Close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!dropdownContainer.contains(e.target)) {
-            dropdownMenu.classList.remove('show');
-            langdropicon.classList.remove('rotate');
-        }
-    });
-
 
     // Toggle Battery Dropdown
     batteryToggle.addEventListener('click', function (e) {
@@ -109,10 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function closeAllDropdowns() {
-        console.log("ddd", dropdownMenu.classList)
         dropopen = false
-        dropdownMenu.classList.remove('show');
-        langdropicon.classList.remove('rotate');
         batteryDropdown.classList.remove('active');
         inverterDropdown.classList.remove('active');
         navdropicon_battery.style.rotate = "0deg"
@@ -131,10 +89,12 @@ window.addEventListener("load", () => {
 
     if (window.scrollY > 100) {
         navbar.classList.add('scrolled');
+        contactnavbar.setAttribute("style", "")
         menuIconImg.style.filter = "invert(1)";
         if (mobileMenu.classList.contains('active')) {
             navbar.style.background = "transparent"
             navbar.style.backdropFilter = "none"
+
         }
         drop[0].style.top = "70px"
         drop[1].style.top = "70px"
@@ -146,10 +106,9 @@ window.addEventListener("load", () => {
             navbar.classList.remove('scrolled');
             menuIconImg.style.filter = "invert(0)";
             navbar.setAttribute("style", "")
-            if (mobileMenu.classList.contains('active')) {
-                contactnavbar.style.background = "transparent"
-                contactnavbar.style.backdropFilter = "none"
-            }
+            navbar.style.background = "transparent"
+            contactnavbar.style.background = "transparent"
+            contactnavbar.style.backdropFilter = "none"
 
             drop[0].style.top = "100px"
             drop[1].style.top = "100px"
@@ -166,6 +125,7 @@ let scrollfunction = () => {
         if (mobileMenu.classList.contains('active')) {
             navbar.style.background = "transparent"
             navbar.style.backdropFilter = "none"
+            contactnavbar.setAttribute("style", "")
         }
         // drop[0].style.top = "70px"
         // drop[1].style.top = "70px"
@@ -177,11 +137,8 @@ let scrollfunction = () => {
             navbar.classList.remove('scrolled');
             menuIconImg.style.filter = "invert(0)";
             navbar.setAttribute("style", "")
-            if (mobileMenu.classList.contains('active')) {
-                console.log(contactnavbar)
-                contactnavbar.style.background = "transparent"
-                contactnavbar.style.backdropFilter = "none"
-            }
+            contactnavbar.style.background = "transparent"
+            contactnavbar.style.backdropFilter = "none"
             // drop[0].style.top = "100px"
             // drop[1].style.top = "100px"
             if (logo) {
