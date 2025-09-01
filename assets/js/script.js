@@ -426,3 +426,100 @@ function toggleassumption(p) {
 }
 
 // slider code end
+
+// image dragable code start
+$(document).ready(function () {
+    let isDragging = false;
+    let sliderContainer = $('.slider-container');
+    let foregroundImage = $('.foreground-image');
+    let sliderHandle = $('.slider-handle');
+    let sliderLine = $('.slider-line');
+
+    // Initialize position
+    let containerWidth = sliderContainer.width();
+    let initialPosition = 125; // 125px from left
+
+    function updateSlider(position) {
+        let percentage = (position / containerWidth) * 100;
+        percentage = Math.max(0, Math.min(100, percentage));
+
+        // Update clip-path to reveal/hide the foreground image
+        foregroundImage.css('clip-path', `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`);
+        sliderHandle.css('left', percentage + '%');
+        sliderLine.css('left', percentage + '%');
+    }
+
+    updateSlider(initialPosition);
+
+    // Mouse events
+    sliderHandle.on('mousedown', function (e) {
+        isDragging = true;
+        e.preventDefault();
+        $(document).css('user-select', 'none');
+    });
+
+    $(document).on('mousemove', function (e) {
+        if (isDragging) {
+            let containerOffset = sliderContainer.offset();
+            let mouseX = e.pageX - containerOffset.left;
+            updateSlider(mouseX);
+        }
+    });
+
+    $(document).on('mouseup', function () {
+        if (isDragging) {
+            isDragging = false;
+            $(document).css('user-select', 'auto');
+        }
+    });
+
+    // Touch events for mobile
+    sliderHandle.on('touchstart', function (e) {
+        isDragging = true;
+        e.preventDefault();
+    });
+
+    $(document).on('touchmove', function (e) {
+        if (isDragging) {
+            let touch = e.originalEvent.touches[0];
+            let containerOffset = sliderContainer.offset();
+            let touchX = touch.pageX - containerOffset.left;
+            updateSlider(touchX);
+        }
+    });
+
+    $(document).on('touchend', function () {
+        isDragging = false;
+    });
+
+    // Click on container to move slider
+    sliderContainer.on('click', function (e) {
+        if (e.target === this || $(e.target).hasClass('background-image') || $(e.target).hasClass('foreground-image')) {
+            let containerOffset = $(this).offset();
+            let clickX = e.pageX - containerOffset.left;
+            updateSlider(clickX);
+        }
+    });
+
+    // Keyboard navigation
+    $(document).on('keydown', function (e) {
+        let currentLeft = parseFloat(sliderHandle.css('left')) || initialPosition;
+        let step = containerWidth * 0.05; // 5% steps
+
+        if (e.key === 'ArrowLeft') {
+            updateSlider(currentLeft - step);
+        } else if (e.key === 'ArrowRight') {
+            updateSlider(currentLeft + step);
+        }
+    });
+
+    // Handle window resize
+    $(window).on('resize', function () {
+        containerWidth = sliderContainer.width();
+        // Get current percentage from slider handle position
+        let currentPercentage = parseFloat(sliderHandle.css('left')) || (initialPosition / containerWidth * 100);
+        updateSlider((currentPercentage / 100) * containerWidth);
+    });
+
+});
+// image dragable code end

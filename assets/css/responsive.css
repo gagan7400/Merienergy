@@ -10,6 +10,14 @@
         align-items: center;
         padding: 30px 70px;
     }
+
+    .stackable_battery_herobanner h2 {
+        font-size: 56px;
+    }
+
+    .stackable_battery_herobanner p {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (min-width:1440px) and (max-width:1570px) {
@@ -24,6 +32,7 @@
         align-items: center;
         padding: 30px 70px;
     }
+
 
     .stackable_battery_herobanner h2 {
         font-size: 42px;
@@ -43,6 +52,14 @@
 
     .section-padding p.small {
         font-size: 14px;
+    }
+
+    .onephase_herobanner h2 {
+        font-size: 42px;
+    }
+
+    .onephase_herobanner p {
+        font-size: 20px;
     }
 }
 
@@ -215,6 +232,16 @@
         font-size: 38px;
     }
 
+    .threephase_herobanner .content h2 {
+        font-size: 42px;
+    }
+
+    .threephase_herobanner .content p {
+        font-size: 20px;
+    }
+
+
+
 }
 
 @media only screen and (max-width:1024px) {
@@ -252,6 +279,7 @@
     .document-card .document_info {
         gap: 5px;
     }
+
     .stackable_battery_herobanner h2 {
         font-size: 32px;
     }
@@ -272,6 +300,23 @@
         font-size: 14px;
     }
 
+    .onephase_herobanner .content .upper_content h2 {
+        font-size: 46px;
+    }
+
+    .onephase_herobanner .content .upper_content p {
+        font-size: 18px;
+    }
+
+    .threephase_herobanner .content h2 {
+        font-size: 46x;
+    }
+
+    .threephase_herobanner .content p {
+        font-size: 18px;
+    }
+
+
 
 }
 
@@ -280,7 +325,6 @@
         max-width: 960px;
         margin: 0px auto;
     }
-
 
     .hero_content .upper_section h3 {
         color: var(--White, #FFF);
@@ -457,7 +501,8 @@
         height: fit-content;
         gap: 30px;
     }
-   .stackable_battery_herobanner h2 {
+
+    .stackable_battery_herobanner h2 {
         font-size: 26px;
     }
 
@@ -465,7 +510,7 @@
         font-size: 14px;
     }
 
- 
+
     .section-padding h2 {
         font-size: 26px;
         text-align: center;
@@ -510,9 +555,61 @@
     }
 
 
-    footer {
+    /*onephase inverter css start  */
+    .onephase_herobanner {
+        background-image: url('../imgs/1phaseinverter/hero_banner.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .onephase_herobanner .content {
+        padding: 100px 20px 50px 20px;
+    }
+
+    .onephase_herobanner .content .upper_content h2 {
+        font-size: 32px;
+    }
+
+    .onephase_herobanner .content .upper_content p {
+        font-size: 16px;
+    }
+
+    .smart_wifi_section .details_box {
+        padding: 0px;
+    }
+
+    .power_section .pe-5 {
+        padding-right: 0px !important;
+    }
+
+    .power_section .col-lg-6 {
+        padding: 20px !important;
+    }
+
+    .power_section footer {
         padding: 30px 10px;
     }
+
+    .threephase_herobanner {
+        background-image: url('../imgs/3phaseinverter/herobanner.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .threephase_herobanner .content p {
+        font-size: 18px;
+    }
+
+    .threephase_herobanner .content h2 {
+        font-size: 48px;
+    }
+
+    .threephase_herobanner .content {
+        padding: 100px 20px 50px 20px;
+    }
+
+
+
 
     footer .footer-logo img {
         max-width: 100px;
@@ -771,13 +868,21 @@
         margin-bottom: 20px;
         gap: 20px;
     }
-    
+
     .stackable_battery_herobanner h2 {
         font-size: 24px;
     }
 
     .stackable_battery_herobanner p {
         font-size: 14px;
+    }
+
+    .threephase_herobanner .content h2 {
+        font-size: 34px;
+    }
+
+    .threephase_herobanner .content p {
+        font-size: 18px;
     }
 
 
@@ -1065,15 +1170,16 @@
         gap: 10px;
 
     }
+
     .stackable_battery_herobanner h2 {
         font-size: 24px;
     }
 
     .stackable_battery_herobanner p {
-        font-size:14px;
+        font-size: 14px;
     }
 
-     
+
     .section-padding h2 {
         font-size: 24px;
     }
@@ -1087,12 +1193,32 @@
         font-size: 12px;
     }
 
+
+    .onephase_herobanner .content .upper_content h2 {
+        font-size: 28px;
+    }
+
+    .onephase_herobanner .content .upper_content p {
+        font-size: 14px;
+    }
+
+    .power_section .pe-5 {
+        padding-right: 0px !important;
+    }
+
+    .power_section .col-lg-6 {
+        padding: 10px !important;
+    }
+
+    .onephase_warrenty_section .col-lg-6 {
+        padding: 20px;
+    }
+
     .document-card .document_info {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
-
         gap: 10px;
     }
 
@@ -1110,6 +1236,8 @@
         position: relative;
         z-index: 2;
     }
+
+
 
     footer {
         padding: 10px;
@@ -1166,6 +1294,27 @@
         padding: 0px;
     }
 
+    .onephase_herobanner .content .upper_content h2 {
+        font-size: 24px;
+    }
+
+    .onephase_herobanner .content .upper_content p {
+        font-size: 14px;
+    }
+
+    .threephase_herobanner .content h2 {
+        font-size: 28px;
+    }
+
+    .threephase_herobanner .content p {
+        font-size: 16px;
+    }
+    .power_section .col-lg-6 ,
+    .onephase_warrenty_section .col-lg-6 {
+        padding: 20px !important;
+    }
+
+
     footer .footer-logo {
         display: flex;
         justify-content: space-between;
@@ -1181,26 +1330,14 @@
         margin: 0px auto;
     }
 
-    h1 {
-        font-size: 32px;
-        letter-spacing: -2px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    h3 {
+    .onephase_herobanner .content .upper_content h2 {
         font-size: 24px;
     }
 
-    h4 {
-        font-size: 22px;
+    .onephase_herobanner .content .upper_content p {
+        font-size: 12px;
     }
 
-    p {
-        font-size: 13px;
-    }
 
     .hero_banner {
         position: relative;
@@ -1293,6 +1430,15 @@
     .ps-5 {
         padding: 0px !important;
     }
+
+    .threephase_herobanner .content h2 {
+        font-size: 24x;
+    }
+
+    .threephase_herobanner .content p {
+        font-size: 12px;
+    }
+
 
     footer {
         padding: 10px 0px;
