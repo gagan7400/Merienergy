@@ -46,7 +46,7 @@ h5 {
 
 h1 {
     color: var(--White, #FFF);
-    text-align: center;
+
     font-feature-settings: 'liga' off, 'clig' off;
     text-shadow: 4px -1px 42px rgba(0, 0, 0, 0.25);
     font-family: "Rethink Sans";
@@ -58,7 +58,7 @@ h1 {
 
 h2 {
     color: var(--Dark, #050E14);
-    text-align: center;
+
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
     font-size: 42px;
@@ -80,7 +80,7 @@ h3 {
 
 h4 {
     color: var(--Dark, #050E14);
-    text-align: center;
+
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
     font-size: 24px;
@@ -829,11 +829,11 @@ p.advance_text {
 }
 
 .product-slider .owl-prev-custom {
-    left: -24px;
+    left: -15px;
 }
 
 .product-slider .owl-next-custom {
-    right: -24px;
+    right: -15px;
 }
 
 /* Tabs */
@@ -1334,7 +1334,7 @@ p.advance_text {
     border-radius: 100px;
     width: fit-content;
     height: fit-content;
-    display: flex;  
+    display: flex;
     padding: 5px 0px;
     justify-content: center;
     align-items: center;
@@ -1373,7 +1373,6 @@ p.advance_text {
     z-index: 2;
 }
 
-
 /* Dark blur on TOP */
 .battery_herobanner::before {
     content: "";
@@ -1381,7 +1380,7 @@ p.advance_text {
     top: 0;
     left: 0;
     width: 100%;
-    height: 30%;
+    height: 40%;
     z-index: -1;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
     pointer-events: none;
@@ -1400,6 +1399,10 @@ p.advance_text {
     pointer-events: none;
 }
 
+.feature_section_mobile {
+    display: none;
+}
+
 .battery_herobanner .content {
     width: 100%;
     height: 100vh;
@@ -1408,8 +1411,14 @@ p.advance_text {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 150px 20px 50px 20px;
+    padding: 100px 20px 50px 20px;
     gap: 100px;
+}
+
+.battery_herobanner h2,
+.battery_herobanner p {
+    color: var(--White);
+    ;
 }
 
 .feature_highlights {
@@ -1421,7 +1430,7 @@ p.advance_text {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .feature_item {
@@ -1433,15 +1442,23 @@ p.advance_text {
     gap: 15px;
 }
 
+.feature_item img {
+    width: 30px;
+    height: 30px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
 .feature_item span {
     color: var(--White, #FFF);
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     text-align: start;
     line-height: normal;
+
 }
 
 .feature_cards .mid_line {
@@ -1463,6 +1480,7 @@ p.advance_text {
     padding: 6rem 0;
     width: 100%;
     height: 100vh;
+    min-height: fit-content;
 }
 
 .section-title {
@@ -1523,6 +1541,13 @@ p.advance_text {
     background: var(--Gray-gray--3, #F5F5F6);
 }
 
+.beautiful_section h2 {
+    text-align: start;
+}
+
+.warrenty_section h2 {
+    text-align: start;
+}
 
 /* Document Cards start */
 .document_section {
@@ -1533,7 +1558,7 @@ p.advance_text {
 .document-card {
     background: #ffffff;
     border: 2px solid #e9ecef;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     transition: all 0.3s ease;
     height: 100%;
@@ -1605,6 +1630,11 @@ p.advance_text {
     pointer-events: none;
 }
 
+.stackable_battery_herobanner h2,
+.stackable_battery_herobanner p {
+    color: var(--White, #FFF);
+}
+
 /* Dark blur on BOTTOM */
 .stackable_battery_herobanner::after {
     content: "";
@@ -1626,7 +1656,7 @@ p.advance_text {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 150px 20px 50px 20px;
+    padding: 100px 20px 50px 20px;
     gap: 100px;
 }
 
