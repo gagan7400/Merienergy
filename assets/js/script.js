@@ -201,11 +201,11 @@ closeIcon.addEventListener('click', () => {
 });
 
 // Close menu on window resize if greater than 991px
-window.addEventListener('resize', () => {
-    if (window.innerWidth > 991) {
-        mobileMenu.classList.remove('active');
-    }
-});
+// window.addEventListener('resize', () => {
+//     if (window.innerWidth > 991) {
+//         mobileMenu.classList.remove('active');
+//     }
+// });
 
 // Toggle collapsible menus (only one open at a time)
 collapsibles.forEach(item => {
@@ -235,23 +235,47 @@ collapsibles.forEach(item => {
             }
         });
     }
-});
-// navbar code end
-
+});//navbar css end
 // slider code start
+// $(document).ready(function () {
+//     // Initialize carousel
+//     $(".product-slider").owlCarousel({
+//         items: 1,
+//         loop: true,
+//         nav: true,
+//         dots: false,
+//         autoplay: true,
+//         autoplayTimeout: 3777000,
+//         navText: [
+//             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+//             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+//         ]
+//     });
+
+//     // Tabs switching
+//     $(".tab-btn").click(function () {
+//         $(".tab-btn").removeClass("active");
+//         $(this).addClass("active");
+
+//         $(".tab-content").addClass("d-none").removeClass("active");
+//         $($(this).data("target")).removeClass("d-none").addClass("active");
+//     });
+// });
 $(document).ready(function () {
-    // Initialize carousel
-    $(".product-slider").owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 3777000,
-        navText: [
-            "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
-            "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-        ]
+    // Initialize all carousels
+    $(".product-slider").each(function () {
+        $(this).owlCarousel({
+            items: 1,
+            loop: true,
+            nav: true,
+            dots: false,
+            autoplay: false,
+            autoplayTimeout: 10000,
+            navText: [
+                "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+                "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+            ]
+        });
     });
 
     // Tabs switching
@@ -261,8 +285,52 @@ $(document).ready(function () {
 
         $(".tab-content").addClass("d-none").removeClass("active");
         $($(this).data("target")).removeClass("d-none").addClass("active");
+
+        // Reset highlight and features for first slide
+        let activeTab = $(".tab-content.active");
+        activeTab.find(".products_categories [data-slide]").removeClass("active");
+        activeTab.find(".products_categories [data-slide='0']").addClass("active");
+
+        activeTab.find(".features-box").addClass("d-none").removeClass("active");
+        activeTab.find(".features-box[data-slide='0']").removeClass("d-none").addClass("active");
+    });
+
+    // Click on product name to change slide & update features
+    $(".products_categories [data-slide]").click(function () {
+        let slideIndex = $(this).data("slide");
+        let activeCarousel = $(".tab-content.active .product-slider");
+        let activeTab = $(".tab-content.active");
+
+        // Change carousel slide
+        activeCarousel.trigger("to.owl.carousel", [slideIndex, 300, true]);
+
+        // Update highlight
+        activeTab.find(".products_categories [data-slide]").removeClass("active");
+        $(this).addClass("active");
+
+        // Update features
+        activeTab.find(".features-box").addClass("d-none").removeClass("active");
+        activeTab.find(`.features-box[data-slide='${slideIndex}']`).removeClass("d-none").addClass("active");
+    });
+
+    // Sync when carousel changes (arrows/autoplay/swipe)
+    $(".product-slider").on("changed.owl.carousel", function (event) {
+        let currentIndex = event.item.index - event.relatedTarget._clones.length / 2;
+        if (currentIndex < 0) currentIndex = event.item.count - 1;
+        if (currentIndex >= event.item.count) currentIndex = 0;
+
+        let parentSection = $(this).closest(".tab-content");
+
+        // Update highlight
+        parentSection.find(".products_categories [data-slide]").removeClass("active");
+        parentSection.find(`.products_categories [data-slide='${currentIndex}']`).addClass("active");
+
+        // Update features
+        parentSection.find(".features-box").addClass("d-none").removeClass("active");
+        parentSection.find(`.features-box[data-slide='${currentIndex}']`).removeClass("d-none").addClass("active");
     });
 });
+
 $(document).ready(function () {
     $(".testimonial-section .owl-carousel").owlCarousel({
         loop: true,
@@ -276,7 +344,8 @@ $(document).ready(function () {
         responsive: {
             0: { items: 1 },    // 1 card on mobile
             768: { items: 2 },  // 2 cards on tablets
-            992: { items: 3 }   // 3 cards on desktops
+            992: { items: 2 },  // 3 cards on desktops
+            1024: { items: 2.5 },  // 2 cards on tablets
         }
     });
 
@@ -287,11 +356,11 @@ $('.blog_slider .owl-carousel').owlCarousel({
     nav: true,
     center: true,
     items: 1,
-    stagePadding: ($(window).width() * 0.15), // 15% each side for half cards
+    stagePadding: ($(window).width() * 0.10), // 15% each side for half cards
     responsive: {
         0: {
-            items: 1,
-            stagePadding: 50
+            items: 1.3,
+            stagePadding: 20
         },
         768: {
             items: 1,
@@ -307,5 +376,53 @@ $('.blog_slider .owl-carousel').owlCarousel({
         "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
     ],
 });
+
+// accordian js 
+// Accordian JS
+$(function () {
+    const $panel = $(".benefits_panel");
+    const $listItems = $panel.find(".left_panel ul li[data-img]");
+    const $rightImage = $panel.find(".right_panel img");
+
+    // Reset any inline styles (we use CSS transitions now)
+    $listItems.find(".accordion-content").removeAttr("style");
+
+    // Open first by default
+    const $first = $listItems.first();
+    $first.addClass("active");
+    $first.find(".accordion-content").addClass("show");
+    $rightImage.attr("src", $first.data("img"));
+
+    // Click handler
+    $listItems.on("click", function () {
+        const $item = $(this);
+        const $content = $item.find(".accordion-content");
+        const newSrc = $item.data("img");
+
+        if ($item.hasClass("active")) return;
+
+        // Close all
+        $listItems.removeClass("active");
+        $listItems.find(".accordion-content").removeClass("show");
+
+        // Open clicked
+        $item.addClass("active");
+        $content.addClass("show");
+
+        // Smooth image change
+        if (newSrc) {
+            $rightImage.stop(true, true).fadeOut(300, function () {
+                $(this).attr("src", newSrc).fadeIn(300);
+            });
+        }
+    });
+});
+
+function toggleassumption(p) {
+    const assumptionicon = document.querySelector('.assumption-icon');
+    const text = document.querySelector('.assumption-text');
+    text.classList.toggle('showassumption');
+    assumptionicon.classList.toggle('rotate');
+}
 
 // slider code end

@@ -1,51 +1,622 @@
-@media only screen and (min-width: 1440px) and (max-width: 1600px) {
-
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1320px;
-    }
-
-    /*  details section*/
-    .details_section .details_cards {
-        padding: 50px !important;
-    }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
-
-
-    /*  details section*/
-    .details_section .details_cards {
-        padding: 30px 0px !important;
+@media only screen and (min-width:1570px) {
+    .container {
+        max-width: 1576px;
+        margin: 0px auto;
     }
 
     .details_section {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 30px 30px;
-    }
-
-    .details_cards {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+        padding: 30px 70px;
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {}
+@media only screen and (min-width:1440px) and (max-width:1570px) {
+    .container {
+        max-width: 1420px;
+        margin: 0px auto;
+    }
 
-@media only screen and (max-width: 767px) {
+    .details_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 70px;
+    }
+}
+
+@media only screen and (max-width:1440px) {
+    .container {
+        max-width: 1320px;
+        margin: 0px auto;
+    }
+
+    h1 {
+        font-size: 60px;
+
+    }
+
+    h2 {
+        font-size: 42px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .details_card p {
+        font-size: 18px;
+    }
+
+    .details_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 70px;
+    }
+
+    #batteries,
+    #inverters {
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    .feautures {
+        gap: 10px;
+    }
+
+    .features p {
+        font-size: 14px;
+    }
+
+    .features .features_midline {
+        height: 50px;
+
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .action-buttons .btn {
+        border-radius: 4px;
+        margin: 0 5px;
+        width: 130px;
+        padding: 10px 10px;
+        border-radius: 4px;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .container {
+        max-width: 1140px;
+        margin: 0px auto;
+    }
+
+    h1 {
+        font-size: 56px;
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+
     .hero_content {
+        padding-top: 110px;
+    }
+
+    .details_card p {
+        font-size: 16px;
+    }
+
+    .details_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0px;
+    }
+
+    .details_cards {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px !important;
+    }
+
+    #batteries,
+    #inverters {
         width: 100%;
+        margin: 0px auto;
+    }
+
+    .features {
+        gap: 10px;
+    }
+
+    .features p {
+        font-size: 14px;
+    }
+
+    .features .features_midline {
+        height: 40px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .action-buttons .btn {
+        border-radius: 4px;
+        margin: 0 5px;
+        width: 121px;
+        padding: 10px 5px;
+        border-radius: 4px;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .container {
+        max-width: 960px;
+        margin: 0px auto;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .container {
+        max-width: 960px;
+        margin: 0px auto;
+    }
+
+    h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .hero_content .upper_section h3 {
+        color: var(--White, #FFF);
+        font-size: 42px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .hero_content {
+        padding-top: 100px;
+    }
+
+    .details_card p {
+        font-size: 14px;
+    }
+
+    .details_section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0px;
+    }
+
+
+    .details_cards {
+        gap: 5px;
+        justify-content: space-evenly;
+        padding: 10px !important;
+    }
+
+    .details_card img {
+        width: 28px;
+        height: 28px
+    }
+
+
+    .details_cards p {
+        font-size: 14px;
+    }
+
+    .product-section .heading {
+        font-size: 42px;
+    }
+
+    .tabs button {
+        font-size: 18px;
+    }
+
+    .tabs .tab-btn.active {
+        font-size: 18px;
+    }
+
+    .products_categories p {
+        font-size: 16px;
+    }
+
+    .products_categories .active {
+        font-size: 16px;
+    }
+
+    #batteries,
+    #inverters {
+        width: 100%;
+        margin: 0px auto;
+    }
+
+    .features_container {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .features {
+        gap: 10px;
+    }
+
+    .features p {
+        font-size: 16px;
+    }
+
+    .features .features_midline {
+        height: 40px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .action-buttons .btn {
+        border-radius: 4px;
+        margin: 0 0px 10px;
+        width: 121px;
+        padding: 10px 10px;
+        border-radius: 4px;
+    }
+
+    .benefits_panel .content {
+        display: flex;
+        height: 550px;
+        gap: 10px;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 20px;
+    }
+
+
+    .benefits_panel .content .left_panel {
+        width: 50%;
+        height: 100%;
+
+    }
+
+    .benefits_panel .content .right_panel {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_panel ul li {
+        list-style: none;
+        color: var(--Gray-gray--8, #5D6266);
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px 0;
+        transition: color 0.3s;
+    }
+
+    .google-rating {
+        text-align: left;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 14px;
+    }
+
+    .blog_section h2 {
+        font-size: 48px;
+    }
+
+    .blog_section p {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 30px 10px;
+    }
+
+    footer .footer-logo img {
+        max-width: 100px;
+        margin-bottom: 15px;
+    }
+
+    footer .bottom-text p {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+
+    footer .footer-copyright div {
+        min-width: fit-content;
+    }
+
+}
+
+@media only screen and (max-width:769px) {
+    .container {
+        max-width: 720px;
+        margin: 0px auto;
+    }
+
+    h1 {
+        font: normal normal 600 36px / 110% var(--font);
+        letter-spacing: -1px;
+    }
+
+    h2 {
+        font: normal normal 600 24px var(--font);
+    }
+
+    h3 {
+        font: normal normal 500 22px / 148% var(--font);
+    }
+
+    h4 {
+        font: normal normal 600 20px / 106.667% var(--font);
+    }
+
+    h5 {
+        font: normal normal 500 18px var(--font);
+    }
+
+    h6 {
+        font: normal normal 500 14px / 132% var(--font);
+    }
+
+    p {
+        font: normal normal 400 12px / 125% var(--font);
+    }
+
+    ul li {
+        font: normal normal 400 14px var(--font);
+    }
+
+    .mobile_details_section {
+        display: block;
+        padding: 20px;
+    }
+
+    .details_cards {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px !important;
+    }
+
+    .details_cards p {
+        font-size: 16px;
+    }
+
+    .horizontal {
+        width: 300px;
+        padding: 1px;
+        height: 1px;
+        background: linear-gradient(90deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white);
+    }
+
+    .details_section {
+        display: none;
+    }
+
+    .features_container {
+        flex-direction: column;
+        align-items: start;
+    }
+
+
+    .details_cards p {
+        font-size: 16px;
+    }
+
+    .product-section .heading {
+        font-size: 32px;
+    }
+
+    .tabs button {
+        font-size: 16px;
+    }
+
+    .tabs .tab-btn.active {
+        font-size: 16px;
+    }
+
+    .products_categories p {
+        font-size: 16px;
+    }
+
+    .products_categories .active {
+        font-size: 16px;
+    }
+
+
+
+    .features {
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .features p {
+        font-size: 14px;
+        margin: 0px;
+    }
+
+    .features .features_midline {
+        height: 30px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .action-buttons .btn {
+        border-radius: 4px;
+        margin: 0 0px 10px;
+        width: 121px;
+        padding: 10px 10px;
+        border-radius: 4px;
+    }
+
+    .benefits_panel .content {
+        display: flex;
+        height: auto;
+        gap: 20px;
+        width: 90%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 20px;
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+
+
+    .benefits_panel .content .left_panel {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .benefits_panel .content .right_panel {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_panel ul li {
+        list-style: none;
+        color: var(--Gray-gray--8, #5D6266);
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px 0;
+        transition: color 0.3s;
+    }
+
+    .blog_section h2 {
+        font-size: 42px;
+    }
+
+    .blog_section p {
+        font-size: 16px;
+    }
+
+    footer .footer-logo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .footer-logo .social-icons {
+        text-align: start;
+    }
+
+    footer .footer-links-col {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: start;
+    }
+
+    footer .footer-links-col .footer-links {
+        margin-bottom: 20px;
+        text-align: start;
+    }
+
+    footer .footer-copyright {
+        padding: 0px !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
+
+@media only screen and (max-width:575px) {
+    .container {
+        max-width: 540px;
+        margin: 0px auto;
+    }
+
+    .hero_banner {
+        position: relative;
+        background: url("../imgs/smallherobanner.png") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero_content {
+        width: 90%;
         height: 100vh;
+        margin: auto;
         min-height: fit-content;
         padding-top: 100px;
         padding-bottom: 30px;
@@ -54,14 +625,14 @@
     .hero_content .upper_section h3 {
         color: var(--White, #FFF);
         font-size: 42px;
-        width: 60%;
+        width: 90%;
         margin: auto;
     }
 
     .hero_content .upper_section p {
         color: var(--White, #FFF);
         font-family: "Rethink Sans";
-        font-size: 20px;
+        font-size: 14px;
         font-style: normal;
         font-weight: 100;
         line-height: normal;
@@ -93,7 +664,315 @@
         line-height: normal;
     }
 
+    .details_cards p {
+        font-size: 14px;
+    }
+
+    .product-section .heading {
+        font-size: 24px;
+    }
+
+    .tabs button {
+        font-size: 16px;
+    }
+
+    .tabs .tab-btn.active {
+        font-size: 16px;
+    }
+
+    .products_categories p {
+        font-size: 14px;
+    }
+
+    .products_categories .active {
+        font-size: 14px;
+    }
+
+    .details_card img {
+        width: 24px;
+        height: 24px
+    }
+
+    .features_container {
+        flex-direction: column;
+        align-items: start;
+        overflow: hidden;
+    }
+
+    .features {
+        width: 100%;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        overflow: auto;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+
+    .features p {
+        font-size: 14px;
+        margin: 0px;
+        min-width: fit-content
+    }
+
+    .features .features_midline {
+        height: 30px;
+    }
+
+    .action-buttons {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .action-buttons .btn {
+        border-radius: 4px;
+        margin: 0 0px 10px;
+        width: 50%;
+        padding: 10px 10px;
+        border-radius: 4px;
+    }
+
+    .benefits_panel .content {
+        display: flex;
+        height: auto;
+        gap: 20px;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 20px;
+        flex-direction: column-reverse;
+        margin: auto;
+    }
+
+
+    .benefits_panel .content .left_panel {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .benefits_panel .content .right_panel {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_panel ul li {
+        list-style: none;
+        color: var(--Gray-gray--8, #5D6266);
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 0;
+        transition: color 0.3s;
+    }
+
+    .testimonial-section {
+        position: relative;
+        margin: 10px 0px 40px;
+        padding: 50px 0px;
+    }
+
+    .testimonial-section h2 {
+        font-size: 20px;
+        margin-bottom: 0px !important;
+    }
+
+    .testimonial-section p {
+        font-size: 14px;
+    }
+
+    .review_btn {
+        position: absolute;
+        bottom: -5px;
+    }
+
+    .testimonial-section .owl-carousel .owl-nav .owl-prev-custom,
+    .testimonial-section .owl-carousel .owl-nav .owl-next-custom {
+        padding: 0px !important;
+        background: transparent !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .testimonial-section .owl-carousel .owl-nav button.owl-prev {
+        left: -24px;
+        top: 100%;
+        z-index: 1;
+        padding: 0px !important;
+        background: transparent !important;
+    }
+
+    .testimonial-section .owl-carousel .owl-nav button.owl-next {
+        z-index: 1;
+        top: 100%;
+        right: -24px;
+        padding: 0px !important;
+        background: transparent !important;
+    }
+
+    .blog_section h2 {
+        font-size: 38px;
+    }
+
+    footer {
+        padding: 10px;
+        margin: 0px;
+    }
+
+    footer .footer-copyright {
+        padding: 0px !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .bottom-text p,
+    footer .bottom-text a {
+        font-size: 16px;
+        white-space: wrap;
+
+    }
 
 }
 
-@media only screen and (max-width: 375px) {}
+@media only screen and (max-width:475px) {
+    .hero_content {
+        width: 80%;
+        height: 100vh;
+        margin: auto;
+        min-height: fit-content;
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .hero_content .upper_section h3 {
+        color: var(--White, #FFF);
+        font-size: 30px;
+        width: 90%;
+        margin: auto;
+    }
+     .blog_section h2 {
+        font-size: 24px;
+    }
+     .blog_section p {
+        font-size: 16px;
+    }
+
+}
+
+@media only screen and (max-width:376px) {
+    .container {
+        max-width: 100%;
+        margin: 0px auto;
+    }
+
+    h1 {
+        font-size: 32px;
+        letter-spacing: -2px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .hero_banner {
+        position: relative;
+        background: url("../imgs/smallherobanner.png") center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .hero_content {
+        width: 90%;
+        height: 100vh;
+        margin: auto;
+        min-height: fit-content;
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .hero_content .upper_section h3 {
+        color: var(--White, #FFF);
+        font-size: 28px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .hero_content .upper_section p {
+        font-size: 14px;
+    }
+
+    .hero_content .lower_section {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .hero_content .lower_section button {
+        width: 100%;
+        height: auto;
+        padding: 10px 24px;
+        margin: 0px !important;
+        border-radius: 4px;
+        border: 1px solid var(--White, #FFF);
+        background: white;
+        color: var(--Dark, #050E14);
+        text-align: center;
+        font-family: "Rethink Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+     .blog_section h2 {
+        font-size: 20px;
+    }
+
+    footer {
+        padding: 10px 0px;
+        margin: 0px;
+    }
+
+    footer .footer-copyright {
+        padding: 0px !important;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .bottom-text p,
+    footer .bottom-text a {
+        white-space: wrap;
+        font-size: 14px;
+    }
+
+    footer .footer-logo a {
+        text-align: start;
+    }
+
+}
