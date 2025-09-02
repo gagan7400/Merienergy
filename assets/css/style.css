@@ -642,8 +642,9 @@ p.advance_text {
     background: white;
     color: var(--Dark, #050E14);
     text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -654,7 +655,17 @@ p.advance_text {
     color: var(--Dark, #050E14);
 }
 
+.btn_white a {
+    background: white;
+    color: var(--Dark, #050E14);
+}
+
 .btn_plain {
+    background-color: transparent !important;
+    color: var(--White, #FFF);
+}
+
+.btn_plain a {
     background-color: transparent !important;
     color: var(--White, #FFF);
 }
@@ -678,11 +689,12 @@ p.advance_text {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 48px;
 }
 
 .details_card p {
-    font-size: 21px;
+    font-size: 20px;
+    line-height: 20px;
     color: var(--Dark, #050E14);
 }
 
@@ -704,16 +716,20 @@ p.advance_text {
 /* Batteries section css start */
 
 .product-section {
-    padding: 30px 0;
+    padding: 96px 0;
     text-align: center;
     background: radial-gradient(50% 64.4% at 50% 50%, #D3D3D3 0%, #F5F5F5 100%);
 }
 
 .product-section .heading {
     color: var(--Dark, #050E14);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
     font-size: 42px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .tabs {
@@ -722,6 +738,7 @@ p.advance_text {
     justify-content: center;
     align-items: center;
     gap: 32px;
+    margin-top: 32px;
 }
 
 .tabs .mid_line {
@@ -737,32 +754,55 @@ p.advance_text {
     text-align: center;
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
-    font-size: 20px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 100px;
+}
+
+.tabs .tab-btn.active {
+    color: var(--Dark, #050E14);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.products_categories p {
+    color: var(--Gray-gray--7, #8F9395);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
-.tabs .tab-btn.active {
+.products_categories .active {
     color: var(--Dark, #050E14);
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.products_categories p {
-    color: var(--Gray-gray--10);
     font-feature-settings: 'liga' off, 'clig' off;
     font-family: "Rethink Sans";
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
-    font-weight: 200;
+    font-weight: 500;
     line-height: normal;
+    position: relative;
 }
 
-.products_categories .active {
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--Dark, #050E14);
+.products_categories .active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -10px;
+    width: 2px;
+    height: 100%;
+    background: var(--Dark, #050E14);
+    /* margin-bottom: 8px;
+    border-radius: 2px; */
 }
 
 .product-slider .item {
@@ -771,6 +811,7 @@ p.advance_text {
     align-items: center;
     min-height: auto;
     overflow: visible;
+    padding: 30px 0px;
 }
 
 #batteries,
@@ -781,6 +822,10 @@ p.advance_text {
 
 .tab-content {
     padding: 10px 0px;
+}
+
+.product-slider.owl-carousel {
+    height: 382px;
 }
 
 #batteries .product-slider .item img {
@@ -822,7 +867,7 @@ p.advance_text {
     font-size: 32px;
     color: #333;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 48px / 2);
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 1000;
@@ -873,13 +918,19 @@ p.advance_text {
 }
 
 .features p {
-    font-size: 18px;
     color: var(--Gray-gray--8, #5D6266);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
     text-align: start;
+    line-height: normal;
+    margin-bottom: 0px;
 }
 
 .features .features_midline {
-    height: 40px;
+    height: 30px;
 }
 
 .action-buttons {
@@ -948,6 +999,7 @@ p.advance_text {
 
 .benefits_panel {
     background: #000;
+    padding: 40px 0px;
 }
 
 .benefits_panel .content {
@@ -961,6 +1013,9 @@ p.advance_text {
 .benefits_panel .content .left_panel {
     width: 40%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -1043,8 +1098,9 @@ p.advance_text {
 /* reviews section css start */
 
 .testimonial-section {
-    padding: 50px 0;
+    padding: 70px 0;
     text-align: center;
+    border-bottom: 1px solid rgba(221, 221, 221, 0.3);
 }
 
 .testimonial-card {
@@ -1062,10 +1118,20 @@ p.advance_text {
     flex-direction: column;
 }
 
-.testimonial-section h2,
-.testimonial-section p {
+.testimonial-section h2 {
     color: var(--Dark, #050E14);
 
+}
+
+.testimonial-section p {
+    color: var(--Gray-gray--9, #494F53);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .testimonial-card p {
@@ -1231,12 +1297,37 @@ p.advance_text {
 /* blog section css start */
 .blog_section {
     overflow: hidden;
+    padding: 70px 0px;
 }
 
 .blog_section .container {
     width: 100%;
     max-width: 100%;
     padding: 0px;
+}
+
+.blog_section h2 {
+    color: var(--Dark, #050E14);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 0px ;
+}
+
+.blog_section p {
+    color: var(--Gray-gray--9, #494F53);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .blog_slider {
@@ -1248,10 +1339,9 @@ p.advance_text {
 
 /* Main card styling */
 .blog_slider .blog_card {
-    height: 500px;
+    height: 700px;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
     position: relative;
 }
 
@@ -1364,7 +1454,8 @@ p.advance_text {
     min-height: fit-content;
     background-image: url('../imgs/battery_herobanner.png');
     background-size: 100%;
-    background-position: center;
+    background-position: 2px -387px;
+    ;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1544,6 +1635,17 @@ p.advance_text {
     border: 1px solid var(--Dark, #050E14);
 }
 
+.btn_warranty a {
+    color: var(--Dark, #050E14);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 .section-image {
     max-width: 100%;
     height: auto;
@@ -1629,7 +1731,7 @@ p.advance_text {
     min-height: fit-content;
     background-image: url(../imgs/5kwhstackable_herobanner_image.png);
     background-size: 100%;
-    background-position: 0px -229px;
+    background-position: -30px -229px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2123,7 +2225,8 @@ p.advance_text {
     height: 100%;
     overflow: hidden;
 }
-  .background-image {
+
+.background-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -2133,7 +2236,7 @@ p.advance_text {
     z-index: 1;
 }
 
-  .foreground-image {
+.foreground-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -2144,6 +2247,7 @@ p.advance_text {
     transition: left 0.3s ease;
     clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
 }
+
 .batterystakable_slider .background-image {
     position: absolute;
     top: 0;
