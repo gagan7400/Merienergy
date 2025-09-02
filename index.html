@@ -287,110 +287,113 @@
             <!-- Tabs -->
             <div class="tabs d-flex justify-content-center align-items-center gap-3">
                 <button class="tab-btn active" data-target="#batteries">Batteries</button>
-                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                <div class="mid_line"></div>
+                <!-- <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline"> -->
                 <button class="tab-btn" data-target="#inverters">Inverters</button>
             </div>
-            <!-- Batteries Slider -->
-            <div id="batteries" class="tab-content active">
-                <div class="owl-carousel product-slider">
-                    <div class="item"><img src="./assets/imgs/3kwshadow.png" alt="Battery"></div>
-                    <div class="item"><img src="./assets/imgs/5kgstackshadow.png" height="500px" alt="Battery"></div>
+            <div class="tabs-wrapper">
+                <!-- Batteries Slider -->
+                <div id="batteries" class="tab-content active">
+                    <div class="owl-carousel product-slider">
+                        <div class="item"><img src="./assets/imgs/slider_product/3kwshadow.png" alt="Battery"></div>
+                        <div class="item"><img src="./assets/imgs/slider_product/5kgstackshadow.png" alt="Battery"></div>
+                    </div>
+
+                    <div class="product-details text-center">
+                        <div class="products_categories">
+                            <p data-slide="0" class="active">5kWh Battery</p>
+                            <p data-slide="1">5kWh Stackable Battery</p>
+                        </div>
+                        <div class="features_container">
+                            <div class="features-box active" data-slide="0">
+                                <div class="features">
+                                    <p>Expandable <br> to 75kWh</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Fast charging with <br> 100A max discharge</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Safety with built-in <br> fire extinguisher</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Modern <br> design</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Self-heating for cold climates <br>
+                                        (in seconds models)</p>
+                                </div>
+                            </div>
+
+                            <!-- Features for Slide 1 -->
+                            <div class="features-box hidden" data-slide="1">
+                                <div class="features">
+                                    <p>Expandable <br> to 120kWh</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Fast charging with <br> 100A max discharge</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Safety with built-in <br> fire extinguisher</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Modern <br> design</p>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons text-center">
+                                <a href="/contact-us.html" class="btn btn-dark">Contact Us</a>
+                                <a href="/5kwbattery.html" class="btn  btn-outline-dark">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="product-details text-center">
-                    <div class="products_categories">
-                        <p data-slide="0" class="active">5kWh Battery</p>
-                        <p data-slide="1">5kWh Stackable Battery</p>
+                <!-- Inverters Slider -->
+                <div id="inverters" class="tab-content hidden">
+                    <div class="owl-carousel product-slider">
+                        <div class="item">
+                            <img src="./assets/imgs/slider_product/inverter1phase.png" alt="Inverter">
+                        </div>
+                        <div class="item">
+                            <img src="./assets/imgs/slider_product/inverter3phase.png" alt="Inverter">
+                        </div>
                     </div>
-                    <div class="features_container">
-                        <div class="features-box active" data-slide="0">
-                            <div class="features">
-                                <p>Expandable <br> to 75kWh</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Fast charging with <br> 100A max discharge</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Safety with built-in <br> fire extinguisher</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Modern <br> design</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Self-heating for cold climates <br>
-                                    (in seconds models)</p>
+
+                    <div class="product-details text-center">
+                        <div class="products_categories">
+                            <p data-slide="0" class="active">Single Phase Hybrid Inverters 3-6 kW</p>
+                            <p data-slide="1">Three Phase Hybrid Inverters 6-30 kW</p>
+                        </div>
+                        <div class="features_container">
+                            <div class="features-box active" data-slide="0">
+                                <div class="features">
+                                    <p>For homes with <br> single-phase power</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Energy <br>monitoring app</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Power<br> backup</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Weatherproof <br> and dust proof</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Over-the-air <br>
+                                        upgrades</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Features for Slide 1 -->
-                        <div class="features-box d-none" data-slide="1">
-                            <div class="features">
-                                <p>Expandable <br> to 120kWh</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Fast charging with <br> 100A max discharge</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Safety with built-in <br> fire extinguisher</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Modern <br> design</p>
+                            <!-- Features for Slide 1 -->
+                            <div class="features-box hidden" data-slide="1">
+                                <div class="features">
+                                    <p>For buildings with <br> three-phase power</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Energy <br>monitoring app</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Power<br> backup</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Weatherproof <br> and dust proof</p>
+                                    <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
+                                    <p>Over-the-air <br>
+                                        upgrades</p>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="action-buttons text-center">
-                            <a href="/contact-us.html" class="btn btn-dark">Contact Us</a>
-                            <a href="/5kwbattery.html" class="btn  btn-outline-dark">More Details</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Inverters Slider -->
-            <div id="inverters" class="tab-content d-none">
-                <div class="owl-carousel product-slider">
-                    <div class="item">
-                        <img src="./assets/imgs/inverter1phase.png" alt="Inverter">
-                    </div>
-                    <div class="item">
-                        <img src="./assets/imgs/inverter3phase.png" alt="Inverter">
-                    </div>
-                </div>
-
-                <div class="product-details text-center">
-                    <div class="products_categories">
-                        <p data-slide="0" class="active">Single Phase Hybrid Inverters 3-6 kW</p>
-                        <p data-slide="1">Three Phase Hybrid Inverters 6-30 kW</p>
-                    </div>
-                    <div class="features_container">
-                        <div class="features-box active" data-slide="0">
-                            <div class="features">
-                                <p>For homes with <br> single-phase power</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Energy <br>monitoring app</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Power<br> backup</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Weatherproof <br> and dust proof</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Over-the-air <br>
-                                    upgrades</p>
+                            <div class="action-buttons text-center">
+                                <a href="/contact-us.html" class="btn btn-dark">Contact Us</a>
+                                <a href="/onephaseinverter.html" class="btn  btn-outline-dark">More Details</a>
                             </div>
-                        </div>
-
-                        <!-- Features for Slide 1 -->
-                        <div class="features-box d-none" data-slide="1">
-                            <div class="features">
-                                <p>For buildings with <br> three-phase power</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Energy <br>monitoring app</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Power<br> backup</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Weatherproof <br> and dust proof</p>
-                                <img src="./assets/icons/Line 8 (Stroke) (1).svg" alt="|" class="features_midline">
-                                <p>Over-the-air <br>
-                                    upgrades</p>
-                            </div>
-                        </div>
-
-                        <div class="action-buttons text-center">
-                            <a href="/contact-us.html" class="btn btn-dark">Contact Us</a>
-                            <a href="/onephaseinverter.html" class="btn  btn-outline-dark">More Details</a>
                         </div>
                     </div>
                 </div>

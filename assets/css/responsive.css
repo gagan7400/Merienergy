@@ -82,7 +82,7 @@
 
     #batteries,
     #inverters {
-        width: 90%;
+        width: 100%;
         margin: 0px auto;
     }
 
@@ -365,6 +365,12 @@
         font-size: 14px;
     }
 
+    .product-section {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
     .product-section .heading {
         font-size: 42px;
     }
@@ -376,6 +382,8 @@
     .tabs .tab-btn.active {
         font-size: 18px;
     }
+
+    
 
     .products_categories p {
         font-size: 16px;
@@ -1309,7 +1317,8 @@
     .threephase_herobanner .content p {
         font-size: 16px;
     }
-    .power_section .col-lg-6 ,
+
+    .power_section .col-lg-6,
     .onephase_warrenty_section .col-lg-6 {
         padding: 20px !important;
     }

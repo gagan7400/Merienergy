@@ -237,62 +237,68 @@ collapsibles.forEach(item => {
     }
 });//navbar css end
 // slider code start
-// $(document).ready(function () {
-//     // Initialize carousel
-//     $(".product-slider").owlCarousel({
-//         items: 1,
-//         loop: true,
-//         nav: true,
-//         dots: false,
-//         autoplay: true,
-//         autoplayTimeout: 3777000,
-//         navText: [
-//             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
-//             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-//         ]
-//     });
-
-//     // Tabs switching
-//     $(".tab-btn").click(function () {
-//         $(".tab-btn").removeClass("active");
-//         $(this).addClass("active");
-
-//         $(".tab-content").addClass("d-none").removeClass("active");
-//         $($(this).data("target")).removeClass("d-none").addClass("active");
-//     });
-// });
 $(document).ready(function () {
-    // Initialize all carousels
+
     $(".product-slider").each(function () {
         $(this).owlCarousel({
             items: 1,
-            loop: true,
+            loop: false,
             nav: true,
             dots: false,
             autoplay: false,
             autoplayTimeout: 10000,
+            smartSpeed: 600, // smooth slide speed
+
             navText: [
                 "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
                 "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
             ]
         });
+        updateArrows($(this));
+    });
+    // Update arrows on slide change
+    $(".product-slider").on("changed.owl.carousel initialized.owl.carousel", function (event) {
+        updateArrows($(this));
     });
 
+    // Function to update nav buttons
+    function updateArrows(carousel) {
+        var carouselData = carousel.data("owl.carousel");
+        if (!carouselData) return;
+
+        var currentIndex = carouselData.relative(carouselData.current());
+        var totalItems = carouselData.items().length;
+
+        var prevBtn = carousel.find(".owl-prev-custom");
+        var nextBtn = carousel.find(".owl-next-custom");
+
+        if (currentIndex === 0) {
+            prevBtn.addClass("disabled");
+        } else {
+            prevBtn.removeClass("disabled");
+        }
+
+        if (currentIndex === totalItems - 1) {
+            nextBtn.addClass("disabled");
+        } else {
+            nextBtn.removeClass("disabled");
+        }
+    }
     // Tabs switching
     $(".tab-btn").click(function () {
         $(".tab-btn").removeClass("active");
         $(this).addClass("active");
 
-        $(".tab-content").addClass("d-none").removeClass("active");
-        $($(this).data("target")).removeClass("d-none").addClass("active");
+        $(".tab-content").removeClass("active").addClass("hidden");
+        $($(this).data("target")).removeClass("hidden").addClass("active");
 
         // Reset highlight and features for first slide
         let activeTab = $(".tab-content.active");
         activeTab.find(".products_categories [data-slide]").removeClass("active");
         activeTab.find(".products_categories [data-slide='0']").addClass("active");
 
-        activeTab.find(".features-box").addClass("d-none").removeClass("active");
-        activeTab.find(".features-box[data-slide='0']").removeClass("d-none").addClass("active");
+        activeTab.find(".features-box").addClass("hidden").removeClass("active");
+        activeTab.find(".features-box[data-slide='0']").removeClass("hidden").addClass("active");
     });
 
     // Click on product name to change slide & update features
@@ -309,8 +315,8 @@ $(document).ready(function () {
         $(this).addClass("active");
 
         // Update features
-        activeTab.find(".features-box").addClass("d-none").removeClass("active");
-        activeTab.find(`.features-box[data-slide='${slideIndex}']`).removeClass("d-none").addClass("active");
+        activeTab.find(".features-box").addClass("hidden").removeClass("active");
+        activeTab.find(`.features-box[data-slide='${slideIndex}']`).removeClass("hidden").addClass("active");
     });
 
     // Sync when carousel changes (arrows/autoplay/swipe)
@@ -326,30 +332,172 @@ $(document).ready(function () {
         parentSection.find(`.products_categories [data-slide='${currentIndex}']`).addClass("active");
 
         // Update features
-        parentSection.find(".features-box").addClass("d-none").removeClass("active");
-        parentSection.find(`.features-box[data-slide='${currentIndex}']`).removeClass("d-none").addClass("active");
+        parentSection.find(".features-box").addClass("hidden").removeClass("active");
+        parentSection.find(`.features-box[data-slide='${currentIndex}']`).removeClass("hidden").addClass("active");
     });
 });
 
+// $(document).ready(function () {
+//     $(".testimonial-section .owl-carousel").owlCarousel({
+//         loop: false,
+//         margin: 20,
+//         nav: true,
+//         dots: false,
+//         navText: [
+//             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+//             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+//         ],   // customize arrow icons
+//         responsive: {
+//             0: { items: 1 },    // 1 card on mobile
+//             768: { items: 2 },  // 2 cards on tablets
+//             992: { items: 2 },  // 3 cards on desktops
+//             1024: { items: 2.5 },  // 2 cards on tablets
+//         }
+//     });
+//     // Function to toggle disabled class
+//     function toggleNav(state) {
+//         var $prev = $(".testimonial-section .owl-prev-custom");
+//         var $next = $(".testimonial-section .owl-next-custom");
+
+//         if (state === "start") {
+//             $prev.addClass("disabled");
+//             $next.removeClass("disabled");
+//         } else if (state === "end") {
+//             $prev.removeClass("disabled");
+//             $next.addClass("disabled");
+//         } else {
+//             $prev.removeClass("disabled");
+//             $next.removeClass("disabled");
+//         }
+//     }
+
+//     // Initial check
+//     toggleNav("start");
+
+//     // On changed event
+//     $owl.on("changed.owl.carousel", function (event) {
+//         var totalItems = event.item.count;
+//         var currentIndex = event.item.index;
+//         var visibleItems = event.page.size; // number of visible items
+
+//         if (currentIndex === 0) {
+//             toggleNav("start");
+//         } else if (currentIndex + visibleItems >= totalItems) {
+//             toggleNav("end");
+//         } else {
+//             toggleNav("middle");
+//         }
+//     });
+// });
+// $(document).ready(function () {
+//     var $owl = $(".testimonial-section .owl-carousel");
+
+//     $owl.owlCarousel({
+//         loop: false, // must be false to detect edges
+//         margin: 20,
+//         nav: true,
+//         dots: false,
+//         navText: [
+//             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
+//             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+//         ],
+//         responsive: {
+//             0: { items: 1 },
+//             768: { items: 2 },
+//             992: { items: 2 },
+//             1024: { items: 2.5 },
+//         }
+//     });
+
+//     // Function to toggle disabled class
+//     function toggleNav(event) {
+//         var $prev = $(".testimonial-section .owl-prev-custom");
+//         var $next = $(".testimonial-section .owl-next-custom");
+
+//         var totalItems = event.item.count;
+//         var currentIndex = event.item.index;
+//         var visibleItems = event.page.size;
+
+//         if (currentIndex === 0) {
+//             $prev.addClass("disabled");
+//         } else {
+//             $prev.removeClass("disabled");
+//         }
+
+//         if (currentIndex + visibleItems >= totalItems) {
+//             $next.addClass("disabled");
+//         } else {
+//             $next.removeClass("disabled");
+//         }
+//     }
+
+//     // Initial check
+//     toggleNav({ item: { index: 0, count: $owl.find(".owl-item").length }, page: { size: 2 } });
+
+//     // Update on slide change
+//     $owl.on("changed.owl.carousel", function (event) {
+//         toggleNav(event);
+//     });
+// });
 $(document).ready(function () {
-    $(".testimonial-section .owl-carousel").owlCarousel({
-        loop: true,
+    var $owl = $(".testimonial-section .owl-carousel");
+
+    $owl.owlCarousel({
+        loop: false,
         margin: 20,
         nav: true,
         dots: false,
         navText: [
             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-        ],   // customize arrow icons
-        responsive: {
-            0: { items: 1 },    // 1 card on mobile
-            768: { items: 2 },  // 2 cards on tablets
-            992: { items: 2 },  // 3 cards on desktops
-            1024: { items: 2.5 },  // 2 cards on tablets
-        }
+        ]
     });
 
+    function toggleNav(event) {
+        var $prev = $(".testimonial-section .owl-prev-custom");
+        var $next = $(".testimonial-section .owl-next-custom");
+
+        var totalItems = event.item.count;
+        var visibleItems = event.page.size; // number of visible slides
+        var currentIndex = event.item.index;
+
+        if (currentIndex <= 0) {
+            $prev.addClass("disabled");
+        } else {
+            $prev.removeClass("disabled");
+        }
+
+        if (currentIndex + visibleItems >= totalItems) {
+            $next.addClass("disabled");
+        } else {
+            $next.removeClass("disabled");
+        }
+    }
+
+    toggleNav({
+        item: { index: 0, count: $owl.find(".owl-item").length },
+        page: { size: $owl.find(".owl-item.active").length }
+    });
+
+    $owl.on("changed.owl.carousel", function (event) {
+        toggleNav(event);
+    });
+
+    // ✅ Fix the jump bug for fractional slides
+    $owl.on("translated.owl.carousel", function (event) {
+        var totalItems = event.item.count;
+        var visibleItems = event.page.size;
+        var currentIndex = event.item.index;
+
+        if (currentIndex + visibleItems > totalItems) {
+            $owl.trigger("to.owl.carousel", [totalItems - visibleItems, 300]);
+        }
+    });
 });
+
+
+
+
 $('.blog_slider .owl-carousel').owlCarousel({
     loop: true,
     margin: 20,
@@ -377,7 +525,7 @@ $('.blog_slider .owl-carousel').owlCarousel({
     ],
 });
 
-// accordian js 
+
 // Accordian JS
 $(function () {
     const $panel = $(".benefits_panel");
