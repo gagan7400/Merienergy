@@ -18,6 +18,22 @@
     .stackable_battery_herobanner p {
         font-size: 20px;
     }
+
+    .content-overlay h2 {
+        font-size: 36px;
+    }
+
+    .content-overlay p {
+        font-size: 24px;
+    }
+
+
+    /* .footer {
+        margin-left: auto;
+        margin-right: auto;
+    } */
+
+
 }
 
 @media only screen and (min-width:1440px) and (max-width:1570px) {
@@ -33,6 +49,26 @@
         padding: 30px 70px;
     }
 
+    .document-card .document_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+    }
+
+    .document-card .document_info p {
+        font-size: 20px;
+        text-align: start;
+    }
+
+    .content-overlay h2 {
+        font-size: 36px;
+    }
+
+    .content-overlay p {
+        font-size: 24px;
+    }
 
     .stackable_battery_herobanner h2 {
         font-size: 42px;
@@ -69,8 +105,16 @@
         margin: 0px auto;
     }
 
+    .document-card .document_info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 10px;
+    }
+
     .details_card p {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .details_section {
@@ -79,6 +123,16 @@
         align-items: center;
         padding: 30px 70px;
     }
+
+    .key_benefits {
+        width: 100%;
+        height: 100vh;
+        outline: none;
+        border: none;
+        background: linear-gradient(to bottom, rgb(255, 255, 255, 0) 61%, rgb(0, 0, 0, 0.6) 71%, rgba(0, 0, 0, 1) 82%), url(../imgs/benefits.jpg) center / cover no-repeat;
+        position: relative;
+    }
+
 
     #batteries,
     #inverters {
@@ -117,10 +171,18 @@
 
 
     .stackable_battery_herobanner h2 {
-        font-size: 42px;
+        font-size: 48px;
     }
 
     .stackable_battery_herobanner p {
+        font-size: 20px;
+    }
+
+    .content-overlay h2 {
+        font-size: 42px;
+    }
+
+    .content-overlay p {
         font-size: 20px;
     }
 
@@ -135,12 +197,45 @@
     .section-padding p.small {
         font-size: 14px;
     }
+
+    .footer {
+        padding: 36px;
+        margin: 42px;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        gap: 20px;
+        ;
+    }
 }
 
 @media only screen and (max-width:1200px) {
     .container {
         max-width: 1140px;
         margin: 0px auto;
+    }
+
+    .document-card .document_info p {
+        color: var(--Gray-gray--12, #192127);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 124%;
+        text-align: start;
+        text-transform: capitalize;
+    }
+
+    .document-card .document_info {
+        gap: 10px;
+    }
+
+    .document-card {
+        padding: 10px;
     }
 
     .hero_content {
@@ -171,6 +266,7 @@
         width: 100%;
         margin: 0px auto;
     }
+
 
     .features {
         gap: 10px;
@@ -220,13 +316,8 @@
         font-size: 12px;
     }
 
-    .document-card {
-        padding: 10px;
-    }
 
-    .document-card .document_info {
-        gap: 5px;
-    }
+
 
     .stackable_battery_herobanner h2 {
         font-size: 38px;
@@ -240,14 +331,82 @@
         font-size: 20px;
     }
 
+    .footer {
+        padding: 36px;
+        margin: 36px;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
 
 
 }
 
 @media only screen and (max-width:1024px) {
+
+
     .container {
         max-width: 960px;
         margin: 0px auto;
+    }
+
+    .contact-section {
+        display: flex;
+        width: 100%;
+        max-width: 960px;
+        min-width: fit-content;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column-reverse;
+        background-color: #fff;
+        margin: 100px auto 50px;
+        flex-wrap: wrap;
+
+    }
+
+    .contact-right {
+        width: 100%;
+        height: fit-content;
+        margin: auto;
+    }
+
+    .contact-left {
+        background: url('../imgs/contactimage.png') no-repeat center center/cover;
+        width: 100%;
+        min-width: none;
+        margin: auto;
+
+        min-height: 700px;
+        /* min-width: fit-content; */
+    }
+
+    .contact-left .data {
+        padding: 36px;
+        margin: auto;
+    }
+
+    .document-card .document_info p {
+        color: var(--Gray-gray--12, #192127);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 124%;
+        text-align: start;
+        text-transform: capitalize;
+    }
+
+    .content-overlay h2 {
+        font-size: 32px;
+    }
+
+    .content-overlay p {
+        font-size: 16px;
     }
 
     .feature_highlights .feature_cards {
@@ -281,11 +440,11 @@
     }
 
     .stackable_battery_herobanner h2 {
-        font-size: 32px;
+        font-size: 42px;
     }
 
     .stackable_battery_herobanner p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .section-padding h2 {
@@ -314,6 +473,13 @@
 
     .threephase_herobanner .content p {
         font-size: 18px;
+    }
+
+    #batteries .product-slider .item,
+    #inverters .product-slider .item {
+        width: 45vw;
+        height: 100%;
+        object-fit: contain;
     }
 
 
@@ -375,6 +541,11 @@
         font-size: 42px;
     }
 
+    .tabs-wrapper {
+        margin-top: 10px;
+    }
+
+
     .tabs button {
         font-size: 18px;
     }
@@ -383,7 +554,21 @@
         font-size: 18px;
     }
 
-    
+    .testimonial-section .owl-carousel .owl-nav button.owl-next {
+        z-index: 1;
+        top: calc(50% - 58px / 2);
+        right: -15px;
+        padding: 0px !important;
+        background: transparent !important;
+    }
+
+    .testimonial-section .owl-carousel .owl-nav button.owl-prev {
+        z-index: 1;
+        top: calc(50% - 58px / 2);
+        left: -15px;
+        padding: 0px !important;
+        background: transparent !important;
+    }
 
     .products_categories p {
         font-size: 16px;
@@ -397,6 +582,13 @@
     #inverters {
         width: 100%;
         margin: 0px auto;
+    }
+
+    #batteries .product-slider .item,
+    #inverters .product-slider .item {
+        width: 35vw;
+        height: 100%;
+        object-fit: contain;
     }
 
     .features_container {
@@ -475,7 +667,7 @@
         align-items: center;
         height: 100%;
         width: 100%;
-        padding-bottom: 14px;
+        padding-bottom: 30px;
     }
 
     .blog_section h2 {
@@ -542,7 +734,7 @@
     }
 
     .document-card {
-        padding: 5px;
+        padding: 20px;
     }
 
 
@@ -563,12 +755,6 @@
     }
 
 
-    /*onephase inverter css start  */
-    .onephase_herobanner {
-        background-image: url('../imgs/1phaseinverter/hero_banner.png');
-        background-size: cover;
-        background-position: center;
-    }
 
     .onephase_herobanner .content {
         padding: 100px 20px 50px 20px;
@@ -618,21 +804,20 @@
 
 
 
-
-    footer .footer-logo img {
-        max-width: 100px;
-        margin-bottom: 15px;
+    .footer {
+        padding: 40px;
+        margin: 0px;
     }
 
-    footer .bottom-text p {
-        font-size: 16px;
-        white-space: nowrap;
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    footer .footer-copyright div {
-        min-width: fit-content;
+    .footer-links-section {
+        width: 100%;
+        justify-content: space-between;
     }
-
 }
 
 @media only screen and (max-width:769px) {
@@ -641,6 +826,77 @@
         margin: 0px auto;
     }
 
+    .contact-section {
+
+        margin: 100px 0px 50px;
+
+    }
+
+    .contact-left {
+        background: transparent;
+        width: 100%;
+        padding: 0px;
+        height: auto;
+        min-width: 100%;
+
+        min-height: auto;
+        /* min-width: fit-content; */
+    }
+
+    .contact-info-box {
+        padding: 20px;
+        width: calc(100% - 40px);
+        border-radius: 24px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+    }
+
+    .contact-left .data {
+        padding: 0px;
+    }
+
+    .contact_data p {
+        font-size: 14px;
+
+    }
+
+    .contact_data h3 {
+        font-size: 18px;
+    }
+
+    .content-overlay h2 {
+        font-size: 24px;
+    }
+
+    .content-overlay p {
+        font-size: 14px;
+    }
+
+    /* Dark blur on TOP */
+    .battery_herobanner::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 43%;
+        z-index: -1;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+        pointer-events: none;
+    }
+
+    /* Dark blur on BOTTOM */
+    .battery_herobanner::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        z-index: -1;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        pointer-events: none;
+    }
 
     .mobile_details_section {
         display: block;
@@ -663,7 +919,8 @@
         width: 300px;
         padding: 1px;
         height: 1px;
-        background: linear-gradient(90deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white);
+        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+        /* background: linear-gradient(90deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white); */
     }
 
     .details_section {
@@ -701,6 +958,12 @@
     }
 
 
+    #batteries .product-slider .item,
+    #inverters .product-slider .item {
+        width: 50vw;
+        height: 100%;
+        object-fit: contain;
+    }
 
     .features {
         gap: 5px;
@@ -836,8 +1099,7 @@
         color: var(--Dark);
         font-feature-settings: 'liga' off, 'clig' off;
         font-family: "Rethink Sans";
-        font-size: 16px;
-
+        font-size: 12px;
     }
 
     .section-padding h2,
@@ -845,6 +1107,10 @@
         text-align: center;
         align-self: center;
         padding: 0px 20px 20px !important;
+    }
+
+    .document-card .document_info p {
+        padding: 0px !important;
     }
 
     .beautiful_section h2 {
@@ -868,7 +1134,7 @@
     .section-padding {
         min-height: fit-content;
         gap: 20px;
-        padding: 20px 0px;
+        padding: 40px 20px;
     }
 
     .warranty_card {
@@ -878,11 +1144,11 @@
     }
 
     .stackable_battery_herobanner h2 {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     .stackable_battery_herobanner p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .threephase_herobanner .content h2 {
@@ -906,31 +1172,19 @@
         font-size: 12px;
     }
 
-    footer .footer-logo {
-        display: flex;
-        flex-direction: column;
+    .footer {
+        padding: 30px;
+        margin: 24px;
     }
 
-    footer .footer-logo .social-icons {
+    .footer-links-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
         text-align: start;
-    }
-
-    footer .footer-links-col {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: start;
-    }
-
-    footer .footer-links-col .footer-links {
-        margin-bottom: 20px;
-        text-align: start;
-    }
-
-    footer .footer-copyright {
-        padding: 0px !important;
-        display: flex;
-        flex-direction: column;
     }
 
 
@@ -941,6 +1195,8 @@
         max-width: 540px;
         margin: 0px auto;
     }
+
+
 
     .hero_banner {
         position: relative;
@@ -1007,8 +1263,28 @@
         line-height: normal;
     }
 
-    .details_cards p {
+    .key_benefits {
+        width: 100%;
+        height: 100vh;
+        outline: none;
+        border: none;
+        background:
+            linear-gradient(to bottom, rgb(255, 255, 255, 0)58%, rgb(0, 0, 0, 0.4) 62%, rgba(0, 0, 0, 1) 77%),
+            url('../imgs/benefits.jpg') center / cover no-repeat;
+        position: relative;
+    }
+
+    .key_benefits_content .content h2 {
+        font-size: 24px;
+    }
+
+    .key_benefits_content .content p {
         font-size: 14px;
+        width: 100%;
+    }
+
+    .details_cards p {
+        font-size: 12px;
     }
 
     .product-section .heading {
@@ -1031,9 +1307,16 @@
         font-size: 14px;
     }
 
+    #batteries .product-slider .item,
+    #inverters .product-slider .item {
+        width: 60vw;
+        height: 100%;
+        object-fit: contain;
+    }
+
     .details_card img {
-        width: 24px;
-        height: 24px
+        width: 28px;
+        height: 28px;
     }
 
     .features_container {
@@ -1099,7 +1382,7 @@
     }
 
     .benefits_panel .content .right_panel {
-        width: 90%;
+        width: 100%;
         height: 100%;
         display: flex;
         border-radius: 8px;
@@ -1108,11 +1391,15 @@
         align-items: center;
     }
 
+    .accordion-content.show {
+        font-size: 14px;
+    }
+
     .left_panel ul li {
         list-style: none;
         color: var(--Gray-gray--8, #5D6266);
         cursor: pointer;
-        font-size: 16px;
+        font-size: 18px;
         padding: 10px 0;
         transition: color 0.3s;
     }
@@ -1124,17 +1411,25 @@
     }
 
     .testimonial-section h2 {
-        font-size: 20px;
-        margin-bottom: 0px !important;
+        font-size: 24px;
+        margin-bottom: 4px !important;
     }
 
     .testimonial-section p {
         font-size: 14px;
     }
 
+    .google-rating h6 {
+        display: none;
+    }
+
+    .google-rating {
+        margin-bottom: 32px;
+    }
+
     .review_btn {
         position: absolute;
-        bottom: -5px;
+        bottom: -23px;
     }
 
     .testimonial-section .owl-carousel .owl-nav .owl-prev-custom,
@@ -1146,20 +1441,55 @@
     }
 
     .testimonial-section .owl-carousel .owl-nav button.owl-prev {
-        left: -24px;
-        top: 100%;
+        left: -10px;
+        top: calc(100% + 32px);
         z-index: 1;
         padding: 0px !important;
         background: transparent !important;
     }
 
+
     .testimonial-section .owl-carousel .owl-nav button.owl-next {
         z-index: 1;
-        top: 100%;
-        right: -24px;
+        top: calc(100% + 32px);
+        right: -10px;
         padding: 0px !important;
         background: transparent !important;
     }
+
+    .testimonial-card {
+        padding: 20px;
+        min-height: 150px;
+        height: 220px;
+
+        ;
+        justify-content: space-between;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .testimonial-card p {
+        font-size: 12px;
+    }
+
+    .testimonial-card small {
+        font-size: 12px;
+    }
+
+    .testimonial-card h6 {
+        font-size: 14px;
+    }
+
+    .see-review {
+        padding-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .google-rating .review_btn {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+
 
     .blog_section h2 {
         font-size: 38px;
@@ -1180,11 +1510,11 @@
     }
 
     .stackable_battery_herobanner h2 {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     .stackable_battery_herobanner p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
 
@@ -1222,14 +1552,21 @@
         padding: 20px;
     }
 
-    .document-card .document_info {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+    .document-card {
+        padding: 12px 16px;
     }
 
+    .document-card .document_info p {
+        color: var(--Gray-gray--12, #192127);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: capitalize;
+    }
+
+    /* 
     .stackable_battery_herobanner {
         width: 100%;
         height: 100vh;
@@ -1243,31 +1580,98 @@
         flex-direction: column;
         position: relative;
         z-index: 2;
+    } */
+
+
+    .blog_slider .blog_card {
+        height: 500px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
     }
 
-
-
-    footer {
+    .blog_slider .card_text {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
         padding: 10px;
+        z-index: 2;
+        bottom: 24px;
+        left: 0px;
+    }
+
+    .blog_slider .card_text p {
+
+        font-size: 14px;
+
+    }
+
+    .footer {
+        padding: 30px 15px;
         margin: 0px;
     }
 
-    footer .footer-copyright {
-        padding: 0px !important;
+    .footer-logo-section {
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        gap: 25px;
     }
 
-    footer .bottom-text p,
-    footer .bottom-text a {
-        font-size: 16px;
-        white-space: wrap;
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
+    .footer-links h6,
+    .footer-links h6 a {
+        color: var(--White, #FFF);
+        font-family: "Rethink Sans";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 24px;
+    }
+
+    .footer-links a {
+        color: var(--Gray-gray--7, #8F9395);
+        font-family: "Rethink Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    .footer-bottom p,
+    .footer-policy a {
+        color: var(--Gray-gray--7, #8F9395);
+        font-family: "Rethink Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 163.5%;
+        text-align: start;
+        /* 22.89px */
     }
 
 }
 
 @media only screen and (max-width:475px) {
+    .battery_herobanner p {
+        font-size: 16px;
+    }
+
+    .battery_herobanner::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    }
+
     .hero_content {
         width: 80%;
         height: 100vh;
@@ -1323,13 +1727,14 @@
         padding: 20px !important;
     }
 
-
-    footer .footer-logo {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-        align-items: center;
+    #batteries .product-slider .item,
+    #inverters .product-slider .item {
+        width: 70vw;
+        height: 100%;
+        object-fit: contain;
     }
+
+
 
 }
 
@@ -1337,6 +1742,25 @@
     .container {
         max-width: 100%;
         margin: 0px auto;
+    }
+
+    .contact-right {
+        width: 100%;
+        height: fit-content;
+        margin: auto;
+        padding: 10px;
+    }
+
+    .contact-section {
+        gap: 20px;
+    }
+
+    .contact-info-box {
+        padding: 10px;
+        width: calc(100%);
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
     }
 
     .onephase_herobanner .content .upper_content h2 {
@@ -1409,8 +1833,13 @@
     }
 
     .section-padding {
-        padding: 30px 5px;
+        padding: 40px 20px;
         height: fit-content;
+        ;
+    }
+
+    .section_padding_child {
+        gap: 24px;
     }
 
     .section-padding .section_header {
@@ -1449,27 +1878,6 @@
     }
 
 
-    footer {
-        padding: 10px 0px;
-        margin: 0px;
-    }
 
-    footer .footer-copyright {
-        padding: 0px !important;
-        display: flex;
-        flex-direction: column;
-    }
-
-    footer .bottom-text p,
-    footer .bottom-text a {
-        white-space: wrap;
-        font-size: 14px;
-    }
-
-
-
-    footer .footer-logo a {
-        text-align: start;
-    }
 
 }

@@ -58,21 +58,20 @@
                         <div class="nav-link inverters">
                             <p>Inverters</p>
                             <div style="width: 18px;display: flex;justify-content: center;align-items: center;">
-
                                 <img class="nav-dropicon" src="./assets/icons/chevron-down18X18.svg" alt="">
                             </div>
                         </div>
                         <div class="dropdown-menu wide-dropdown inverterdropdown">
                             <div class="dropdown-content">
 
-                                <a href="/5kwbattery.html" class="dropdown-item">
+                                <a href="/onephaseinverter.html" class="dropdown-item">
                                     <div class="dropdown-img">
                                         <img src="./assets/imgs/inverterdrop1.png" alt="5kWh Battery">
                                     </div>
                                     <p class="normal_text">Single Phase Hybrid Inverter</p>
                                     <h5>3-6 kw</h5>
                                 </a>
-                                <a href="/5kwbatterystakable.html" class="dropdown-item">
+                                <a href="/threephaseinverter.html" class="dropdown-item">
                                     <div class="dropdown-img">
                                         <img src="./assets/imgs/inverterdrop2.png" alt="5kWh Stackable Battery">
                                     </div>
@@ -108,11 +107,12 @@
                 </div>
             </div>
         </div>
+
         <!-- Sidebar Menu -->
         <div class="mobile-menu">
             <div class="close-icon">
                 <div class="logo">
-                    <img src="./assets/imgs/nav_logo.png" alt="Logo">
+                    <a href="/index.html"> <img src="./assets/imgs/nav_logo.png" alt="Logo"></a>
                 </div>
                 <img src="./assets/icons/close.svg" alt="Close">
             </div>
@@ -237,9 +237,21 @@
             </div>
         </div>
     </section>
-    <section class="energy_monitoring section-padding">
-        <div class="container">
-            <div class="battery_slide"></div>
+    <section class="onephase_slider_section battery_slider_section">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="background-image"></div>
+                <div class="foreground-image"></div>
+                <div class="slider-line"></div>
+                <div class="content-overlay">
+                    <h2>Weatherproof and dust resistant </h2>
+                    <p>Rated IP65 for dust and water resistance, suitable for indoor/outdoor use with recommended
+                        minimal shielding for longevity.</p>
+                </div>
+                <div class="slider-handle">
+                    <img src="./assets/imgs/drag-icon.png" alt="">
+                </div>
+            </div>
         </div>
     </section>
     <!-- Warranty Section -->
@@ -292,7 +304,7 @@
                     <div class="document-card">
                         <div class="document_info">
                             <img src="./assets/icons/pdf.svg" alt="">
-                            <h5>Limited Warranty</h5>
+                            <p>Limited Warranty</p>
                         </div>
                         <a href="#">
                             <img src="./assets/icons/download.svg" alt=""></a>
@@ -302,7 +314,7 @@
                     <div class="document-card">
                         <div class="document_info">
                             <img src="./assets/icons/pdf.svg" alt="">
-                            <h5>User's Manual</h5>
+                            <p>User's Manual</p>
                         </div>
                         <a href="#">
                             <img src="./assets/icons/download.svg" alt=""></a>
@@ -312,7 +324,7 @@
                     <div class="document-card">
                         <div class="document_info">
                             <img src="./assets/icons/pdf.svg" alt="">
-                            <h5>Quick Installation Guide</h5>
+                            <p>Quick Installation Guide</p>
                         </div>
                         <a href="#">
                             <img src="./assets/icons/download.svg" alt=""></a>
@@ -322,7 +334,7 @@
                     <div class="document-card">
                         <div class="document_info">
                             <img src="./assets/icons/pdf.svg" alt="">
-                            <h5>Data Sheet</h5>
+                            <p>Data Sheet</p>
                         </div>
                         <a href="#">
                             <img src="./assets/icons/download.svg" alt=""></a>
@@ -331,54 +343,56 @@
             </div>
         </div>
     </section>
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="row text-center p-2 text-md-start">
-                <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 mb-4 footer-logo">
-                    <a href="./index.html"><img src="./assets/imgs/nav_logo.png" alt="Logo"></a>
-
-                    <div class="social-icons mt-3">
-                        <a href="#"><img src="./assets/icons/social/linkedin.svg" alt=""></a>
-                        <a href="#"><img src="./assets/icons/social/whatsapp.svg" alt=""></a>
-                        <a href="#"><img src="./assets/icons/social/facebook.svg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-9 col-lg-10 col-xl-10  ">
-                    <div class="row footer-links-col">
-                        <div class="col col-md-2 col-xl  mb-4 footer-links">
-                            <h6 class="text-white mb-3"><a href="./index.html">Home</a></h6>
+            <div class="footer-container">
+                <div class="footer-top">
+                    <!-- Logo and Social Icons -->
+                    <div class="footer-logo-section">
+                        <a href="./index.html" class="footer-logo">
+                            <img src="./assets/imgs/nav_logo.png" alt="Logo">
+                        </a>
+                        <div class="social-icons">
+                            <a href="#"><img src="./assets/icons/social/linkedin.svg" alt="LinkedIn"></a>
+                            <a href="#"><img src="./assets/icons/social/whatsapp.svg" alt="WhatsApp"></a>
+                            <a href="#"><img src="./assets/icons/social/facebook.svg" alt="Facebook"></a>
                         </div>
+                    </div>
 
-                        <div class="col  col-md-5 col-xl   mb-4 footer-links">
-                            <h6 class="text-white mb-3">Batteries</h6>
+                    <!-- Footer Links -->
+                    <div class="footer-links-section">
+                        <div class="footer-links">
+                            <h6><a href="./index.html">Home</a></h6>
+                        </div>
+                        <div class="footer-links">
+                            <h6>Batteries</h6>
                             <a href="./5kwbattery.html">5kWh Battery</a>
                             <a href="./5kwbatterystakable.html">5kWh Stackable Battery</a>
                         </div>
-
-                        <div class="col  col-md-5 col-xl  mb-4 footer-links">
-                            <h6 class="text-white mb-3">Inverters</h6>
+                        <div class="footer-links">
+                            <h6>Inverters</h6>
                             <a href="./onephaseinverter.html">Single Phase Hybrid Inverter <br> 3–6 kW</a>
                             <a href="./threephaseinverter.html">Three Phase Hybrid Inverters <br> 6–30 kW</a>
                         </div>
-
-                        <div class="col col-md-2 col-xl  col-lg mb-4 footer-links">
-                            <h6 class="text-white mb-3"><a href="./index.html">Installer</a></h6>
+                        <div class="footer-links">
+                            <h6><a href="./index.html">Installer</a></h6>
                         </div>
-
-                        <div class="col col-md-2 col-xl col-lg mb-4  footer-links">
-                            <h6 class="text-white mb-3"><a href="./contact-us.html">Contact Us</a></h6>
+                        <div class="footer-links">
+                            <h6><a href="./contact-us.html">Contact Us</a></h6>
                         </div>
                     </div>
                 </div>
-            </div>
-            <hr>
-            <div class="row text-center p-2 text-md-start footer-copyright">
-                <div class="col col-md-8 bottom-text">
+
+                <hr>
+
+                <!-- Bottom Section -->
+                <div class="footer-bottom">
                     <p>Copyright © 2025. All rights reserved to Meri energy</p>
-                </div>
-                <div class="col col-md-4 text-md-end bottom-text">
-                    <a href="./term-conditions.html" class="text-decoration-none me-3">Privacy Policy</a> |
-                    <a href="./term-conditions.html" class="text-decoration-none ms-3">Terms & Condition</a>
+                    <div class="footer-policy">
+                        <a href="./term-conditions.html">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="./term-conditions.html">Terms & Condition</a>
+                    </div>
                 </div>
             </div>
         </div>

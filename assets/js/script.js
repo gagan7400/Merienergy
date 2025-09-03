@@ -450,7 +450,20 @@ $(document).ready(function () {
         navText: [
             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-        ]
+        ], responsive: {
+            0: {        // Mobile
+                items: 1
+            },
+            768: {      // Tablet
+                items: 2
+            },
+            1024: {     // Desktop
+                items:2
+            },
+            1200:{
+                items:3
+            }
+        }
     });
 
     function toggleNav(event) {
@@ -495,19 +508,17 @@ $(document).ready(function () {
     });
 });
 
-
-
-
 $('.blog_slider .owl-carousel').owlCarousel({
     loop: true,
     margin: 20,
     nav: true,
-    center: true,
+    center: true, // ensures the center slide is main focus
     items: 1,
-    stagePadding: ($(window).width() * 0.10), // 15% each side for half cards
+    stagePadding: ($(window).width() * 0.10), // peek effect
+    smartSpeed: 800, // smoother transition
     responsive: {
         0: {
-            items: 1.3,
+            items: 1.1,
             stagePadding: 20
         },
         768: {
@@ -522,11 +533,10 @@ $('.blog_slider .owl-carousel').owlCarousel({
     navText: [
         "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
         "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-    ],
+    ]
 });
 
 
-// Accordian JS
 $(function () {
     const $panel = $(".benefits_panel");
     const $listItems = $panel.find(".left_panel ul li[data-img]");

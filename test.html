@@ -1,84 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Meri Energy</title>
-    <link rel="icon" href="./assets/imgs/nav_logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/responsive.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms and Privacy</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: #eaf7fd;
+      padding: 1rem;
+      overflow-y: auto;
+      border-right: 1px solid #ccc;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    .submenu {
+      margin-left: 1rem;
+      display: none;
+    }
+
+    .submenu.show {
+      display: block;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 2rem;
+      overflow-y: auto;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 <body>
-    <footer>
-        <div class="container">
-            <div class="row text-center p-2 text-md-start">
-                <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 mb-4 footer-logo">
-                    <a href="./index.html"><img src="./assets/imgs/nav_logo.png" alt="Logo"></a>
 
-                    <div class="social-icons mt-3">
-                        <a href="#"><img src="./assets/icons/social/linkedin.svg" alt=""></a>
-                        <a href="#"><img src="./assets/icons/social/whatsapp.svg" alt=""></a>
-                        <a href="#"><img src="./assets/icons/social/facebook.svg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-9 col-lg-10 col-xl-10  ">
-                    <div class="row footer-links-col">
-                        <div class="col col-md-2 col-xl  mb-4 footer-links">
-                            <h6 class="text-white mb-3"><a href="./index.html">Home</a></h6>
-                        </div>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#terms">Terms of Use and Disclaimer</a></li>
+      <li onclick="toggleSubmenu(this)">
+        Privacy Policy
+        <ul class="submenu">
+          <li><a href="#definitions">Definitions</a></li>
+          <li><a href="#controller">Name and Address of the controller</a></li>
+          <li><a href="#cookies">Cookies</a></li>
+          <li><a href="#data">Collection of general data and information</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-                        <div class="col  col-md-5 col-xl   mb-4 footer-links">
-                            <h6 class="text-white mb-3">Batteries</h6>
-                            <a href="./5kwbattery.html">5kWh Battery</a>
-                            <a href="./5kwbatterystakable.html">5kWh Stackable Battery</a>
-                        </div>
+  <div class="content">
+    <section id="terms">
+      <h2>Terms of Use and Disclaimer</h2>
+      <p>
+        Meri Energy AG (“Meri Energy”) retains copyright on the content of this website...
+        <br />
+        Example URL: 
+        <a href="https://www.ristorantecantinaseneselivorno.com/5-motivi-reali-per-cui-la-corrispondenza-con-un/">https://www.ristorantecantinaseneselivorno.com</a>
+      </p>
+    </section>
 
-                        <div class="col  col-md-5 col-xl  mb-4 footer-links">
-                            <h6 class="text-white mb-3">Inverters</h6>
-                            <a href="./onephaseinverter.html">Single Phase Hybrid Inverter <br> 3–6 kW</a>
-                            <a href="./threephaseinverter.html">Three Phase Hybrid Inverters <br> 6–30 kW</a>
-                        </div>
+    <section id="definitions">
+      <h2>Definitions</h2>
+      <p>This section includes definitions used in the privacy policy...</p>
+    </section>
 
-                        <div class="col col-md-2 col-xl  col-lg mb-4 footer-links">
-                            <h6 class="text-white mb-3"><a href="./index.html">Installer</a></h6>
-                        </div>
+    <section id="controller">
+      <h2>Name and Address of the controller</h2>
+      <p>Information about the data controller...</p>
+    </section>
 
-                        <div class="col col-md-2 col-xl col-lg mb-4  footer-links">
-                            <h6 class="text-white mb-3"><a href="./contact-us.html">Contact Us</a></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row text-center p-2 text-md-start footer-copyright">
-                <div class="col col-md-8 bottom-text">
-                    <p>Copyright © 2025. All rights reserved to Meri energy</p>
-                </div>
-                <div class="col col-md-4 text-md-end bottom-text">
-                    <a href="./term-conditions.html" class="text-decoration-none me-3">Privacy Policy</a> |
-                    <a href="./term-conditions.html" class="text-decoration-none ms-3">Terms & Condition</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- jQuery + Owl Carousel -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
+    <section id="cookies">
+      <h2>Cookies</h2>
+      <p>Details about cookie usage on the website...</p>
+    </section>
+
+    <section id="data">
+      <h2>Collection of general data and information</h2>
+      <p>This section explains what general data is collected...</p>
+    </section>
+  </div>
+
+  <script>
+    function toggleSubmenu(item) {
+      const submenu = item.querySelector('.submenu');
+      submenu.classList.toggle('show');
+    }
+  </script>
 </body>
-
 </html>
