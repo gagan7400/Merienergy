@@ -21,7 +21,6 @@ const selectedLang = document.querySelector('.selected-language');
 const langdropicon = document.querySelector('.language-dropdown-icon');
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const batteryToggle = document.querySelector('.nav-link.batteries');
     const inverterToggle = document.querySelector('.nav-link.inverters');
@@ -70,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dropopen = true
             batteryDropdown.classList.add('active');
             navdropicon_battery.style.rotate = "180deg"
+            batteryToggle.classList.add("active");
             navbar.style.background = "white"
             navbar.classList.add("scrolled")
             drop[0].style.top = "70px"
@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dropopen = true
             inverterDropdown.classList.add('active');
             navdropicon_inverter.style.rotate = "180deg"
+            inverterToggle.classList.add("active")
             navbar.style.background = "white"
             navbar.classList.add("scrolled")
             drop[0].style.top = "70px"
@@ -115,7 +116,9 @@ document.addEventListener('DOMContentLoaded', function () {
         langdropicon.classList.remove('rotate');
         batteryDropdown.classList.remove('active');
         inverterDropdown.classList.remove('active');
-        navdropicon_battery.style.rotate = "0deg"
+        navdropicon_battery.style.rotate = "0deg";
+        inverterToggle.classList.remove("active")
+        batteryToggle.classList.remove("active");
         navdropicon_inverter.style.rotate = "0deg"
         navbar.classList.remove("scrolled")
         navbar.setAttribute("style", "")
@@ -200,13 +203,6 @@ closeIcon.addEventListener('click', () => {
     mobileMenu.classList.remove('active');
 });
 
-// Close menu on window resize if greater than 991px
-// window.addEventListener('resize', () => {
-//     if (window.innerWidth > 991) {
-//         mobileMenu.classList.remove('active');
-//     }
-// });
-
 // Toggle collapsible menus (only one open at a time)
 collapsibles.forEach(item => {
     const header = item.querySelector('.collapsible-header');
@@ -235,18 +231,20 @@ collapsibles.forEach(item => {
             }
         });
     }
-});//navbar css end
+});
+//navbar css end
+
 // slider code start
 $(document).ready(function () {
 
     $(".product-slider").each(function () {
         $(this).owlCarousel({
             items: 1,
-            loop: false,
+            loop: true,
             nav: true,
             dots: false,
             autoplay: false,
-            autoplayTimeout: 10000,
+            autoplayTimeout: 4000,
             smartSpeed: 600, // smooth slide speed
 
             navText: [
@@ -254,36 +252,9 @@ $(document).ready(function () {
                 "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
             ]
         });
-        updateArrows($(this));
-    });
-    // Update arrows on slide change
-    $(".product-slider").on("changed.owl.carousel initialized.owl.carousel", function (event) {
-        updateArrows($(this));
+        // updateArrows($(this));
     });
 
-    // Function to update nav buttons
-    function updateArrows(carousel) {
-        var carouselData = carousel.data("owl.carousel");
-        if (!carouselData) return;
-
-        var currentIndex = carouselData.relative(carouselData.current());
-        var totalItems = carouselData.items().length;
-
-        var prevBtn = carousel.find(".owl-prev-custom");
-        var nextBtn = carousel.find(".owl-next-custom");
-
-        if (currentIndex === 0) {
-            prevBtn.addClass("disabled");
-        } else {
-            prevBtn.removeClass("disabled");
-        }
-
-        if (currentIndex === totalItems - 1) {
-            nextBtn.addClass("disabled");
-        } else {
-            nextBtn.removeClass("disabled");
-        }
-    }
     // Tabs switching
     $(".tab-btn").click(function () {
         $(".tab-btn").removeClass("active");
@@ -337,108 +308,7 @@ $(document).ready(function () {
     });
 });
 
-// $(document).ready(function () {
-//     $(".testimonial-section .owl-carousel").owlCarousel({
-//         loop: false,
-//         margin: 20,
-//         nav: true,
-//         dots: false,
-//         navText: [
-//             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
-//             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-//         ],   // customize arrow icons
-//         responsive: {
-//             0: { items: 1 },    // 1 card on mobile
-//             768: { items: 2 },  // 2 cards on tablets
-//             992: { items: 2 },  // 3 cards on desktops
-//             1024: { items: 2.5 },  // 2 cards on tablets
-//         }
-//     });
-//     // Function to toggle disabled class
-//     function toggleNav(state) {
-//         var $prev = $(".testimonial-section .owl-prev-custom");
-//         var $next = $(".testimonial-section .owl-next-custom");
 
-//         if (state === "start") {
-//             $prev.addClass("disabled");
-//             $next.removeClass("disabled");
-//         } else if (state === "end") {
-//             $prev.removeClass("disabled");
-//             $next.addClass("disabled");
-//         } else {
-//             $prev.removeClass("disabled");
-//             $next.removeClass("disabled");
-//         }
-//     }
-
-//     // Initial check
-//     toggleNav("start");
-
-//     // On changed event
-//     $owl.on("changed.owl.carousel", function (event) {
-//         var totalItems = event.item.count;
-//         var currentIndex = event.item.index;
-//         var visibleItems = event.page.size; // number of visible items
-
-//         if (currentIndex === 0) {
-//             toggleNav("start");
-//         } else if (currentIndex + visibleItems >= totalItems) {
-//             toggleNav("end");
-//         } else {
-//             toggleNav("middle");
-//         }
-//     });
-// });
-// $(document).ready(function () {
-//     var $owl = $(".testimonial-section .owl-carousel");
-
-//     $owl.owlCarousel({
-//         loop: false, // must be false to detect edges
-//         margin: 20,
-//         nav: true,
-//         dots: false,
-//         navText: [
-//             "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
-//             "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
-//         ],
-//         responsive: {
-//             0: { items: 1 },
-//             768: { items: 2 },
-//             992: { items: 2 },
-//             1024: { items: 2.5 },
-//         }
-//     });
-
-//     // Function to toggle disabled class
-//     function toggleNav(event) {
-//         var $prev = $(".testimonial-section .owl-prev-custom");
-//         var $next = $(".testimonial-section .owl-next-custom");
-
-//         var totalItems = event.item.count;
-//         var currentIndex = event.item.index;
-//         var visibleItems = event.page.size;
-
-//         if (currentIndex === 0) {
-//             $prev.addClass("disabled");
-//         } else {
-//             $prev.removeClass("disabled");
-//         }
-
-//         if (currentIndex + visibleItems >= totalItems) {
-//             $next.addClass("disabled");
-//         } else {
-//             $next.removeClass("disabled");
-//         }
-//     }
-
-//     // Initial check
-//     toggleNav({ item: { index: 0, count: $owl.find(".owl-item").length }, page: { size: 2 } });
-
-//     // Update on slide change
-//     $owl.on("changed.owl.carousel", function (event) {
-//         toggleNav(event);
-//     });
-// });
 $(document).ready(function () {
     var $owl = $(".testimonial-section .owl-carousel");
 
@@ -448,8 +318,8 @@ $(document).ready(function () {
         nav: true,
         dots: false,
         navText: [
-            "<span class='owl-prev-custom'><img src='./assets/icons/chevron-left.svg'/></span>",
-            "<span class='owl-next-custom'><img src='./assets/icons/chevron-right.svg'/></span>"
+            "<img class='owl-prev-custom' src='./assets/icons/chevron-left_disabled.svg'/>",
+            "<img class='owl-next-custom' src='./assets/icons/chevron-right.svg'/>"
         ], responsive: {
             0: {        // Mobile
                 items: 1
@@ -458,10 +328,10 @@ $(document).ready(function () {
                 items: 2
             },
             1024: {     // Desktop
-                items:2
+                items: 2
             },
-            1200:{
-                items:3
+            1200: {
+                items: 3
             }
         }
     });
@@ -508,6 +378,8 @@ $(document).ready(function () {
     });
 });
 
+
+
 $('.blog_slider .owl-carousel').owlCarousel({
     loop: true,
     margin: 20,
@@ -538,50 +410,118 @@ $('.blog_slider .owl-carousel').owlCarousel({
 
 
 $(function () {
-    const $panel = $(".benefits_panel");
-    const $listItems = $panel.find(".left_panel ul li[data-img]");
-    const $rightImage = $panel.find(".right_panel img");
+    const $lis = $(".left_panel ul > li");
 
-    // Reset any inline styles (we use CSS transitions now)
-    $listItems.find(".accordion-content").removeAttr("style");
+    // MAIN: open/close accordion item
+    $lis.on("click", function (e) {
+        if ($(e.target).closest(".inner-accordian").length) return;
 
-    // Open first by default
-    const $first = $listItems.first();
-    $first.addClass("active");
-    $first.find(".accordion-content").addClass("show");
-    $rightImage.attr("src", $first.data("img"));
+        const $li = $(this);
+        const $content = $li.children(".accordion-content");
+        const imgSrc = $li.data("img");
 
-    // Click handler
-    $listItems.on("click", function () {
-        const $item = $(this);
-        const $content = $item.find(".accordion-content");
-        const newSrc = $item.data("img");
+        // Close others
+        $lis.not($li).removeClass("accordion-active")
+            .children(".accordion-content").each(function () {
+                $(this).stop(true, true).css({ height: 0, opacity: 0 });
+            });
+        $lis.not($li).find(".assumption-text").css("height", 0);
+        $lis.not($li).find(".assumption-icon").css({ transform: "rotate(0deg)" });
 
-        if ($item.hasClass("active")) return;
+        // Toggle current
+        const isOpen = $li.hasClass("accordion-active");
+        if (isOpen) {
+            $li.removeClass("accordion-active");
+            $content.stop(true, true).css({ height: 0, opacity: 0 });
+        } else {
+            $li.addClass("accordion-active");
+            const h = $content.get(0).scrollHeight;
+            $content.stop(true, true).css({ height: h + "px", opacity: 1 });
 
-        // Close all
-        $listItems.removeClass("active");
-        $listItems.find(".accordion-content").removeClass("show");
+            // if (imgSrc) {
+            //     $(".right_panel img").attr("src", imgSrc);
+            // }
 
-        // Open clicked
-        $item.addClass("active");
-        $content.addClass("show");
+            $(".right_panel img").fadeOut(400, function () {
+                $(this).attr("src", imgSrc).fadeIn(100);
 
-        // Smooth image change
-        if (newSrc) {
-            $rightImage.stop(true, true).fadeOut(300, function () {
-                $(this).attr("src", newSrc).fadeIn(300);
             });
         }
     });
+
+    // ASSUMPTIONS: delegated handler
+    // $(".left_panel").on("click", ".inner-accordian", function (e) {
+    //     e.stopPropagation();
+    //     console.log("df")
+    //     const $wrap = $(this);
+    //     const $text = $wrap.find(".assumption-text");
+    //     const $icon = $wrap.find(".assumption-icon");
+    //     const $accordionContent = $wrap.closest(".accordion-content");
+
+    //     if ($text.height() > 0) {
+    //         // Close assumption
+    //         $text.css("height", 0);
+    //         $icon.css({ transform: "rotate(0deg)" });
+    //     } else {
+    //         // Open assumption
+    //         const el = $text.get(0);
+    //         const h = el.scrollHeight;
+    //         $text.css("height", h + "px");
+    //         $icon.css({ transform: "rotate(180deg)" });
+    //     }
+
+    //     // 🔑 Recalculate parent accordion-content height
+    //     const newHeight = $accordionContent.get(0).scrollHeight;
+    //     $accordionContent.css("height", newHeight + "px");
+    // });
+    // // ASSUMPTIONS: delegated handler
+    $(".left_panel").on("click", ".inner-accordian", function (e) {
+        e.stopPropagation();
+
+        const $wrap = $(this);
+        const $text = $wrap.find(".assumption-text");
+        const $icon = $wrap.find(".assumption-icon");
+        const $accordionContent = $wrap.closest(".accordion-content");
+
+        if ($text.height() > 0) {
+            // Close assumption
+            $text.css("max-height", 0);
+            $icon.css({ transform: "rotate(0deg)" });
+        } else {
+            // First close all assumptions inside same li
+            $accordionContent.find(".assumption-text").css("max-height", 0);
+            $accordionContent.find(".assumption-icon").css({ transform: "rotate(0deg)" });
+
+            // Open clicked assumption
+            const el = $text.get(0);
+            const h = el.scrollHeight;
+            $text.css("max-height", h + "px");
+            $icon.css({ transform: "rotate(180deg)" });
+        }
+
+        // 🔑 Recalculate after CSS height change
+        setTimeout(() => {
+            const newHeight = $accordionContent.get(0).scrollHeight;
+            console.log(newHeight)
+            $accordionContent.css("max-height", newHeight + "px");
+        }, 0); // delay ensures browser recalculates correctly
+    });
+
+
+    // INITIAL RENDER: open first item
+    const $firstLi = $lis.first();
+    $firstLi.addClass("accordion-active");
+    const $firstContent = $firstLi.children(".accordion-content");
+    $firstContent.css({
+        height: $firstContent.get(0).scrollHeight + "px",
+        opacity: 1
+    });
+    const firstImgSrc = $firstLi.data("img");
+    if (firstImgSrc) {
+        $(".right_panel img").attr("src", firstImgSrc);
+    }
 });
 
-function toggleassumption(p) {
-    const assumptionicon = document.querySelector('.assumption-icon');
-    const text = document.querySelector('.assumption-text');
-    text.classList.toggle('showassumption');
-    assumptionicon.classList.toggle('rotate');
-}
 
 // slider code end
 

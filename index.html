@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 
+
 <body>
     <nav class="nav-bar">
         <div class="container">
@@ -40,14 +41,16 @@
                         <div class="dropdown-menu wide-dropdown batterydropdown">
                             <div class="dropdown-content">
                                 <a href="/5kwbattery.html" class="dropdown-item">
-                                    <div class="dropdown-img">
-                                        <img src="./assets/imgs/battery-drop1.png" alt="5kWh Battery">
+                                    <div class="dropdown-img battery5">
+                                        <img src="./assets/imgs/Merienergyproductpngs/5 Kw battery.png"
+                                            alt="5kWh Battery">
                                     </div>
                                     <p class="normal_text">5kWh Battery</p>
                                 </a>
                                 <a href="/5kwbatterystakable.html" class="dropdown-item">
                                     <div class="dropdown-img">
-                                        <img src="./assets/imgs/battery-drop2.png" alt="5kWh Stackable Battery">
+                                        <img src="./assets/imgs/Merienergyproductpngs/Group 1000003761.png"
+                                            alt="5kWh Stackable Battery">
                                     </div>
                                     <p class="normal_text">5kWh Stackable Battery</p>
                                 </a>
@@ -66,17 +69,23 @@
 
                                 <a href="/onephaseinverter.html" class="dropdown-item">
                                     <div class="dropdown-img">
-                                        <img src="./assets/imgs/inverterdrop1.png" alt="5kWh Battery">
+                                        <img src="./assets/imgs/Merienergyproductpngs/Inverter 3.png"
+                                            alt="5kWh Battery">
                                     </div>
-                                    <p class="normal_text">Single Phase Hybrid Inverter</p>
-                                    <h5>3-6 kw</h5>
+                                    <div>
+                                        <p class="normal_text">Single Phase Hybrid Inverter</p>
+                                        <h5>3-6 kw</h5>
+                                    </div>
                                 </a>
                                 <a href="/threephaseinverter.html" class="dropdown-item">
                                     <div class="dropdown-img">
-                                        <img src="./assets/imgs/inverterdrop2.png" alt="5kWh Stackable Battery">
+                                        <img src="./assets/imgs/Merienergyproductpngs/Inverter 6.png"
+                                            alt="5kWh Stackable Battery">
                                     </div>
-                                    <p class="normal_text">Three Phase Hybrid Inverter</p>
-                                    <h5>6-30 kW</h5>
+                                    <div>
+                                        <p class="normal_text">Three Phase Hybrid Inverter</p>
+                                        <h5>6-30 kW</h5>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -210,7 +219,7 @@
         <div class="container">
             <div
                 class="row details_cards flex-lg-row flex-md-row flex-column align-items-center justify-content-evenly">
-                <div class="col-auto d-flex flex-column flex-lg-row align-items-center gap-2">
+                <div class="col-auto d-flex flex-grow flex-column flex-lg-row align-items-center gap-2">
                     <div class="details_card d-flex justify-content-center align-items-start gap-3">
                         <img src="./assets/icons/cleanenergy.svg" alt="">
                         <p>Clean <br> Energy</p>
@@ -418,15 +427,20 @@
                 <div class="left_panel">
                     <ul>
                         <!-- Static Main Heading -->
-                        <li data-img="./assets/imgs/right_panel.jpg">
+                        <li data-img="./assets/imgs/right_panel.jpg" class="accordion-active">
                             Save with reduced/zero electricity bills
-                            <div class="accordion-content">
-                                <p>Meri Energy's battery system pays itself back in less than 4 years</p>
-                                <div class="inner-accordian" onclick="toggleassumption(this)">
-                                    <span><sup>*</sup>Assumptions </span> <img src="./assets/icons/chevron-down.svg"
-                                        alt="" class="assumption-icon">
-                                    <p class="assumption-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                        Iste, quos aut facere dignissimos nostrum qui. Rerum quasi ea veniam autem!</p>
+                            <div class="accordion-content  ">
+                                Meri Energy’s battery system pays itself back in less than 4 years
+                                <div class="inner-accordian">
+                                    <span><sup>*</sup>Assumptions &nbsp; <img src="./assets/icons/chevron-down.svg"
+                                            alt="" class="assumption-icon"> </span>
+
+                                    <p class="assumption-text">50% subsidy via Eco bonus (Italy) spread across 10 years;
+                                        30% lumpsum subsidy in German markets; Grid electricity price: ~€0.29/kWh;
+                                        Self-consumption: Italy - 4,680 kWh/year (PV + 10kW battery) and 2,340 kWh/year
+                                        (PV only), Germany – 6000 kWh/year (PV + 15kW battery) and 3000 kWh/year (PV
+                                        only)
+                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -434,18 +448,20 @@
                         <!-- Accordion Items -->
                         <li data-img="./assets/imgs/achieve_energy.jpg">
                             Achieve energy independence
-                            <div class="accordion-content ">Store solar energy and use it anytime to reduce
-                                dependency on grid power.</div>
+                            <div class="accordion-content">Every Meri Energy system comes equipped with integrated
+                                backup for power outages. Also, the monitoring app allows you to monitor and manage your
+                                energy usage</div>
                         </li>
                         <li data-img="./assets/imgs/feel_confident.jpg">
                             Feel confident with best in class after-sales support
-                            <div class="accordion-content ">24/7 support and expert service for long-term
-                                reliability.</div>
+                            <div class="accordion-content ">Our technical support is managed directly by our engineers —
+                                ensuring fast, expert, and personalized assistance when you need it. </div>
                         </li>
                         <li data-img="./assets/imgs/better_place.jpg">
                             Make earth a better place
-                            <div class="accordion-content ">Switch to clean energy and contribute to a sustainable
-                                future.</div>
+                            <div class="accordion-content ">Meri Energy helps you reduce reliance on fossil fuels and
+                                increase your use of renewable energy. Every installation is a small act with a big
+                                impact—for your home, your wallet, and the planet. </div>
                         </li>
                     </ul>
                 </div>
@@ -475,7 +491,8 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="review_btn btn btn-dark mt-2">View all Reviews</a>
+                        <a href="https://www.google.com/search?q=merienergy&oq=merienergy&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMgYIARBFGDwyDQgCEC4YrwEYxwEYgAQyCggDEAAYBxgKGB4yCggEEAAYgAQYogQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDzSAQg5NjM5ajBqN6gCCLACAfEFxbn8duqog4_xBcW5_HbqqIOP&sourceid=chrome&ie=UTF-8#"
+                            target="_blank" class="review_btn btn btn-dark mt-2">View all Reviews</a>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-12">
@@ -521,8 +538,8 @@
                                 </div>
                             </div>
                             <div class="stars">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
                             </div>
                             <p>Great service and very innovative solutions. Definitely recommended!</p>
                             <a href="#" class="see-review">See full review</a>
@@ -536,8 +553,8 @@
                                 </div>
                             </div>
                             <div class="stars">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
                             </div>
                             <p>Great service and very innovative solutions. Definitely recommended!</p>
                             <a href="#" class="see-review">See full review</a>
@@ -551,8 +568,8 @@
                                 </div>
                             </div>
                             <div class="stars">
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                    class="fa fa-star"></i><i class="fa fa-star"></i>
                             </div>
                             <p>Great service and very innovative solutions. Definitely recommended!</p>
                             <a href="#" class="see-review">See full review</a>
@@ -604,57 +621,6 @@
             </div>
         </div>
     </section>
-    <!-- <footer>
-        <div class="container">
-            <div class="row text-center p-2 text-md-start">
-                <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 mb-4 footer-logo">
-                    <a href="./index.html"><img src="./assets/imgs/nav_logo.png" alt="Logo"></a>
-                    <div class="social-icons mt-3">
-                        <a href="#"><img src="./assets/icons/social/linkedin.svg" alt=""></a>
-                        <a href="#"><img src="./assets/icons/social/whatsapp.svg" alt=""></a>
-                        <a href="#"><img src="./assets/icons/social/facebook.svg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-9 col-lg-10 col-xl-10  ">
-                    <div class="row footer-links-col">
-                        <div class="col col-md-2 col-xl  mb-4 footer-links">
-                            <h6 class="text-white mb-3"><a href="./index.html">Home</a></h6>
-                        </div>
-                        <div class="col  col-md-5 col-xl   mb-4 footer-links">
-                            <h6 class="text-white mb-3">Batteries</h6>
-                            <a href="./5kwbattery.html">5kWh Battery</a>
-                            <a href="./5kwbatterystakable.html">5kWh Stackable Battery</a>
-                        </div>
-
-                        <div class="col  col-md-5 col-xl  mb-4 footer-links">
-                            <h6 class="text-white mb-3">Inverters</h6>
-                            <a href="./onephaseinverter.html">Single Phase Hybrid Inverter <br> 3–6 kW</a>
-                            <a href="./threephaseinverter.html">Three Phase Hybrid Inverters <br> 6–30 kW</a>
-                        </div>
-
-                        <div class="col col-md-2 col-xl  col-lg mb-4 footer-links">
-                            <h6 class="text-white mb-3"><a href="./index.html">Installer</a></h6>
-                        </div>
-
-                        <div class="col col-md-2 col-xl col-lg mb-4  footer-links">
-                            <h6 class="text-white mb-3"><a href="./contact-us.html">Contact Us</a></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row text-center p-2 text-md-start footer-copyright">
-                <div class="col col-md-8 bottom-text">
-                    <p>Copyright © 2025. All rights reserved to Meri energy</p>
-                </div>
-                <div class="col col-md-4 text-md-end bottom-text">
-                    <a href="./term-conditions.html" class="text-decoration-none me-3">Privacy Policy</a> |
-                    <a href="./term-conditions.html" class="text-decoration-none ms-3">Terms & Condition</a>
-                </div>
-            </div>
-        </div>
-    </footer> -->
-
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
@@ -709,10 +675,7 @@
             </div>
         </div>
     </footer>
-
-
     <!-- jQuery + Owl Carousel -->
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="./assets/js/script.js"></script>

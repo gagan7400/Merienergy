@@ -145,7 +145,7 @@
     }
 
     .features p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .features .features_midline {
@@ -258,7 +258,8 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
-        padding: 20px !important;
+        padding: 0px !important;
+        gap: 32px;
     }
 
     #batteries,
@@ -954,7 +955,7 @@
     }
 
     .products_categories .active {
-        font-size: 16px;
+        font-size: 18px;
     }
 
 
@@ -974,7 +975,8 @@
         font-size: 14px;
         margin: 0px;
     }
-
+  
+ 
     .features .features_midline {
         height: 30px;
     }
@@ -1304,7 +1306,7 @@
     }
 
     .products_categories .active {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     #batteries .product-slider .item,
@@ -1734,6 +1736,13 @@
         object-fit: contain;
     }
 
+    #batteries .product-slider .owl-item,
+    #inverters .product-slider .owl-item  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
 
 
 }
