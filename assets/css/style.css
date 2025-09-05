@@ -22,20 +22,6 @@
     --Gray-gray--10: #2B3237;
 }
 
-
-.main_heading {
-    color: var(--White, #FFF);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    text-shadow: 4px -1px 42px rgba(0, 0, 0, 0.25);
-    font-family: "Rethink Sans";
-    font-size: 56px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-
 h1,
 h2,
 h3,
@@ -47,7 +33,6 @@ h5 {
 
 h1 {
     color: var(--White, #FFF);
-
     font-feature-settings: 'liga' off, 'clig' off;
     text-shadow: 4px -1px 42px rgba(0, 0, 0, 0.25);
     font-family: "Rethink Sans";
@@ -136,6 +121,53 @@ p.advance_text {
     line-height: normal;
 }
 
+
+.heading_section h3 {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.heading_section p {
+    color: var(--White, #FFF);
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.blog_section .sub_heading {
+    padding: 20px;
+}
+
+.sub_heading h2 {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.sub_heading p {
+    color: var(--White, #FFF);
+    text-align: center;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: "Rethink Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
 
 /* nav-bar css */
 /* Basic navbar styling */
@@ -564,8 +596,8 @@ p.advance_text {
 
 /* nav-bar css end  */
 .whatsapp_icon {
-    width: 112px;
-    height: 112px;
+    width: 72px;
+    height: 72px;
     position: fixed;
     right: 20px;
     bottom: 20px;
@@ -579,8 +611,8 @@ p.advance_text {
 }
 
 .whatsapp_icon img {
-    width: 112px;
-    height: 112px;
+    width: 72px;
+    height: 72px;
     flex-shrink: 0;
 }
 
@@ -647,27 +679,7 @@ p.advance_text {
     text-align: center;
 }
 
-.hero_content .upper_section h3 {
-    color: var(--White, #FFF);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 56px;
-    letter-spacing: 2px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
 
-}
-
-.hero_content .upper_section p {
-    color: var(--White, #FFF);
-    font-family: "Rethink Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 100;
-    line-height: normal;
-}
 
 .hero_content button {
     width: 250px;
@@ -694,6 +706,7 @@ p.advance_text {
 
 .btn_white a {
     background: white;
+    font-size: 18px;
     color: var(--Dark, #050E14);
 }
 
@@ -703,6 +716,7 @@ p.advance_text {
 }
 
 .btn_plain a {
+    font-size: 18px;
     background-color: transparent !important;
     color: var(--White, #FFF);
 }
@@ -726,7 +740,7 @@ p.advance_text {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 48px;
+    gap: 0px;
 }
 
 .details_card p {
@@ -959,6 +973,7 @@ p.advance_text {
 .product-slider .owl-prev-custom img,
 .product-slider .owl-next-custom img {
     filter: invert(1);
+    width: 32px;
 }
 
 /* Custom nav arrows */
@@ -982,11 +997,11 @@ p.advance_text {
 }
 
 .product-slider .owl-prev-custom {
-    left: -15px;
+    left: -5px;
 }
 
 .product-slider .owl-next-custom {
-    right: -15px;
+    right: -5px;
 }
 
 /* Tabs */
@@ -1088,9 +1103,6 @@ p.advance_text {
     height: 100vh;
     outline: none;
     border: none;
-    /* background:
-        linear-gradient(to bottom, rgb(255, 255, 255, 0)37%, rgb(0, 0, 0, 0.1) 53%, rgba(0, 0, 0) 90%),
-        url('../imgs/benefits.jpg') center / cover no-repeat; */
     background:
         linear-gradient(to bottom, rgb(255, 255, 255, 0)63%, rgb(0, 0, 0, 0.4) 74%, rgba(0, 0, 0, 1) 86%),
         url('../imgs/benefits.jpg') center / cover no-repeat;
@@ -1135,14 +1147,7 @@ p.advance_text {
 
 .key_benefits_content .content p {
     color: var(--White, #FFF);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    width: 60%;
+
 }
 
 .key_benefits_content .content h2 {
@@ -1159,7 +1164,7 @@ p.advance_text {
     height: 550px;
     justify-content: space-around;
     align-items: center;
-    padding: 70px 20px;
+    padding: 70px 0px;
 }
 
 .benefits_panel .content .left_panel {
@@ -1222,7 +1227,6 @@ p.advance_text {
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-
 }
 
 .assumption-text {
@@ -1338,20 +1342,12 @@ p.advance_text {
     flex-direction: column;
 }
 
-.testimonial-section h2 {
+.testimonial-section .sub_heading h2 {
     color: var(--Dark, #050E14);
-
 }
 
-.testimonial-section p {
+.testimonial-section .sub_heading p {
     color: var(--Gray-gray--9, #494F53);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 .testimonial-card p {
@@ -1372,7 +1368,6 @@ p.advance_text {
     width: 50px !important;
     height: 50px !important;
     border-radius: 50% !important;
-
 }
 
 .testimonial-section .owl-carousel {
@@ -1404,7 +1399,7 @@ p.advance_text {
 
 .testimonial-section .owl-theme .owl-nav .disabled {
     opacity: 1;
-         cursor: default;
+    cursor: default;
 }
 
 .testimonial-section .owl-carousel .owl-nav .owl-next-custom.disabled {
@@ -1491,11 +1486,11 @@ p.advance_text {
 
 .testimonial-section .owl-carousel .owl-nav img.owl-next-custom.disabled {
     opacity: 0.5;
-     
+
 }
 
 .testimonial-section .owl-carousel .owl-nav button.owl-next.disabled {
-    background: #FFF  !important;
+    background: #FFF !important;
 }
 
 .testimonial-section .owl-carousel .owl-nav img.owl-prev-custom.disabled {
@@ -1617,28 +1612,12 @@ p.advance_text {
     padding: 0px;
 }
 
-.blog_section h2 {
+.blog_section .sub_heading h2 {
     color: var(--Dark, #050E14);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 42px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: capitalize;
-    margin: 0px;
 }
 
-.blog_section p {
+.blog_section .sub_heading p {
     color: var(--Gray-gray--9, #494F53);
-    text-align: center;
-    font-feature-settings: 'liga' off, 'clig' off;
-    font-family: "Rethink Sans";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 .blog_slider {
@@ -1681,14 +1660,14 @@ p.advance_text {
 
 .blog_slider .card_text {
     position: absolute;
-    width: 70%;
+    width: 80%;
     text-align: center;
     color: #fff;
     font-size: 24px;
     padding: 40px;
     z-index: 2;
     bottom: 0px;
-    left: calc(50% - 35%);
+    left: calc(50% - 40%);
     right: 0px;
 }
 
@@ -1762,31 +1741,20 @@ p.advance_text {
 
 .blog_slider .owl-item {
     transition: all 0.5s ease;
-    /* smooth transition */
-    /* filter: blur(4px); */
-    /* blur by default */
-    /* transform: scale(0.99); */
-    /* slightly smaller */
     opacity: 0.5;
-    /* faded */
 }
 
 .blog_slider .owl-item.active.center {
-    /* filter: blur(0); */
-    /* clear main slide */
-    /* transform: scale(1); */
-    /* normal size */
     opacity: 1;
 }
 
-.blog_card {
+/* .blog_card {
     background-size: cover;
     background-position: center;
     height: 400px;
     position: relative;
     overflow: hidden;
-}
-
+} */
 
 /* blog section css end */
 

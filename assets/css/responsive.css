@@ -26,14 +26,6 @@
     .content-overlay p {
         font-size: 24px;
     }
-
-
-    /* .footer {
-        margin-left: auto;
-        margin-right: auto;
-    } */
-
-
 }
 
 @media only screen and (min-width:1440px) and (max-width:1570px) {
@@ -105,6 +97,23 @@
         margin: 0px auto;
     }
 
+
+    .heading_section h3 {
+        font-size: 42px;
+    }
+
+    .heading_section p {
+        font-size: 20px;
+    }
+
+    .sub_heading h2 {
+        font-size: 38px;
+    }
+
+    .sub_heading p {
+        font-size: 18px;
+    }
+
     .document-card .document_info {
         display: flex;
         flex-direction: column;
@@ -169,15 +178,6 @@
         border-radius: 4px;
     }
 
-
-    .stackable_battery_herobanner h2 {
-        font-size: 48px;
-    }
-
-    .stackable_battery_herobanner p {
-        font-size: 20px;
-    }
-
     .content-overlay h2 {
         font-size: 42px;
     }
@@ -219,6 +219,8 @@
         margin: 0px auto;
     }
 
+
+
     .document-card .document_info p {
         color: var(--Gray-gray--12, #192127);
         font-family: Poppins;
@@ -243,7 +245,7 @@
     }
 
     .details_card p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .details_section {
@@ -354,6 +356,102 @@
     .container {
         max-width: 960px;
         margin: 0px auto;
+    }
+
+    .heading_section h3 {
+        font-size: 38px;
+    }
+
+    .heading_section p {
+        font-size: 18px;
+    }
+
+    .sub_heading h2 {
+        font-size: 32px;
+    }
+
+    .sub_heading p {
+        font-size: 16px;
+    }
+
+    .btn_white a {
+        background: white;
+        font-size: 16px;
+        color: var(--Dark, #050E14);
+    }
+
+    .btn_plain a {
+        font-size: 16px;
+        background-color: transparent !important;
+        color: var(--White, #FFF);
+    }
+
+    .left_panel ul li {
+        font-size: 20px;
+        padding: 10px 0;
+    }
+
+    .accordion-content {
+        font-size: 14px;
+    }
+
+    .left_panel ul li.accordion-active {
+        color: var(--White, #FFF);
+        font-size: 20px;
+    }
+
+    /* testimonial responsive css start */
+
+    .testimonial-card small {
+        font-size: 16px;
+    }
+
+    .testimonial-card p {
+        font-size: 16px;
+    }
+
+    .testimonial-card h6 {
+        font-size: 18px;
+    }
+
+    .see-review {
+        font-size: 16px;
+    }
+
+    .google-rating h6 {
+        font-size: 18px;
+    }
+
+    .google-rating .review_btn {
+        font-size: 16px;
+    }
+
+    .google_logo {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .google_logo img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+    }
+
+    /* testimonial responsive css end */
+
+    .blog_slider .card_text {
+        width: 85%;
+        font-size: 24px;
+        left: calc(50% - 42.5%);
+    }
+
+    .blog_slider .card_text p {
+        font-size: 20px;
     }
 
     .contact-section {
@@ -495,8 +593,7 @@
 
     .hero_content .upper_section h3 {
         color: var(--White, #FFF);
-        font-size: 42px;
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
 
@@ -560,7 +657,12 @@
         top: calc(50% - 58px / 2);
         right: -15px;
         padding: 0px !important;
-        background: transparent !important;
+        border-radius: 40px;
+        background: var(--Dark) !important;
+        opacity: 1;
+        filter: invert(0);
+        border: 1px solid var(--Gray-gray--5, #DADBDC);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
     }
 
     .testimonial-section .owl-carousel .owl-nav button.owl-prev {
@@ -671,13 +773,7 @@
         padding-bottom: 30px;
     }
 
-    .blog_section h2 {
-        font-size: 48px;
-    }
 
-    .blog_section p {
-        font-size: 18px;
-    }
 
     .feature_highlights .feature_cards {
         gap: 2px;
@@ -827,10 +923,24 @@
         margin: 0px auto;
     }
 
+    .heading_section h3 {
+        font-size: 32px;
+    }
+
+    .heading_section p {
+        font-size: 16px;
+    }
+
+    .sub_heading h2 {
+        font-size: 28px;
+    }
+
+    .sub_heading p {
+        font-size: 16px;
+    }
+
     .contact-section {
-
         margin: 100px 0px 50px;
-
     }
 
     .contact-left {
@@ -871,6 +981,30 @@
 
     .content-overlay p {
         font-size: 14px;
+    }
+
+
+    .blog_slider .owl-nav .owl-prev {
+        left: calc(10%);
+    }
+
+    .blog_slider .owl-nav .owl-next {
+        right: calc(10%);
+    }
+
+    .blog_slider .card_text p {
+        font-size: 16px;
+    }
+
+    .blog_slider .blog_card {
+        height: 550px;
+    }
+
+    .blog_slider .card_text {
+        width: 90%;
+        font-size: 24px;
+        left: calc(50% - 45%);
+        padding: 40px 0px;
     }
 
     /* Dark blur on TOP */
@@ -955,7 +1089,8 @@
     }
 
     .products_categories .active {
-        font-size: 18px;
+        font-size: 16px;
+
     }
 
 
@@ -975,8 +1110,8 @@
         font-size: 14px;
         margin: 0px;
     }
-  
- 
+
+
     .features .features_midline {
         height: 30px;
     }
@@ -1004,11 +1139,10 @@
         width: 90%;
         justify-content: space-around;
         align-items: center;
-        padding: 20px 20px;
+        padding: 20px 0px;
         flex-direction: column-reverse;
         margin: auto;
     }
-
 
     .benefits_panel .content .left_panel {
         width: 100%;
@@ -1017,7 +1151,7 @@
     }
 
     .benefits_panel .content .right_panel {
-        width: 90%;
+        width: 100%;
         height: 100%;
         display: flex;
         border-radius: 8px;
@@ -1035,13 +1169,7 @@
         transition: color 0.3s;
     }
 
-    .blog_section h2 {
-        font-size: 42px;
-    }
 
-    .blog_section p {
-        font-size: 16px;
-    }
 
     .battery_herobanner {
         width: 100%;
@@ -1130,7 +1258,6 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-
     }
 
     .section-padding {
@@ -1199,6 +1326,21 @@
     }
 
 
+    .heading_section h3 {
+        font-size: 32px;
+    }
+
+    .heading_section p {
+        font-size: 16px;
+    }
+
+    .sub_heading h2 {
+        font-size: 24px;
+    }
+
+    .sub_heading p {
+        font-size: 14px;
+    }
 
     .hero_banner {
         position: relative;
@@ -1219,13 +1361,26 @@
         padding-bottom: 30px;
     }
 
+    .left_panel ul li {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    .accordion-content {
+        font-size: 12px;
+    }
+
+    .left_panel ul li.accordion-active {
+        color: var(--White, #FFF);
+        font-size: 18px;
+    }
+
     .ps-5 {
         padding: 0px !important;
     }
 
     .hero_content .upper_section h3 {
         color: var(--White, #FFF);
-        font-size: 42px;
         width: 90%;
         margin: auto;
     }
@@ -1276,14 +1431,7 @@
         position: relative;
     }
 
-    .key_benefits_content .content h2 {
-        font-size: 24px;
-    }
 
-    .key_benefits_content .content p {
-        font-size: 14px;
-        width: 100%;
-    }
 
     .details_cards p {
         font-size: 12px;
@@ -1306,7 +1454,9 @@
     }
 
     .products_categories .active {
-        font-size: 16px;
+        /* font-size: 16px; */
+        font-size: 14px;
+        font-weight: 500;
     }
 
     #batteries .product-slider .item,
@@ -1371,7 +1521,7 @@
         width: 100%;
         justify-content: space-around;
         align-items: center;
-        padding: 20px 20px;
+        padding: 20px 0px;
         flex-direction: column-reverse;
         margin: auto;
     }
@@ -1413,12 +1563,7 @@
     }
 
     .testimonial-section h2 {
-        font-size: 24px;
         margin-bottom: 4px !important;
-    }
-
-    .testimonial-section p {
-        font-size: 14px;
     }
 
     .google-rating h6 {
@@ -1431,7 +1576,7 @@
 
     .review_btn {
         position: absolute;
-        bottom: -23px;
+        bottom: -11px;
     }
 
     .testimonial-section .owl-carousel .owl-nav .owl-prev-custom,
@@ -1443,7 +1588,7 @@
     }
 
     .testimonial-section .owl-carousel .owl-nav button.owl-prev {
-        left: -10px;
+        left: 15px;
         top: calc(100% + 32px);
         z-index: 1;
         padding: 0px !important;
@@ -1454,9 +1599,14 @@
     .testimonial-section .owl-carousel .owl-nav button.owl-next {
         z-index: 1;
         top: calc(100% + 32px);
-        right: -10px;
+        right: 15px;
         padding: 0px !important;
-        background: transparent !important;
+        border-radius: 40px;
+        background: var(--Dark) !important;
+        opacity: 1;
+        filter: invert(0);
+        border: 1px solid var(--Gray-gray--5, #DADBDC);
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
     }
 
     .testimonial-card {
@@ -1492,9 +1642,20 @@
         font-size: 14px;
     }
 
+    .blog_section .owl-theme .owl-nav [class*=owl-] {
+        background: none !important;
+        margin: 0px !important;
+        padding: 4px !important;
+        background: transparent !important;
+        border-radius: 100px !important;
+    }
 
-    .blog_section h2 {
-        font-size: 38px;
+    .blog_slider .owl-nav .owl-prev {
+        left: calc(7%);
+    }
+
+    .blog_slider .owl-nav .owl-next {
+        right: calc(7%);
     }
 
 
@@ -1613,6 +1774,7 @@
     .footer {
         padding: 30px 15px;
         margin: 0px;
+        border-radius: 0px;
     }
 
     .footer-logo-section {
@@ -1666,6 +1828,27 @@
 }
 
 @media only screen and (max-width:475px) {
+
+    .heading_section h3 {
+        font-size: 32px;
+    }
+
+    .heading_section p {
+        font-size: 16px;
+    }
+
+    .sub_heading h2 {
+        font-size: 24px;
+    }
+
+    .sub_heading p {
+        font-size: 14px;
+    }
+
+    .blog_slider .blog_card {
+        height: 400px;
+    }
+
     .battery_herobanner p {
         font-size: 16px;
     }
@@ -1675,7 +1858,7 @@
     }
 
     .hero_content {
-        width: 80%;
+        width: 90%;
         height: 100vh;
         margin: auto;
         min-height: fit-content;
@@ -1690,13 +1873,6 @@
         margin: auto;
     }
 
-    .blog_section h2 {
-        font-size: 26px;
-    }
-
-    .blog_section p {
-        font-size: 16px;
-    }
 
     .ps-5 {
         padding: 0px !important;
@@ -1737,7 +1913,7 @@
     }
 
     #batteries .product-slider .owl-item,
-    #inverters .product-slider .owl-item  {
+    #inverters .product-slider .owl-item {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1792,7 +1968,7 @@
     }
 
     .hero_content {
-        width: 90%;
+        width: 100%;
         height: 100vh;
         margin: auto;
         min-height: fit-content;
@@ -1837,9 +2013,6 @@
         line-height: normal;
     }
 
-    .blog_section h2 {
-        font-size: 20px;
-    }
 
     .section-padding {
         padding: 40px 20px;
