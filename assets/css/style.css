@@ -2807,7 +2807,7 @@ p {
     transition: all 0.3s ease;
 }
 
-.nav-link {
+.terms .nav-link {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -2819,27 +2819,27 @@ p {
     text-decoration: none;
 }
 
-.nav-link:hover {
+.terms .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-.nav-link img {
+.terms .nav-link img {
     width: 28px;
     filter: invert(1);
     opacity: 0.5;
     transition: all 0.3s ease;
 }
 
-.nav-item.active .nav-link {
+.terms .nav-item.active .nav-link {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.nav-item.active .nav-link img {
+.terms .nav-item.active .nav-link img {
     opacity: 1;
     transform: rotate(90deg);
 }
 
-.nav-item.active h4 {
+.terms .nav-item.active h4 {
     color: var(--Dark, #050E14);
     font-weight: 600;
 }
@@ -2857,12 +2857,12 @@ p {
     transition: max-height 0.3s ease, margin-top 0.3s ease;
 }
 
-.nav-item.active .sub-nav {
+.terms  .nav-item.active .sub-nav {
     max-height: 1000px;
     margin-top: 10px;
 }
 
-.sub-nav-link {
+.terms  .sub-nav-link {
     padding: 6px 12px;
     border-radius: 4px;
     color: var(--Gray-Mode-600, #6B7280);
@@ -2873,18 +2873,18 @@ p {
     position: relative;
 }
 
-.sub-nav-link:hover {
+.terms  .sub-nav-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--Gray-Mode-700, #464C5E);
 }
 
-.sub-nav-link.active {
+.terms .sub-nav-link.active {
     background-color: var(--Foundation-Blue-Light, #E6F6FC);
     color: var(--Dark, #050E14);
     font-weight: 500;
 }
 
-.sub-nav-link.active::before {
+.terms  .sub-nav-link.active::before {
     content: '';
     position: absolute;
     left: 0;
@@ -3018,7 +3018,7 @@ ul li strong {
         margin-left: 10px;
     }
 
-    .sub-nav-link {
+    .terms  .sub-nav-link {
         font-size: 13px;
         padding: 5px 10px;
     }
@@ -3042,15 +3042,15 @@ ul li strong {
         padding: 0px;
     }
 
-    .nav-link {
+    .terms  .nav-link {
         padding: 6px 10px;
     }
 
-    .nav-link h4 {
+.terms      .nav-link h4 {
         font-size: 14px;
     }
 
-    .sub-nav-link {
+.terms     .sub-nav-link {
         font-size: 12px;
         padding: 4px 8px;
     }
@@ -3062,8 +3062,8 @@ ul li strong {
 }
 
 /* Focus styles for accessibility */
-.nav-link:focus,
-.sub-nav-link:focus {
+.terms  .nav-link:focus,
+.terms  .sub-nav-link:focus {
     outline: 2px solid var(--Foundation-Blue, #0EA5E9);
     outline-offset: 2px;
 }
@@ -3074,7 +3074,7 @@ ul li strong {
 }
 
 /* Enhanced visual feedback */
-.nav-item {
+.terms  .nav-item {
     position: relative;
 }
 
