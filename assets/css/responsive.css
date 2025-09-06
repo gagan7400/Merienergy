@@ -106,6 +106,10 @@
         margin: 0px auto;
     }
 
+    .testimonial-card p {
+        font-size: 16px;
+        height: 130px;
+    }
 
     .heading_section h3 {
         font-size: 42px;
@@ -209,7 +213,7 @@
 
     .footer {
         padding: 36px;
-        margin: 42px;
+        margin: 0px 42px 42px;
     }
 
     .footer-top {
@@ -345,7 +349,7 @@
 
     .footer {
         padding: 36px;
-        margin: 36px;
+        margin: 0px 36px 36px;
     }
 
     .footer-top {
@@ -1324,7 +1328,7 @@
 
     .footer {
         padding: 30px;
-        margin: 24px;
+        margin: 0px 24px 24px;
     }
 
     .footer-links-section {
@@ -1452,14 +1456,22 @@
         position: relative;
     }
 
-
+    .benefits_panel {
+        background: #000;
+        padding: 32px 0px;
+    }
 
     .details_cards p {
         font-size: 12px;
     }
 
+    .blog_section {
+        overflow: hidden;
+        padding: 32px 0px;
+    }
+
     .product-section {
-        padding: 60px 0px;
+        padding: 32px 0px;
     }
 
     .product-section .heading {
@@ -1570,13 +1582,14 @@
 
     .accordion-content.show {
         font-size: 14px;
-    } 
+    }
+
     .battery_slider_section {
-    width: 100%;
-    height: 80vh;
-    min-height: fit-content;
-    background: grey;
-}
+        width: 100%;
+        height: 80vh;
+        min-height: fit-content;
+        background: grey;
+    }
 
     .left_panel ul li {
         list-style: none;
@@ -1589,8 +1602,8 @@
 
     .testimonial-section {
         position: relative;
-        margin: 10px 0px 40px;
-        padding: 50px 0px;
+        /* margin: 10px 0px 40px; */
+        padding: 32px 0px 85px;
     }
 
     .testimonial-section h2 {
@@ -1607,7 +1620,7 @@
 
     .review_btn {
         position: absolute;
-        bottom: -11px;
+        bottom: 23px;
     }
 
     .testimonial-section .owl-carousel .owl-nav .owl-prev-custom,
@@ -1866,6 +1879,13 @@
 
     .heading_section h3 {
         font-size: 32px;
+    }
+
+    .threephase_herobanner {
+        padding-top: 10px;
+        background-image: url(../imgs/3phaseinverter/herobanner.jpg);
+        background-size: cover;
+        background-position: -242px 1px;
     }
 
     .heading_section p {
