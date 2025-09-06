@@ -18,131 +18,194 @@
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
     <script>
-
         document.addEventListener("DOMContentLoaded", () => {
             const navItems = document.querySelectorAll('.nav-item');
-            const subLinks = document.querySelectorAll('.sub-nav a');
+            const subLinks = document.querySelectorAll('.sub-nav-link');
+            const mainNavLinks = document.querySelectorAll('.nav-link');
+            const allSections = document.querySelectorAll('.content-section, .sub-section');
+            const contentContainer = document.querySelector('.terms_content_box');
 
-            // Toggle sub-nav
-            navItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    navItems.forEach(i => i.classList.remove('active'));
-                    item.classList.add('active');
+            let isScrolling = false;
+            let scrollTimeout;
+
+            // Function to update active navigation based on scroll position
+            function updateActiveNav() {
+                if (isScrolling) return;
+
+                const containerScrollTop = contentContainer.scrollTop;
+                const scrollPosition = containerScrollTop + 150; // Offset for better detection
+                let activeSection = null;
+                let activeSubSection = null;
+
+                // Find the currently visible section
+                allSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        if (section.classList.contains('sub-section')) {
+                            activeSubSection = section;
+                        } else {
+                            activeSection = section;
+                        }
+                    }
                 });
-            });
 
-            // Smooth scroll for sub-links
-            subLinks.forEach(link => {
+                // Update main navigation
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    const sectionId = item.getAttribute('data-section');
+
+                    if (activeSection && activeSection.id === sectionId) {
+                        item.classList.add('active');
+                    } else if (activeSubSection) {
+                        // Check if the sub-section belongs to this main section
+                        const parentSection = activeSubSection.closest('.content-section');
+                        if (parentSection && parentSection.id === sectionId) {
+                            item.classList.add('active');
+                        }
+                    }
+                });
+
+                // Update sub-navigation
+                subLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkId = link.getAttribute('href').replace('#', '');
+
+                    if (activeSubSection && activeSubSection.id === linkId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Handle main navigation clicks
+            mainNavLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const id = link.getAttribute('href').replace('#', '');
-                    const target = document.getElementById(id);
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
+                    const targetId = link.getAttribute('href').replace('#', '');
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        isScrolling = true;
+                        contentContainer.scrollTo({
+                            top: targetSection.offsetTop - 100,
                             behavior: 'smooth'
                         });
+
+                        // Update navigation immediately
+                        navItems.forEach(item => item.classList.remove('active'));
+                        link.closest('.nav-item').classList.add('active');
+
+                        // Reset scrolling flag after animation
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 1000);
                     }
                 });
             });
 
-            // Optional: Highlight nav based on scroll position
-            const sections = document.querySelectorAll('.sub-section');
+            // Handle sub-navigation clicks
+            subLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').replace('#', '');
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        isScrolling = true;
+                        contentContainer.scrollTo({
+                            top: targetSection.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+
+                        // Update navigation immediately
+                        subLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+
+                        // Activate parent nav item
+                        const parentNavItem = link.closest('.nav-item');
+                        navItems.forEach(item => item.classList.remove('active'));
+                        parentNavItem.classList.add('active');
+
+                        // Reset scrolling flag after animation
+                        setTimeout(() => {
+                            isScrolling = false;
+                        }, 1000);
+                    }
+                });
+            });
+
+            // Scroll event listener with throttling
+            let scrollTimer;
+            contentContainer.addEventListener('scroll', () => {
+                if (scrollTimer) {
+                    clearTimeout(scrollTimer);
+                }
+                scrollTimer = setTimeout(() => {
+                    updateActiveNav();
+                }, 10);
+            });
+
+            // Initial call to set active state
+            updateActiveNav();
+
+            // Intersection Observer for more precise detection
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const id = entry.target.getAttribute('id');
+                        if (entry.isIntersecting && !isScrolling) {
+                            const sectionId = entry.target.getAttribute('id');
+
+                            // Update sub-navigation
                             subLinks.forEach(link => {
                                 link.classList.remove('active');
-                                if (link.getAttribute('href') === '#' + id) {
+                                if (link.getAttribute('href') === '#' + sectionId) {
                                     link.classList.add('active');
+                                }
+                            });
+
+                            // Update main navigation
+                            navItems.forEach(item => {
+                                const sectionData = item.getAttribute('data-section');
+                                if (sectionId === sectionData) {
+                                    navItems.forEach(nav => nav.classList.remove('active'));
+                                    item.classList.add('active');
+                                } else if (entry.target.classList.contains('sub-section')) {
+                                    // Check if this sub-section belongs to this main section
+                                    const parentSection = entry.target.closest('.content-section');
+                                    if (parentSection && parentSection.id === sectionData) {
+                                        navItems.forEach(nav => nav.classList.remove('active'));
+                                        item.classList.add('active');
+                                    }
                                 }
                             });
                         }
                     });
                 },
-                { threshold: 0.3 }
+                {
+                    threshold: 0.3,
+                    rootMargin: '-100px 0px -50% 0px',
+                    root: contentContainer
+                }
             );
 
-            sections.forEach(section => observer.observe(section));
+            // Observe all sections
+            allSections.forEach(section => observer.observe(section));
         });
-
-
     </script>
     <style>
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
 
-        section.terms {
-            margin: 0;
-            margin-top: 100px;
-            font-family: Arial, sans-serif;
-            display: flex;
-            height: 100vh;
-        }
-
-        .sidebar {
-            width: 300px;
-            background: #eaf7fd;
-            padding: 1rem;
-            overflow-y: auto;
-            border-right: 1px solid #ccc;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar li {
-            margin: 0.5rem 0;
-            cursor: pointer;
-        }
-
-        .submenu {
-            margin-left: 1rem;
-            display: none;
-        }
-
-        .submenu.show {
-            display: block;
-        }
-
-        .content {
-            flex-grow: 1;
-            padding: 2rem;
-            overflow-y: auto;
-        }
-
-        .terms-content {
-            overflow: auto;
-        }
-
-        h2 {
-            margin-top: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
     </style>
+
 </head>
 
 <body>
-    <nav class="nav-bar">
+    <nav class="nav-bar  contact_nav ">
         <div class="container">
             <div class="navs">
                 <!-- Logo -->
                 <div class="logo">
-                    <a href="/index.html"><img id="logo" src="./assets/imgs/logo_nav.png" alt="Logo"></a>
+                    <a href="/index.html"><img src="./assets/imgs/nav_logo.png" alt="Logo"></a>
                 </div>
 
                 <!-- Desktop Navigation -->
@@ -158,8 +221,7 @@
                             <div class="dropdown-content">
                                 <a href="/5kwbattery.html" class="dropdown-item">
                                     <div class="dropdown-img battery5">
-                                        <img src="./assets/imgs/Merienergyproductpngs/5 Kw battery.png"
-                                            alt="5kWh Battery">
+                                        <img src="./assets/imgs/battery-drop1.png" alt="5kWh Battery">
                                     </div>
                                     <p class="normal_text">5kWh Battery</p>
                                 </a>
@@ -187,19 +249,15 @@
                                     <div class="dropdown-img">
                                         <img src="./assets/imgs/inverterdrop1.png" alt="5kWh Battery">
                                     </div>
-                                    <div>
-                                        <p class="normal_text">Single Phase Hybrid Inverter</p>
-                                        <h5>3-6 kw</h5>
-                                    </div>
+                                    <p class="normal_text">Single Phase Hybrid Inverter</p>
+                                    <h5>3-6 kw</h5>
                                 </a>
                                 <a href="/threephaseinverter.html" class="dropdown-item">
                                     <div class="dropdown-img">
                                         <img src="./assets/imgs/inverterdrop2.png" alt="5kWh Stackable Battery">
                                     </div>
-                                    <div>
-                                        <p class="normal_text">Three Phase Hybrid Inverter</p>
-                                        <h5>6-30 kW</h5>
-                                    </div>
+                                    <p class="normal_text">Three Phase Hybrid Inverter</p>
+                                    <h5>6-30 kW</h5>
                                 </a>
                             </div>
                         </div>
@@ -223,7 +281,6 @@
                         <a href="#" data-lang="Spanish">Spanish</a>
                     </div>
                 </div>
-
                 <!-- Hamburger Menu -->
                 <div class="menu-icon">
                     <img src="./assets/icons/menu.svg" alt="Menu">
@@ -232,6 +289,7 @@
         </div>
 
         <!-- Sidebar Menu -->
+
         <div class="mobile-menu">
             <div class="close-icon">
                 <div class="logo">
@@ -325,155 +383,268 @@
     </div>
     <section class="terms">
         <div class="container">
-            <div class="row">
+            <div class="terms_box">
                 <!-- Left Column - Navigation/Table of Contents -->
-                <div class="col-lg-4 col-md-4">
+                <div class="pointer">
                     <div class="terms-nav">
-                        <div class="nav-item active">
-                            <img src="./assets/icons/arrow-up-right.svg" alt="" class="nav-icon">
-                            <h4>Terms of Use and Disclaimer</h4>
+                        <div class="nav-item" data-section="terms">
+                            <a href="#terms" class="nav-link"> <img src="./assets/icons/chevron-right.svg" alt=""
+                                    class="nav-icon">
+                                <h4>Terms of Use and Disclaimer</h4>
+                            </a>
                         </div>
-                        <div class="nav-item">
-                            <img src="./assets/icons/arrow-up-right.svg" alt="" class="nav-icon">
-                            <h4>Privacy Policy</h4>
+                        <div class="nav-item" data-section="privacy">
+
+                            <a href="#privacy" class="nav-link"> <img src="./assets/icons/chevron-right.svg" alt=""
+                                    class="nav-icon">
+                                <h4>Privacy Policy</h4>
+                            </a>
+
                             <div class="sub-nav">
-                                <a href="#definitions">Definitions</a>
-                                <a href="#controller">Name and Address of the controller</a>
-                                <a href="#cookies">Cookies</a>
-                                <a href="#collection">Collection of general data and information</a>
-                                <a href="#newsletter">Subscription to our newsletters</a>
-                                <a href="#tracking">Newsletter-Tracking</a>
-                                <a href="#contact">Contact possibility via the website</a>
-                                <a href="#erasure">Routine erasure and blocking of personal data</a>
-                                <a href="#rights">Rights of the data subject</a>
+                                <a href="#definitions" class="sub-nav-link">Definitions</a>
+                                <a href="#controller" class="sub-nav-link">Name and Address of the controller</a>
+                                <a href="#cookies" class="sub-nav-link">Cookies</a>
+                                <a href="#collection" class="sub-nav-link">Collection of general data and
+                                    information</a>
+                                <a href="#newsletter" class="sub-nav-link">Subscription to our newsletters</a>
+                                <a href="#tracking" class="sub-nav-link">Newsletter-Tracking</a>
+                                <a href="#contact" class="sub-nav-link">Contact possibility via the website</a>
+                                <a href="#erasure" class="sub-nav-link">Routine erasure and blocking of personal
+                                    data</a>
+                                <a href="#rights" class="sub-nav-link">Rights of the data subject</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Right Column - Main Content -->
-                <div class="col-lg-8 col-md-8">
+                <div class="terms_content_box">
                     <div class="terms-content">
                         <!-- Terms of Use and Disclaimer Section -->
                         <div class="content-section" id="terms">
                             <h2>Terms of Use and Disclaimer</h2>
-                            <p>Meri Energy AG ('Meri Energy') retains copyright on the content of this website. All
-                                content, including but not limited to text, images, graphics, logos, and software, is
-                                protected by copyright laws and international treaties. The use of any content from this
-                                website for commercial purposes without the express written permission of Meri Energy is
-                                strictly prohibited.</p>
+                            <p>Meri Energy AG (“Meri Energy”) retains copyright on the content of this website. All the
+                                text, pictures, graphics and animations as well as their arrangement on this website are
+                                subject to protection of copyright and other applicable protective laws. The content of
+                                the website may not be copied, distributed, or made accessible to third parties without
+                                the express consent of Meri Energy. No reproduction of any part of the site may be sold
+                                or distributed for commercial gain, nor shall it be modified or incorporated in any
+                                other work, publication or site, whether in hard copy or electronic format, including
+                                postings to any other
+                                site.https://www.ristorantecantinaseneselivorno.com/5-motivi-reali-per-cui-la-corrispondenza-con-un/
+                            </p>
+                            <p>Meri Energy AG (“Meri Energy”) retains copyright on the content of this website. All the
+                                text, pictures, graphics and animations as well as their arrangement on this website are
+                                subject to protection of copyright and other applicable protective laws. The content of
+                                the website may not be copied, distributed, or made accessible to third parties without
+                                the express consent of Meri Energy. No reproduction of any part of the site may be sold
+                                or distributed for commercial gain, nor shall it be modified or incorporated in any
+                                other work, publication or site, whether in hard copy or electronic format, including
+                                postings to any other
+                                site.https://www.ristorantecantinaseneselivorno.com/5-motivi-reali-per-cui-la-corrispondenza-con-un/
+                            </p>
 
-                            <p>The information on this website is provided for general information purposes only. While
-                                Meri Energy strives to keep the information up to date and correct, we make no
-                                representations or warranties of any kind, express or implied, about the completeness,
-                                accuracy, reliability, suitability, or availability of the website or the information,
-                                products, services, or related graphics contained on the website for any purpose.</p>
+                            <p> The information on this site has been included in good faith and is for general
+                                information purposes only. While Meri Energy makes reasonable efforts to ensure that the
+                                information is accurate and up to date, Meri Energy makes no warranties of completion or
+                                accuracy and shall not be liable for information contained in, or any omissions from,
+                                the website. Meri Energy reserves the right to make modifications, corrections and/or
+                                improvements to the information, at any time without any notice.</p>
 
-                            <p>This website may contain forward-looking statements that involve risks and uncertainties.
-                                Actual results may differ materially from those expressed or implied in such statements.
-                                Meri Energy disclaims any obligation to update forward-looking statements.</p>
+                            <p> The forward-looking statements contained in this website are only predictions based on
+                                Meri Energy’s current expectations and predictions about future events and the
+                                Institutional counterpart expressly understands that any estimates, projections and
+                                assumptions are, by definition, uncertain. No information on this site shall constitute
+                                an invitation to invest in Meri Energy. Neither Meri Energy, nor its affiliates,
+                                officers, employees or agents shall be liable for any loss, damage or expense arising
+                                out of any access to or use of this site or any site linked to it, including, without
+                                limitation, any loss of profit, indirect, incidental or consequential loss.</p>
 
-                            <p>This website may contain links to third-party websites. Meri Energy has no control over
-                                the nature, content, and availability of those sites. The inclusion of any links does
-                                not necessarily imply a recommendation or endorse the views expressed within them. Meri
-                                Energy makes no representations or warranties regarding the content of any third-party
-                                websites.</p>
+                            <p> There are certain links on this website which may connect to other websites that are
+                                maintained by third parties. Meri Energy does not have any control over such third-party
+                                websites, and makes no representations or warranties with regard to the accuracy or
+                                completeness of the information contained in such websites.</p>
 
-                            <p>In no event shall Meri Energy be liable for any loss or damage including without
-                                limitation, indirect or consequential loss or damage, arising from loss of data or
-                                profits arising out of, or in connection with, the use of this website.</p>
                         </div>
-
+                        <hr>
                         <!-- Privacy Policy Section -->
                         <div class="content-section" id="privacy">
                             <h2>Privacy Policy</h2>
-                            <p>The use of the internet pages of Meri Energy AG is possible without any indication of
-                                personal data. However, if a data subject wants to use special enterprise services via
-                                our website, processing of personal data could become necessary. If the processing of
-                                personal data is necessary and there is no statutory basis for such processing, we
-                                generally obtain consent from the data subject.</p>
-
+                            <p>The use of the Internet pages of the Meri Energy AG is possible without any indication of
+                                personal data; however, if a data subject wants to use special enterprise services via
+                                our
+                                website, processing of personal data could become necessary. If the processing of
+                                personal
+                                data is necessary and there is no statutory basis for such processing, we generally
+                                obtain
+                                consent from the data subject.</p>
                             <p>The processing of personal data, such as the name, address, e-mail address, or telephone
                                 number of a data subject shall always be in line with the General Data Protection
-                                Regulation (GDPR), and in accordance with the country-specific data protection
-                                regulations applicable to Meri Energy AG.</p>
+                                Regulation
+                                (GDPR), and in accordance with the country-specific data protection regulations
+                                applicable
+                                to the Meri Energy AG. By means of this data protection declaration, our enterprise
+                                would
+                                like to inform the general public of the nature, scope, and purpose of the personal data
+                                we
+                                collect, use and process. Furthermore, data subjects are informed, by means of this data
+                                protection declaration, of the rights to which they are entitled.</p>
+                            <p>Internet-based data transmissions may in principle have security gaps, so absolute
+                                protection may not be guaranteed. For this reason, every data subject is free to
+                                transfer
+                                personal data to us via alternative means, e.g. by telephone.</p>
+
 
                             <!-- Definitions Sub-section -->
                             <div class="sub-section" id="definitions">
                                 <h3>Definitions</h3>
-                                <p><strong>Personal data</strong> means any information relating to an identified or
-                                    identifiable natural person ('data subject').</p>
-                                <p><strong>Data subject</strong> means any identified or identifiable natural person,
-                                    whose personal data is processed by the controller responsible for the processing.
-                                </p>
-                                <p><strong>Processing</strong> means any operation or set of operations which is
-                                    performed on personal data or on sets of personal data.</p>
-                                <p><strong>Restriction of processing</strong> means the marking of stored personal data
-                                    with the aim of limiting their processing in the future.</p>
-                                <p><strong>Profiling</strong> means any form of automated processing of personal data
-                                    consisting of the use of personal data to evaluate certain personal aspects.</p>
-                                <p><strong>Pseudonymisation</strong> means the processing of personal data in such a
-                                    manner that the personal data can no longer be attributed to a specific data
-                                    subject.</p>
-                                <p><strong>Controller or controller responsible for the processing</strong> means the
-                                    natural or legal person, public authority, agency or other body which, alone or
-                                    jointly with others, determines the purposes and means of the processing of personal
-                                    data.</p>
-                                <p><strong>Processor</strong> means a natural or legal person, public authority, agency
-                                    or other body which processes personal data on behalf of the controller.</p>
-                                <p><strong>Recipient</strong> means a natural or legal person, public authority, agency
-                                    or another body, to which the personal data are disclosed.</p>
-                                <p><strong>Third party</strong> means a natural or legal person, public authority,
-                                    agency or body other than the data subject, controller, processor and persons who,
-                                    under the direct authority of the controller or processor, are authorised to process
-                                    personal data.</p>
-                                <p><strong>Consent</strong> of the data subject means any freely given, specific,
-                                    informed and unambiguous indication of the data subject's wishes by which he or she,
-                                    by a statement or by a clear affirmative action, signifies agreement to the
-                                    processing of personal data relating to him or her.</p>
+                                <p>The data protection declaration of the Meri Energy AG is based on the terms used by
+                                    the European legislator for the adoption of the General Data Protection Regulation
+                                    (GDPR). Our data protection declaration should be legible and understandable for the
+                                    general public, as well as our customers and business partners. To ensure this, we
+                                    would like to first explain the terminology used.</p>
+
+                                <p>In this data protection declaration, we use, inter alia, the following terms:</p>
+                                <ul>
+                                    <li><strong>Personal data</strong> Personal data means any information relating to
+                                        an
+                                        identified or identifiable natural person (“data subject”). An identifiable
+                                        natural person is one who can be identified, directly or indirectly, in
+                                        particular by reference to an identifier such as a name, an identification
+                                        number, location data, an online identifier or to one or more factors specific
+                                        to the physical, physiological, genetic, mental, economic, cultural or social
+                                        identity of that natural person.
+                                    </li>
+                                    <li><strong>Data subject</strong> Data subject is any identified or identifiable
+                                        natural person, whose personal data is processed by the controller responsible
+                                        for the processing.
+                                    </li>
+                                    <li><strong>Processing</strong> Processing is any operation or set of operations
+                                        which is performed on personal data or on sets of personal data, whether or not
+                                        by automated means, such as collection, recording, organisation, structuring,
+                                        storage, adaptation or alteration, retrieval, consultation, use, disclosure by
+                                        transmission, dissemination or otherwise making available, alignment or
+                                        combination, restriction, erasure or destruction.</li>
+                                    <li><strong>Restriction of processing</strong> Restriction of processing is the
+                                        marking of stored personal data with the aim of limiting their processing in the
+                                        future.
+                                    </li>
+                                    <li><strong>Profiling</strong> Profiling means any form of automated processing of
+                                        personal data consisting of the use of personal data to evaluate certain
+                                        personal aspects relating to a natural person, in particular to analyse or
+                                        predict aspects concerning that natural person’s performance at work, economic
+                                        situation, health, personal preferences, interests, reliability, behaviour,
+                                        location or movements.
+
+                                    </li>
+                                    <li><strong>Pseudonymisation</strong> Pseudonymisation is the processing of personal
+                                        data in such a manner that the personal data can no longer be attributed to a
+                                        specific data subject without the use of additional information, provided that
+                                        such additional information is kept separately and is subject to technical and
+                                        organisational measures to ensure that the personal data are not attributed to
+                                        an identified or identifiable natural person.
+                                    </li>
+                                    <li><strong>Controller or controller responsible for the processing</strong>
+                                        Controller or controller responsible for the processing is the natural or legal
+                                        person, public authority, agency or other body which, alone or jointly with
+                                        others, determines the purposes and means of the processing of personal data;
+                                        where the purposes and means of such processing are determined by Union or
+                                        Member State law, the controller or the specific criteria for its nomination may
+                                        be provided for by Union or Member State law.
+                                    </li>
+                                    <li><strong>Processor</strong> Processor is a natural or legal person, public
+                                        authority, agency or other body which processes personal data on behalf of the
+                                        controller.</li>
+                                    <li><strong>Recipient</strong> Recipient is a natural or legal person, public
+                                        authority, agency or another body, to which the personal data are disclosed,
+                                        whether a third party or not. However, public authorities which may receive
+                                        personal data in the framework of a particular inquiry in accordance with Union
+                                        or Member State law shall not be regarded as recipients; the processing of those
+                                        data by those public authorities shall be in compliance with the applicable data
+                                        protection rules according to the purposes of the processing.
+                                    </li>
+                                    <li><strong>Third party</strong> Third party is a natural or legal person, public
+                                        authority, agency or body other than the data subject, controller, processor and
+                                        persons who, under the direct authority of the controller or processor, are
+                                        authorised to process personal data.
+                                    </li>
+                                    <li><strong>Consent</strong> Consent of the data subject is any freely given,
+                                        specific, informed and unambiguous indication of the data subject’s wishes by
+                                        which he or she, by a statement or by a clear affirmative action, signifies
+                                        agreement to the processing of personal data relating to him or her.
+                                    </li>
+                                </ul>
                             </div>
 
                             <!-- Name and Address of the controller Sub-section -->
                             <div class="sub-section" id="controller">
                                 <h3>Name and Address of the controller</h3>
                                 <p>Controller for the purposes of the General Data Protection Regulation (GDPR), other
-                                    data protection laws applicable in Member states of the European Union and other
-                                    provisions related to data protection is:</p>
-                                <p><strong>Meri Energy AG</strong><br>
-                                    Arisdörferstrasse 2<br>
-                                    6540 Duer, Schweiz<br>
-                                    E-Mail: Contact@MeriEnergy.com<br>
+                                    data
+                                    protection laws applicable in Member states of the European Union and other
+                                    provisions
+                                    related to data protection is:</p>
+                                <p><strong>Meri Energy AG</strong> <br>
+                                    Arbachstrasse 2<br>
+                                    6340 Baar<br>
+                                    Schweiz <br>
+                                    Email: Cabas@MeriEnergy.com<br>
                                     Website: MeriEnergy.com</p>
                             </div>
 
                             <!-- Cookies Sub-section -->
                             <div class="sub-section" id="cookies">
                                 <h3>Cookies</h3>
-                                <p>The internet pages of Meri Energy AG use cookies. Cookies are text files that are
+                                <p> The Internet pages of the Meri Energy AG use cookies. Cookies are text files that
+                                    are
                                     stored in a computer system via an Internet browser.</p>
-                                <p>Many Internet sites and servers use cookies. Many cookies contain a so-called cookie
-                                    ID. A cookie ID is a unique identifier of the cookie. It consists of a character
-                                    string through which Internet pages and servers can be assigned to the specific
-                                    Internet browser in which the cookie was stored.</p>
-                                <p>Through the use of cookies, Meri Energy AG can provide the users of this website with
-                                    more user-friendly services that would not be possible without the cookie setting.
-                                </p>
-                                <p>By means of a cookie, the information and offers on our website can be optimized with
+
+                                <p> Many Internet sites and servers use cookies. Many cookies contain a so-called cookie
+                                    ID.
+                                    A cookie ID is a unique identifier of the cookie. It consists of a character string
+                                    through which Internet pages and servers can be assigned to the specific Internet
+                                    browser in which the cookie was stored. This allows visited Internet sites and
+                                    servers
+                                    to differentiate the individual browser of the dats subject from other Internet
+                                    browsers
+                                    that contain other cookies. A specific Internet browser can be recognized and
+                                    identified
+                                    using the unique cookie ID.</p>
+
+                                <p> Through the use of cookies, the Meri Energy AG can provide the users of this website
+                                    with more user-friendly services that would not be possible without the cookie
+                                    setting.</p>
+
+                                <p> By means of a cookie, the information and offers on our website can be optimized
+                                    with
                                     the user in mind. Cookies allow us, as previously mentioned, to recognize our
-                                    website users. The purpose of this recognition is to make it easier for users to
-                                    utilize our website.</p>
-                                <p>The data subject may, at any time, prevent the setting of cookies through our website
-                                    by means of a corresponding setting of the Internet browser used, and may thus
-                                    permanently deny the setting of cookies. Furthermore, already set cookies may be
-                                    deleted at any time via an Internet browser or other software programs. This is
-                                    possible in all popular Internet browsers.</p>
+                                    website
+                                    users. The purpose of this recognition is to make it easier for users to utilize our
+                                    website. The website user that uses cookies, e.g. does not have to enter access data
+                                    each time the website is accessed, because this is taken over by the website, and
+                                    the
+                                    cookie is thus stored on the user’s computer system. Another example is the cookie
+                                    of a
+                                    shopping cart in an online shop. The online store remembers the articles that a
+                                    customer
+                                    has placed in the virtual shopping cart via a cookie.</p>
+
+                                <p> The data subject may, at any time, prevent the setting of cookies through our
+                                    website by
+                                    means of a corresponding setting of the Internet browser used, and may thus
+                                    permanently
+                                    deny the setting of cookies. Furthermore, already set cookies may be deleted at any
+                                    time
+                                    via an Internet browser or other software programs. This is possible in all popular
+                                    Internet browsers. If the data subject deactivates the setting of cookies in the
+                                    Internet browser used, not all functions of our website may be entirely usable.</p>
                             </div>
 
                             <!-- Collection of general data and information Sub-section -->
                             <div class="sub-section" id="collection">
                                 <h3>Collection of general data and information</h3>
-                                <p>The website of Meri Energy AG collects a series of general data and information when
-                                    a data subject or automated system calls up the website. This general data and
+                                <p>The website of the Meri Energy AG collects a series of general data and information
+                                    when a data subject or automated system calls up the website. This general data and
                                     information are stored in the server log files. Collected may be (1) the browser
                                     types and versions used, (2) the operating system used by the accessing system, (3)
                                     the website from which an accessing system reaches our website (so-called
@@ -481,78 +652,93 @@
                                     site, (6) an Internet protocol address (IP address), (7) the Internet service
                                     provider of the accessing system, and (8) any other similar data and information
                                     that may be used in the event of attacks on our information technology systems.</p>
-                                <p>When using these general data and information, Meri Energy AG does not draw any
+
+                                <p> When using these general data and information, the Meri Energy AG does not draw any
                                     conclusions about the data subject. Rather, this information is needed to (1)
                                     deliver the content of our website correctly, (2) optimize the content of our
                                     website as well as its advertisement, (3) ensure the long-term viability of our
                                     information technology systems and website technology, and (4) provide law
                                     enforcement authorities with the information necessary for criminal prosecution in
-                                    case of a cyber-attack.</p>
-                                <p>Therefore, Meri Energy AG analyzes anonymously collected data and information
-                                    statistically, with the aim of increasing the data protection and data security of
-                                    our enterprise, and to ensure an optimal level of protection for the personal data
-                                    we process. The anonymous data of the server log files are stored separately from
-                                    all personal data provided by a data subject.</p>
+                                    case of a cyber-attack. Therefore, the Meri Energy AG analyzes anonymously collected
+                                    data and information statistically, with the aim of increasing the data protection
+                                    and data security of our enterprise, and to ensure an optimal level of protection
+                                    for the personal data we process. The anonymous data of the server log files are
+                                    stored separately from all personal data provided by a data subject.</p>
                             </div>
 
                             <!-- Subscription to our newsletters Sub-section -->
                             <div class="sub-section" id="newsletter">
                                 <h3>Subscription to our newsletters</h3>
-                                <p>On the website of Meri Energy AG, users are given the opportunity to subscribe to our
-                                    enterprise's newsletter. The input mask used for this purpose determines what
+                                <p>On the website of the Meri Energy AG, users are given the opportunity to subscribe to
+                                    our enterprise’s newsletter. The input mask used for this purpose determines what
                                     personal data are transmitted, as well as when the newsletter is ordered from the
                                     controller.</p>
-                                <p>Meri Energy AG informs its customers and business partners regularly by means of a
-                                    newsletter about enterprise offers. The enterprise's newsletter may only be received
-                                    by the data subject if (1) the data subject has a valid e-mail address and (2) the
-                                    data subject registers for the newsletter shipping.</p>
-                                <p>A confirmation e-mail will be sent to the e-mail address registered by a data subject
-                                    for the first time for newsletter shipping, for legal reasons, in a double opt-in
-                                    procedure. This confirmation e-mail is used to prove whether the owner of the e-mail
-                                    address as the data subject is authorized to receive the newsletter.</p>
-                                <p>During the registration for the newsletter, we also store the IP address of the
+
+
+                                <p> The Meri Energy AG informs its customers and business partners regularly by means of
+                                    a newsletter about enterprise offers. The enterprise’s newsletter may only be
+                                    received by the data subject if (1) the data subject has a valid e-mail address and
+                                    (2) the data subject registers for the newsletter shipping. A confirmation e-mail
+                                    will be sent to the e-mail address registered by a data subject for the first time
+                                    for newsletter shipping, for legal reasons, in the double opt-in procedure. This
+                                    confirmation e-mail is used to prove whether the owner of the e-mail address as the
+                                    data subject is authorized to receive the newsletter.</p>
+
+                                <p> During the registration for the newsletter, we also store the IP address of the
                                     computer system assigned by the Internet service provider (ISP) and used by the data
                                     subject at the time of the registration, as well as the date and time of the
                                     registration. The collection of this data is necessary in order to understand the
                                     (possible) misuse of the e-mail address of a data subject at a later date, and it
                                     therefore serves the aim of the legal protection of the controller.</p>
-                                <p>The personal data collected as part of a registration for the newsletter will only be
-                                    used to send our newsletter. In addition, subscribers to the newsletter may be
+
+                                <p> The personal data collected as part of a registration for the newsletter will only
+                                    be used to send our newsletter. In addition, subscribers to the newsletter may be
                                     informed by e-mail, as long as this is necessary for the operation of the newsletter
                                     service or a registration in question, as this could be the case in the event of
                                     modifications to the newsletter offer, or in the event of a change in technical
-                                    circumstances.</p>
+                                    circumstances. There will be no transfer of personal data collected by the
+                                    newsletter service to third parties. The subscription to our newsletter may be
+                                    terminated by the data subject at any time. The consent to the storage of personal
+                                    data, which the data subject has given for shipping the newsletter, may be revoked
+                                    at any time. For the purpose of revocation of consent, a corresponding link is found
+                                    in each newsletter. It is also possible to unsubscribe from the newsletter at any
+                                    time directly on the website of the controller, or to communicate this to the
+                                    controller in a different way.</p>
                             </div>
 
                             <!-- Newsletter-Tracking Sub-section -->
                             <div class="sub-section" id="tracking">
                                 <h3>Newsletter-Tracking</h3>
-                                <p>The newsletter of Meri Energy AG contains so-called tracking pixels. A tracking pixel
-                                    is a miniature graphic embedded in such e-mails, which are sent in HTML format to
-                                    enable log file recording and analysis. This allows a statistical analysis of the
-                                    success or failure of online marketing campaigns.</p>
-                                <p>Based on the embedded tracking pixel, Meri Energy AG may see if and when an e-mail
-                                    was opened by a data subject, and which links in the e-mail were called up (clicked)
-                                    by data subjects.</p>
-                                <p>Such personal data collected in the tracking pixels contained in the newsletters are
+                                <p>The newsletter of the Meri Energy AG contains so-called tracking pixels. A tracking
+                                    pixel is a miniature graphic embedded in such e-mails, which are sent in HTML format
+                                    to enable log file recording and analysis. This allows a statistical analysis of the
+                                    success or failure of online marketing campaigns. Based on the embedded tracking
+                                    pixel, the Meri Energy AG may see if and when an e-mail was opened by a data
+                                    subject, and which links in the e-mail were called up by data subjects.</p>
+
+                                <p> Such personal data collected in the tracking pixels contained in the newsletters are
                                     stored and analyzed by the controller in order to optimize the shipping of the
                                     newsletter, as well as to adapt the content of future newsletters even better to the
                                     interests of the data subject. These personal data will not be passed on to third
                                     parties. Data subjects are at any time entitled to revoke the respective separate
-                                    declaration of consent issued by means of the double-opt-in procedure.</p>
+                                    declaration of consent issued by means of the double-opt-in procedure. After a
+                                    revocation, these personal data will be deleted by the controller. The Meri Energy
+                                    AG automatically regards a withdrawal from the receipt of the newsletter as a
+                                    revocation.</p>
                             </div>
 
                             <!-- Contact possibility via the website Sub-section -->
                             <div class="sub-section" id="contact">
                                 <h3>Contact possibility via the website</h3>
-                                <p>The website of Meri Energy AG contains information that enables a quick electronic
-                                    contact to our enterprise, as well as direct communication with us, which also
-                                    includes a general address of the so-called electronic mail (e-mail address). If a
-                                    data subject contacts the controller by e-mail or via a contact form, the personal
-                                    data transmitted by the data subject are automatically stored.</p>
-                                <p>Such personal data transmitted on a voluntary basis by a data subject to the data
+                                <p>The website of the Meri Energy AG contains information that enables a quick
+                                    electronic contact to our enterprise, as well as direct communication with us, which
+                                    also includes a general address of the so-called electronic mail (e-mail address).
+                                    If a data subject contacts the controller by e-mail or via a contact form, the
+                                    personal data transmitted by the data subject are automatically stored. Such
+                                    personal data transmitted on a voluntary basis by a data subject to the data
                                     controller are stored for the purpose of processing or contacting the data subject.
-                                    There is no transfer of this personal data to third parties.</p>
+                                    There is no transfer of this personal data to third parties.
+                                </p>
                             </div>
 
                             <!-- Routine erasure and blocking of personal data Sub-section -->
@@ -562,9 +748,10 @@
                                     only for the period necessary to achieve the purpose of storage, or as far as this
                                     is granted by the European legislator or other legislators in laws or regulations to
                                     which the controller is subject to.</p>
-                                <p>If the storage purpose is not applicable, or if a storage period prescribed by the
+
+                                <p> If the storage purpose is not applicable, or if a storage period prescribed by the
                                     European legislator or another competent legislator expires, the personal data are
-                                    routinely and automatically blocked or erased in accordance with legal requirements.
+                                    routinely blocked or erased in accordance with legal requirements.
                                 </p>
                             </div>
 
@@ -577,34 +764,16 @@
                                     from the controller the confirmation as to whether or not personal data concerning
                                     him or her are being processed. If a data subject wishes to avail himself of this
                                     right of confirmation, he or she may, at any time, contact any employee of the
-                                    controller.</p>
+                                    controller.
+                                </p>
 
                                 <h4>b) Right of access</h4>
                                 <p>Each data subject shall have the right granted by the European legislator to obtain
                                     from the controller free information about his or her personal data stored at any
                                     time and a copy of this information. Furthermore, the European directives and
-                                    regulations grant the data subject access to the following information:</p>
-                                <ul>
-                                    <li>the purposes of the processing;</li>
-                                    <li>the categories of personal data concerned;</li>
-                                    <li>the recipients or categories of recipients to whom the personal data have been
-                                        or will be disclosed, in particular recipients in third countries or
-                                        international organisations;</li>
-                                    <li>where possible, the envisaged period for which the personal data will be stored,
-                                        or, if not possible, the criteria used to determine that period;</li>
-                                    <li>the existence of the right to request from the controller rectification or
-                                        erasure of personal data, or restriction of processing of personal data
-                                        concerning the data subject, or to object to such processing;</li>
-                                    <li>the right to lodge a complaint with a supervisory authority;</li>
-                                    <li>where the personal data are not collected from the data subject, any available
-                                        information as to their source;</li>
-                                    <li>the existence of automated decision-making, including profiling, referred to in
-                                        Article 22(1) and (4) of the GDPR and, at least in those cases, meaningful
-                                        information about the logic involved, as well as the significance and envisaged
-                                        consequences of such processing for the data subject.</li>
-                                </ul>
-                                <p>If a data subject wishes to avail himself of this right of access, he or she may, at
-                                    any time, contact any employee of the controller.</p>
+                                    regulations grant the data subject access to the following information:
+                                </p>
+
                             </div>
                         </div>
                     </div>

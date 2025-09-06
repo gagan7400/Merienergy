@@ -26,12 +26,21 @@
     .content-overlay p {
         font-size: 24px;
     }
+
+    .document-card .document_info p {
+        font-size: 18px;
+    }
+
 }
 
 @media only screen and (min-width:1440px) and (max-width:1570px) {
     .container {
         max-width: 1420px;
         margin: 0px auto;
+    }
+
+    .document-card .document_info p {
+        font-size: 18px;
     }
 
     .details_section {
@@ -781,7 +790,7 @@
     }
 
     .feature_item {
-        gap: 2px;
+        gap: 5px;
     }
 
     .feature_item span {
@@ -797,6 +806,10 @@
         padding: 40px 0px;
         height: fit-content;
         gap: 30px;
+    }
+
+    .section_padding_child {
+        gap: 20px;
     }
 
     .stackable_battery_herobanner h2 {
@@ -1197,19 +1210,20 @@
 
     .feature_section_mobile {
         display: block;
+        padding: 40px 0px 20px;
+
     }
 
     .feature_section_mobile .feature_highlights {
-        margin-top: 2rem;
         width: 100%;
     }
 
     .feature_highlights .feature_cards {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         flex-direction: row;
-        gap: 20px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
@@ -1223,6 +1237,8 @@
 
     .feature_item img {
         filter: invert(1);
+        width: 25px;
+        height: 25px;
     }
 
     .feature_item span {
@@ -1230,6 +1246,7 @@
         font-feature-settings: 'liga' off, 'clig' off;
         font-family: "Rethink Sans";
         font-size: 12px;
+        text-align: center;
     }
 
     .section-padding h2,
@@ -1267,9 +1284,13 @@
     }
 
     .warranty_card {
-
         margin-bottom: 20px;
-        gap: 20px;
+        gap: 30px;
+    }
+
+    .document-card .document_info {
+        flex-direction: row;
+        flex-wrap: nowrap;
     }
 
     .stackable_battery_herobanner h2 {
@@ -1437,9 +1458,10 @@
         font-size: 12px;
     }
 
-    .product-section{
+    .product-section {
         padding: 60px 0px;
     }
+
     .product-section .heading {
         font-size: 24px;
     }
@@ -1548,7 +1570,13 @@
 
     .accordion-content.show {
         font-size: 14px;
-    }
+    } 
+    .battery_slider_section {
+    width: 100%;
+    height: 80vh;
+    min-height: fit-content;
+    background: grey;
+}
 
     .left_panel ul li {
         list-style: none;
@@ -1725,11 +1753,15 @@
     .document-card .document_info p {
         color: var(--Gray-gray--12, #192127);
         font-family: Poppins;
-        font-size: 16px;
+        font-size: 13px;
         font-style: normal;
         font-weight: 500;
         line-height: normal;
         text-transform: capitalize;
+    }
+
+    .section-title {
+        font-size: 20px;
     }
 
     /* 
@@ -1848,6 +1880,56 @@
         font-size: 14px;
     }
 
+    .feature_section_mobile {
+        display: block;
+    }
+
+    .feature_section_mobile .feature_highlights {
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .feature_highlights .feature_cards {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .feature_item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .card-box {
+        width: 100px;
+    }
+
+
+    .feature_item img {
+        filter: invert(1);
+        width: 25px;
+        height: 25px;
+    }
+
+    .feature_item span {
+        color: var(--Dark);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-family: "Rethink Sans";
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .feature_cards .mid_line.third {
+        display: none;
+    }
+
+
     .blog_slider .blog_card {
         height: 400px;
     }
@@ -1858,6 +1940,16 @@
 
     .battery_herobanner::before {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    }
+
+    .btn_warranty {
+        width: 100%;
+        font-size: 18px;
+
+    }
+
+    .section_padding_child .p-5 {
+        padding: 10px !important;
     }
 
     .hero_content {
@@ -1959,6 +2051,9 @@
         font-size: 12px;
     }
 
+    .feature_cards .mid_line.third {
+        display: block;
+    }
 
     .hero_banner {
         position: relative;
@@ -2018,9 +2113,8 @@
 
 
     .section-padding {
-        padding: 40px 20px;
+        padding: 40px 10px;
         height: fit-content;
-        ;
     }
 
     .section_padding_child {
