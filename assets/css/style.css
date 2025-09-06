@@ -393,10 +393,11 @@ p.advance_text {
     align-items: center;
     justify-content: space-evenly;
     background: radial-gradient(38.19% 57.61% at 50% 42.39%, #D8D8D8 0%, #F5F5F5 100%);
+
 }
 
 .nav-bar .dropdown-item .dropdown-img {
-    width: 135px;
+    width: 100px;
     height: 135px;
     /* margin-bottom: 40px; */
     transition: transform 0.3s ease;
@@ -668,20 +669,15 @@ p.advance_text {
     left: 0;
     width: 100%;
     height: 30%;
-    /* adjust how much bottom fade you want */
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
     pointer-events: none;
 }
-
-
 
 .hero_content .upper_section {
     text-align: center;
 }
 
-
-
-.hero_content button {
+.hero_content .btn {
     width: 250px;
     height: auto;
     padding: 10px 24px;
@@ -697,6 +693,8 @@ p.advance_text {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .btn_white {
@@ -704,7 +702,7 @@ p.advance_text {
     color: var(--Dark, #050E14);
 }
 
-.btn_white a {
+a.btn_white {
     background: white;
     font-size: 18px;
     color: var(--Dark, #050E14);
@@ -715,10 +713,20 @@ p.advance_text {
     color: var(--White, #FFF);
 }
 
-.btn_plain a {
+a.btn_plain {
     font-size: 18px;
     background-color: transparent !important;
     color: var(--White, #FFF);
+}
+
+.btn_white.btn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 1);
+}
+
+.btn_plain.btn:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0px 20px rgba(255, 255, 255, 1);
 }
 
 /* hero section css end */
@@ -1085,11 +1093,17 @@ p.advance_text {
     width: 151px;
     padding: 16px 24px;
     border-radius: 4px;
+    transition: all 0.3s linear;
 }
 
 .action-buttons .btn-dark {
     border: 1px solid var(--Dark, #050E14);
     background: var(--Dark, #050E14);
+}
+
+.action-buttons .btn-dark.btn:hover {
+    background: var(--White, #050E14);
+    color: var(--Dark);
 }
 
 .action-buttons .btn-outline-dark {
@@ -1579,6 +1593,14 @@ p.advance_text {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    transition: all 0.3s linear;
+}
+
+.google-rating .review_btn:hover {
+
+    background: var(--White, #050E14);
+    color: var(--Dark);
+
 }
 
 .google_logo {
@@ -1706,10 +1728,24 @@ p.advance_text {
 
 .blog_slider .owl-nav .owl-prev {
     left: calc(5%);
+    transition: all 0.3s linear;
 }
+
 
 .blog_slider .owl-nav .owl-next {
     right: calc(5%);
+    transition: all 0.3s linear;
+}
+
+.blog_slider .owl-nav .owl-prev:hover {
+    background: var(--Gray-gray--6) !important;
+    border-radius: 100px !important;
+}
+
+
+.blog_slider .owl-nav .owl-next:hover {
+    background: var(--Gray-gray--6) !important;
+    border-radius: 100px !important;
 }
 
 

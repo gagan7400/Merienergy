@@ -1403,7 +1403,7 @@
         gap: 20px;
     }
 
-    .hero_content .lower_section button {
+    .hero_content .lower_section .btn {
         width: 100%;
         height: auto;
         padding: 10px 24px;
@@ -1437,6 +1437,9 @@
         font-size: 12px;
     }
 
+    .product-section{
+        padding: 60px 0px;
+    }
     .product-section .heading {
         font-size: 24px;
     }
@@ -1979,7 +1982,7 @@
     .hero_content .upper_section h3 {
         color: var(--White, #FFF);
         font-size: 28px;
-        width: 90%;
+        width: 80%;
         margin: auto;
     }
 
@@ -1996,7 +1999,7 @@
         gap: 20px;
     }
 
-    .hero_content .lower_section button {
+    .hero_content .lower_section .btn {
         width: 100%;
         height: auto;
         padding: 10px 24px;
