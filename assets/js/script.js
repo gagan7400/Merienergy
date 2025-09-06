@@ -409,106 +409,92 @@ $('.blog_slider .owl-carousel').owlCarousel({
 });
 
 
-    $(function () {
-      const $lis = $(".left_panel ul > li");
+$(function () {
+    const $lis = $(".left_panel ul > li");
 
-      // MAIN: open/close accordion item
-      $lis.on("click", function (e) {
+    // MAIN: open/close accordion item
+    $lis.on("click", function (e) {
         if ($(e.target).closest(".inner-accordian").length) return;
 
         const $li = $(this);
         const $content = $li.children(".accordion-content");
         const imgSrc = $li.data("img");
 
+        // Agar already open hai to kuch mat karo (close na ho)
+        if ($li.hasClass("accordion-active")) {
+            return;
+        }
+
         // Close others
         $lis.not($li).removeClass("accordion-active")
-          .children(".accordion-content").each(function () {
-            $(this).stop(true, true).css({ height: 0, opacity: 0 });
-          });
+            .children(".accordion-content").each(function () {
+                $(this).stop(true, true).css({ height: 0, opacity: 0 });
+            });
         $lis.not($li).find(".assumption-text").css("max-height", "0");
         $lis.not($li).find(".assumption-icon").css({ transform: "rotate(0deg)" });
         $lis.not($li).find(".inner-accordian").data("assumption-open", false);
 
-        // Toggle current
-        const isOpen = $li.hasClass("accordion-active");
-        if (isOpen) {
-          $li.removeClass("accordion-active");
-          $content.stop(true, true).css({ height: 0, opacity: 0 });
-          // Also close any open assumptions in this accordion
-          $content.find(".assumption-text").css("max-height", "0");
-          $content.find(".assumption-icon").css({ transform: "rotate(0deg)" });
-          $content.find(".inner-accordian").data("assumption-open", false);
-        } else {
-          $li.addClass("accordion-active");
-          const h = $content.get(0).scrollHeight;
-          $content.stop(true, true).css({ height: h + "px", opacity: 1 });
+        // Open current
+        $li.addClass("accordion-active");
+        const h = $content.get(0).scrollHeight;
+        $content.stop(true, true).css({ height: h + "px", opacity: 1 });
 
-          if (imgSrc) {
-              $(".right_panel img").attr("src", imgSrc);
-          }
-
-        //   $(".right_panel img").fadeOut(400, function () {
-        //     $(this).attr("src", imgSrc).fadeIn(100);
-
-        //   });
+        if (imgSrc) {
+            $(".right_panel img").attr("src", imgSrc);
         }
-      });
+    });
 
-
-      $(".left_panel").on("click", ".inner-accordian", function (e) {
+    $(".left_panel").on("click", ".inner-accordian", function (e) {
         e.stopPropagation();
 
         const $wrap = $(this);
-        console.log(this.offsetHeight)
         const $text = $wrap.find(".assumption-text");
         const $icon = $wrap.find(".assumption-icon");
         const $accordionContent = $wrap.closest(".accordion-content");
-        const $parentLi = $accordionContent.closest("li");
 
-        // Use data attribute to track state more reliably
         const isAssumptionOpen = $wrap.data("assumption-open") === true;
 
         if (isAssumptionOpen) {
-          // Close assumption
-          $text.css("max-height", "0");
-          $icon.css({ transform: "rotate(0deg)" });
-          $wrap.data("assumption-open", false);
+            // Close assumption
+            $text.css("max-height", "0");
+            $icon.css({ transform: "rotate(0deg)" });
+            $wrap.data("assumption-open", false);
         } else {
-          // First close all assumptions inside same li
-          $accordionContent.find(".assumption-text").css("max-height", "0");
-          $accordionContent.find(".assumption-icon").css({ transform: "rotate(0deg)" });
-          $accordionContent.find(".inner-accordian").data("assumption-open", false);
+            // First close all assumptions inside same li
+            $accordionContent.find(".assumption-text").css("max-height", "0");
+            $accordionContent.find(".assumption-icon").css({ transform: "rotate(0deg)" });
+            $accordionContent.find(".inner-accordian").data("assumption-open", false);
 
-          // Open clicked assumption
-          const el = $text.get(0);
-          const h = el.scrollHeight;
+            // Open clicked assumption
+            const el = $text.get(0);
+            const h = el.scrollHeight;
 
-          $text.css("max-height", h + "px");
-          $icon.css({ transform: "rotate(180deg)" });
-          $wrap.data("assumption-open", true);
+            $text.css("max-height", h + "px");
+            $icon.css({ transform: "rotate(180deg)" });
+            $wrap.data("assumption-open", true);
         }
 
         // 🔑 Recalculate parent accordion height after assumption change
         setTimeout(() => {
-          const newHeight = $accordionContent.get(0).scrollHeight;
-          $accordionContent.css("height", newHeight + "px");
-        }, 220); // Increased delay to ensure CSS transition completes
-      });
+            const newHeight = $accordionContent.get(0).scrollHeight;
+            $accordionContent.css("height", newHeight + "px");
+        }, 220);
+    });
 
-      // INITIAL RENDER: open first item
-      const $firstLi = $lis.first();
-      $firstLi.addClass("accordion-active");
-      const $firstContent = $firstLi.children(".accordion-content");
-      $firstContent.css({
+    // INITIAL RENDER: open first item
+    const $firstLi = $lis.first();
+    $firstLi.addClass("accordion-active");
+    const $firstContent = $firstLi.children(".accordion-content");
+    $firstContent.css({
         height: $firstContent.get(0).scrollHeight + "px",
         opacity: 1
-      });
-      const firstImgSrc = $firstLi.data("img");
-      if (firstImgSrc) {
-        $(".right_panel img").attr("src", firstImgSrc);
-      }
     });
- 
+    const firstImgSrc = $firstLi.data("img");
+    if (firstImgSrc) {
+        $(".right_panel img").attr("src", firstImgSrc);
+    }
+});
+
 
 // slider code end
 

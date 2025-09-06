@@ -1069,9 +1069,8 @@
 
     .horizontal {
         width: 300px;
-        padding: 1px;
         height: 1px;
-        background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+        background: linear-gradient(to left ,   rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
         /* background: linear-gradient(90deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white); */
     }
 
