@@ -132,6 +132,7 @@ p.advance_text {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin-bottom: 8px;
 }
 
 .heading_section p {
@@ -157,6 +158,7 @@ p.advance_text {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+
 }
 
 .sub_heading p {
@@ -1131,7 +1133,7 @@ a.btn_plain {
 }
 
 .key_benefits_content .content {
-    width: 100%;
+    width: 40%;
     color: #fff;
     background: transparent;
     /* No extra background, let gradient show */
@@ -1145,7 +1147,6 @@ a.btn_plain {
 
 .key_benefits_content .content p {
     color: var(--White, #FFF);
-
 }
 
 .key_benefits_content .content h2 {
@@ -1793,15 +1794,13 @@ a.btn_plain {
     width: 100%;
     height: 100vh;
     min-height: fit-content;
-    background-image: url('../imgs/batterybanner.jpg');
-    background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     position: relative;
     z-index: 2;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.41) 0%, rgba(0, 0, 0, 0.36) 5.02%, rgba(0, 0, 0, 0.26) 10.21%, rgba(0, 0, 0, 0.09) 19.35%, rgba(0, 0, 0, 0.00) 28.32%), linear-gradient(0deg, rgba(109, 107, 103, 0.82) 0%, rgba(103, 101, 99, 0.72) 5.02%, rgba(103, 101, 99, 0.52) 10.21%, rgba(103, 101, 99, 0.19) 19.35%, rgba(103, 101, 99, 0.00) 28.32%), linear-gradient(0deg, rgba(0, 0, 0, 0.00) 58.32%, rgba(0, 0, 0, 0.32) 78.61%, rgba(0, 0, 0, 0.52) 87.74%, rgba(0, 0, 0, 0.72) 95.02%, rgba(0, 0, 0, 0.82) 100%), linear-gradient(0deg, rgba(148, 147, 145, 0.00) 50%, rgba(148, 147, 145, 0.32) 74.34%, rgba(148, 147, 145, 0.52) 85.29%, rgba(148, 147, 145, 0.72) 94.03%, rgba(148, 147, 145, 0.82) 100%), url(../imgs/batterybanner.jpg) lightgray center / cover no-repeat;
 }
 
 
@@ -1818,7 +1817,7 @@ a.btn_plain {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 172px 20px 32px 20px;
+    padding: 172px 0px 32px 0px;
     gap: 100px;
 }
 
@@ -1884,6 +1883,7 @@ a.btn_plain {
     min-height: fit-content;
 }
 
+
 .section-title {
     color: var(--Dark, #050E14);
     font-feature-settings: 'liga' off, 'clig' off;
@@ -1905,6 +1905,37 @@ a.btn_plain {
     line-height: normal;
 }
 
+.section_padding_child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0px;
+    gap: 72px;
+}
+
+.section_padding_child .section_padding_child_header {
+    width: calc(45% - 72px / 2);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.section_padding_child .image-container {
+    width: calc(55% - 72px / 2);
+    min-width: 400px;
+}
+
+.section_padding_child .section-title {
+    padding-bottom: 24px;
+}
+
+.section_padding_child .section-text {
+    padding-bottom: 12px;
+}
+
 .section-padding p.small {
     color: var(--Gray-gray--8, #5D6266);
     font-feature-settings: 'liga' off, 'clig' off;
@@ -1921,7 +1952,7 @@ a.btn_plain {
 }
 
 .btn_warranty {
-    margin-top: 20px;
+    margin-top: 32px;
     display: flex;
     padding: 16px;
     justify-content: center;
@@ -1944,8 +1975,6 @@ a.btn_plain {
     max-width: 100%;
     height: auto;
 }
-
-
 
 .battery_slider_section {
     width: 100%;
@@ -2145,21 +2174,6 @@ a.btn_plain {
     padding-left: 0px;
     padding-right: 0px;
 }
-
-.smart_wifi_section .details_box {
-    padding: 0px 100px 0px 0px;
-}
-
-.onephase_herobanner .section-image {
-    width: 100%;
-    height: 600px;
-}
-
-.onephase_warrenty_section {
-    padding: 100px 40px;
-    height: fit-content;
-}
-
 
 
 /*onephase inverter css end  */
@@ -2634,6 +2648,7 @@ a.btn_plain {
     font-weight: 700;
     line-height: normal;
     text-transform: capitalize;
+    padding-bottom: 12px;
 }
 
 .content-overlay p {
@@ -2691,38 +2706,7 @@ a.btn_plain {
     font-size: 0.9rem;
     z-index: 10;
 }
-
-@media (max-width: 768px) {
-    .content-overlay {
-        padding: 5px;
-        top: 20px;
-        left: 0px;
-        text-align: center;
-        z-index: 6;
-        transform: translate(0);
-        color: white;
-        padding: 8px;
-        border-radius: 10px;
-        width: 100%;
-    }
-
-
-    .content-overlay h2 {
-        font-size: 24px;
-        font-weight: 500;
-    }
-
-    .content-overlay p {
-        font-size: 14px;
-        font-weight: 400;
-    }
-
-    .slider-handle {
-        width: 50px;
-        height: 50px;
-    }
-}
-
+ 
 /* slider css end */
 
 .terms {

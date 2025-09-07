@@ -513,12 +513,20 @@
         text-transform: capitalize;
     }
 
+    .content-overlay {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        width: 80%;
+    }
+
     .content-overlay h2 {
         font-size: 32px;
     }
 
+
     .content-overlay p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .feature_highlights .feature_cards {
@@ -564,7 +572,7 @@
     }
 
     .section-padding p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .section-padding p.small {
@@ -625,7 +633,6 @@
         padding: 10px 0px;
     }
 
-
     .details_cards {
         gap: 5px;
         justify-content: space-evenly;
@@ -655,7 +662,6 @@
     .tabs-wrapper {
         margin-top: 10px;
     }
-
 
     .tabs button {
         font-size: 18px;
@@ -753,7 +759,6 @@
     .benefits_panel .content .left_panel {
         width: 50%;
         height: 100%;
-
     }
 
     .benefits_panel .content .right_panel {
@@ -786,8 +791,6 @@
         padding-bottom: 30px;
     }
 
-
-
     .feature_highlights .feature_cards {
         gap: 2px;
         justify-content: space-evenly;
@@ -807,14 +810,36 @@
     }
 
     .section-padding {
-        padding: 40px 0px;
+        padding: 80px 0px;
         height: fit-content;
-        gap: 30px;
     }
 
     .section_padding_child {
-        gap: 20px;
+        width: 80%;
+        height: fit-content;
+        margin: 0px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0px;
+        gap: 72px;
     }
+
+    .section_padding_child .section_padding_child_header {
+        width: 100%;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .section_padding_child .image-container {
+        min-width: 100%;
+        width: 100%;
+    }
+
 
     .stackable_battery_herobanner h2 {
         font-size: 26px;
@@ -822,25 +847,6 @@
 
     .stackable_battery_herobanner p {
         font-size: 14px;
-    }
-
-
-    .section-padding h2 {
-        font-size: 26px;
-        text-align: center;
-    }
-
-    .section-padding p {
-        font-size: 14px;
-    }
-
-    .section-padding p.small {
-        font-size: 12px;
-    }
-
-    .warranty_card {
-        margin-bottom: 20px;
-        gap: 20px;
     }
 
     .document-card .document_info h5 {
@@ -851,14 +857,6 @@
         padding: 20px;
     }
 
-
-    .section-padding h2,
-    .section-padding p {
-        text-align: center;
-        align-self: center;
-        padding: 0px 20px 20px !important;
-    }
-
     .beautiful_section h2 {
         text-align: center;
     }
@@ -867,8 +865,6 @@
         text-align: center;
         align-self: center;
     }
-
-
 
     .onephase_herobanner .content {
         padding: 100px 20px 50px 20px;
@@ -915,8 +911,6 @@
     .threephase_herobanner .content {
         padding: 100px 20px 50px 20px;
     }
-
-
 
     .footer {
         padding: 40px;
@@ -990,6 +984,14 @@
 
     .contact_data h3 {
         font-size: 18px;
+    }
+
+    .content-overlay {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        width: 80%;
+
     }
 
     .content-overlay h2 {
@@ -1070,7 +1072,7 @@
     .horizontal {
         width: 300px;
         height: 1px;
-        background: linear-gradient(to left ,   rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
         /* background: linear-gradient(90deg, white, rgb(228, 166, 166), rgb(141, 104, 104), rgb(228, 166, 166), white); */
     }
 
@@ -1190,9 +1192,11 @@
     .battery_herobanner {
         width: 100%;
         height: 100vh;
+
         min-height: fit-content;
-        background-image: url('../imgs/battery_herobanner.png');
-        background-size: cover;
+        /* background-image: url('../imgs/battery_herobanner.png'); */
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.41) 0%, rgba(0, 0, 0, 0.36) 5.02%, rgba(0, 0, 0, 0.26) 10.21%, rgba(0, 0, 0, 0.09) 19.35%, rgba(0, 0, 0, 0.00) 28.32%), linear-gradient(0deg, rgba(109, 107, 103, 0.82) 0%, rgba(103, 101, 99, 0.72) 5.02%, rgba(103, 101, 99, 0.52) 10.21%, rgba(103, 101, 99, 0.19) 19.35%, rgba(103, 101, 99, 0.00) 28.32%), linear-gradient(0deg, rgba(0, 0, 0, 0.00) 58.32%, rgba(0, 0, 0, 0.32) 78.61%, rgba(0, 0, 0, 0.52) 87.74%, rgba(0, 0, 0, 0.72) 95.02%, rgba(0, 0, 0, 0.82) 100%), linear-gradient(0deg, rgba(148, 147, 145, 0.00) 50%, rgba(148, 147, 145, 0.32) 74.34%, rgba(148, 147, 145, 0.52) 85.29%, rgba(148, 147, 145, 0.72) 94.03%, rgba(148, 147, 145, 0.82) 100%), url(../imgs/batterybanner.jpg) lightgray center / cover no-repeat;
+        /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 58.32%, rgba(0, 0, 0, 0.32) 78.61%, rgba(0, 0, 0, 0.52) 87.74%, rgba(0, 0, 0, 0) 95.02%, rgba(0, 0, 0, 0) 100%), linear-gradient(0deg, rgba(148, 147, 145, 0.00) 50%, rgba(148, 147, 145, 0) 74.34%, rgba(148, 147, 145, 0) 85.29%, rgba(148, 147, 145, 0) 94.03%, rgba(148, 147, 145, 0) 0%), url(../imgs/batterybanner.jpg) lightgray center / cover no-repeat; background-size: cover; */
         background-position: center;
         display: flex;
         justify-content: center;
@@ -1201,6 +1205,8 @@
         position: relative;
         z-index: 2;
     }
+
+
 
     .battery_herobanner h2 {
         font-size: 32px;
@@ -1252,12 +1258,6 @@
         text-align: center;
     }
 
-    .section-padding h2,
-    .section-padding p {
-        text-align: center;
-        align-self: center;
-        padding: 0px 20px 20px !important;
-    }
 
     .document-card .document_info p {
         padding: 0px !important;
@@ -1273,27 +1273,27 @@
     }
 
 
-    .section-padding .section_header {
+    /* .section-padding .section_header {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 10px;
-    }
+    } */
 
     .section-padding {
         min-height: fit-content;
-        gap: 20px;
-        padding: 40px 20px;
+        padding: 60px 0px;
     }
 
-    .warranty_card {
-        margin-bottom: 20px;
-        gap: 30px;
+    .section_padding_child {
+        width: 100%;
+        gap: 50px;
     }
 
     .document-card .document_info {
         flex-direction: row;
         flex-wrap: nowrap;
+        align-items: center;
     }
 
     .stackable_battery_herobanner h2 {
@@ -1703,16 +1703,27 @@
 
 
     .section-padding {
-        padding: 30px 0px;
+        padding: 40px 0px;
         height: fit-content;
     }
 
-    .section-padding .section_header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+    .section-padding h2 {
+        font-size: 24px;
+        text-align: center;
+    }
 
+    .section-padding p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .btn_warranty {
+        margin-top: 32px;
+        width: 100%;
+    }
+
+    p.small {
+        font-size: 12px;
     }
 
     .stackable_battery_herobanner h2 {
@@ -1723,20 +1734,9 @@
         font-size: 16px;
     }
 
-
-    .section-padding h2 {
-        font-size: 24px;
+    .content-overlay h2 {
+        padding-bottom: 8px;
     }
-
-    .section-padding p {
-        text-align: center;
-        font-size: 14px;
-    }
-
-    p.small {
-        font-size: 12px;
-    }
-
 
     .onephase_herobanner .content .upper_content h2 {
         font-size: 28px;
@@ -1872,6 +1872,9 @@
         /* 22.89px */
     }
 
+    .footer-logo img {
+        max-width: 100px;
+    }
 }
 
 @media only screen and (max-width:475px) {
@@ -2034,7 +2037,33 @@
         height: 50vh;
     }
 
+    .footer-logo img {
+        max-width: 100px;
+    }
 
+    .footer-links h6,
+    .footer-links h6 a {
+        color: var(--White, #FFF);
+        font-family: "Rethink Sans";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        margin: 10px 0;
+        color: inherit;
+        border: 0;
+        border-top: var(--bs-border-width) solid;
+        opacity: .55;
+    }
+
+    .footer-bottom {
+        flex-direction: column-reverse;
+        text-align: start;
+    }
 }
 
 @media only screen and (max-width:376px) {
@@ -2132,30 +2161,23 @@
 
 
     .section-padding {
-        padding: 40px 10px;
+        padding: 40px 0px;
         height: fit-content;
+    }
+
+    .section_padding_child .section-title {
+        padding-bottom: 10px;
+        font-size: 26px;
+    }
+
+    .section_padding_child .section-text {
+        padding-bottom: 8px;
+        text-align: center;
+        font-size: 14px;
     }
 
     .section_padding_child {
         gap: 24px;
-    }
-
-    .section-padding .section_header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .section-padding h2 {
-        font-size: 26px;
-        padding: 0px !important;
-    }
-
-    .section-padding p {
-        text-align: center;
-        font-size: 14px;
-        padding: 0px !important;
     }
 
     p.small {
@@ -2175,7 +2197,14 @@
         font-size: 12px;
     }
 
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
 
-
+    .footer-logo img {
+        max-width: 100px;
+    }
 
 }
