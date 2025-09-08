@@ -364,8 +364,6 @@
 }
 
 @media only screen and (max-width:1024px) {
-
-
     .container {
         max-width: 960px;
         margin: 0px auto;
@@ -894,12 +892,6 @@
         padding: 30px 10px;
     }
 
-    .threephase_herobanner {
-        background-image: url('../imgs/3phaseinverter/herobanner.jpg');
-        background-size: cover;
-        background-position: center;
-    }
-
     .threephase_herobanner .content p {
         font-size: 18px;
     }
@@ -1206,7 +1198,17 @@
         z-index: 2;
     }
 
-
+    batteries_herosection .content {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 0px 32px 0px;
+        gap: 100px;
+    }
 
     .battery_herobanner h2 {
         font-size: 32px;
@@ -1272,14 +1274,6 @@
         align-self: center;
     }
 
-
-    /* .section-padding .section_header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-    } */
-
     .section-padding {
         min-height: fit-content;
         padding: 60px 0px;
@@ -1303,6 +1297,7 @@
     .stackable_battery_herobanner p {
         font-size: 16px;
     }
+
 
     .threephase_herobanner .content h2 {
         font-size: 34px;
@@ -1349,6 +1344,15 @@
         margin: 0px auto;
     }
 
+    .nav-bar .collapsible-content .item span {
+        font-size: 14px;
+    }
+
+    .nav-bar .collapsible-content .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
     .heading_section h3 {
         font-size: 32px;
@@ -1453,6 +1457,18 @@
             linear-gradient(to bottom, rgb(255, 255, 255, 0)58%, rgb(0, 0, 0, 0.4) 62%, rgba(0, 0, 0, 1) 77%),
             url('../imgs/benefits.jpg') center / cover no-repeat;
         position: relative;
+    }
+
+    .key_benefits_content .content {
+        width: 100%;
+        color: #fff;
+        background: transparent;
+        padding: 0px 0px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .benefits_panel {
@@ -1734,6 +1750,13 @@
         font-size: 16px;
     }
 
+    .content-overlay {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        width: 100%;
+    }
+
     .content-overlay h2 {
         padding-bottom: 8px;
     }
@@ -1917,6 +1940,7 @@
         align-items: center;
         flex-direction: row;
         gap: 10px;
+        row-gap: 20px;
         flex-wrap: wrap;
     }
 
@@ -1932,7 +1956,6 @@
         width: 100px;
     }
 
-
     .feature_item img {
         filter: invert(1);
         width: 25px;
@@ -1947,10 +1970,11 @@
         text-align: center;
     }
 
-    .feature_cards .mid_line.third {
-        display: none;
+    .mid_line.third {
+        width: 300px;
+        height: 1px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
     }
-
 
     .blog_slider .blog_card {
         height: 400px;
@@ -2072,6 +2096,15 @@
         margin: 0px auto;
     }
 
+    .nav-bar .close-icon .logo img {
+        width: 90px;
+    }
+
+    .nav-bar .navs .logo img {
+        width: auto;
+        height: 70px;
+    }
+
     .contact-right {
         width: 100%;
         height: fit-content;
@@ -2174,6 +2207,10 @@
         padding-bottom: 8px;
         text-align: center;
         font-size: 14px;
+    }
+
+    .card-box {
+        width: 80px;
     }
 
     .section_padding_child {
