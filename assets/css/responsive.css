@@ -1938,11 +1938,11 @@
         font-size: 32px;
     }
 
-    .threephase_herobanner {
+        .threephase_herobanner {
         padding-top: 10px;
         background-image: url(../imgs/3phaseinverter/herobanner.jpg);
-        background-size: cover;
-        background-position:center;
+        background-size: 237% 100%;
+        background-position: center;
     }
 
     .onephase_herobanner {
