@@ -2076,7 +2076,7 @@ a.btn_plain {
     width: 100%;
     height: 47%;
     z-index: -1;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
     pointer-events: none;
 }
 
@@ -2106,7 +2106,7 @@ a.btn_plain {
     align-items: center;
     flex-direction: column;
     text-align: center;
-    padding: 172px 20px 32px 20px;
+    padding: 172px 0px 32px 0px;
     gap: 100px;
 }
 
@@ -2181,7 +2181,7 @@ a.btn_plain {
     width: 100%;
     height: 100vh;
     min-height: fit-content;
-    background-image: url('../imgs/3phaseinverter/herobanner.png');
+    background-image: url('../imgs/3phaseinverter/herobanner.jpg');
     background-size: cover;
     background-position: center;
     /* background: linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.00) 44.34%), linear-gradient(180deg, rgba(108, 131, 144, 0.52) 0%, rgba(105, 127, 143, 0.70) 17.75%, rgba(80, 100, 122, 0.00) 40.56%), url('../imgs/3phaseinverter/herobanner.jpg') lightgray -7.991px -254.228px / 130.752% 170.799% no-repeat; */
@@ -2194,7 +2194,7 @@ a.btn_plain {
 }
 
 /* Dark blur on TOP */
-  .threephase_herobanner::before {
+.threephase_herobanner::before {
     content: "";
     position: absolute;
     top: 0;
@@ -2217,7 +2217,7 @@ a.btn_plain {
     z-index: -1;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     pointer-events: none;
-}  
+}
 
 .threephase_herobanner .content p {
     color: var(--White, #FFF);

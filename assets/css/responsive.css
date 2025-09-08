@@ -411,6 +411,8 @@
         font-size: 20px;
     }
 
+
+
     /* testimonial responsive css start */
 
     .testimonial-card small {
@@ -1018,21 +1020,38 @@
         padding: 40px 0px;
     }
 
-    /* Dark blur on TOP */
-    .battery_herobanner::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
+    .battery_herobanner {
         width: 100%;
-        height: 43%;
-        z-index: -1;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1), transparent);
-        pointer-events: none;
+        height: 100vh;
+        min-height: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.41) 0%, rgba(0, 0, 0, 0.36) 5.02%, rgba(0, 0, 0, 0.26) 10.21%, rgba(0, 0, 0, 0.09) 19.35%, rgba(0, 0, 0, 0.00) 28.32%), linear-gradient(0deg, rgba(109, 107, 103, 0.82) 0%, rgba(103, 101, 99, 0.72) 5.02%, rgba(103, 101, 99, 0.52) 10.21%, rgba(103, 101, 99, 0.19) 19.35%, rgba(103, 101, 99, 0.00) 28.32%), linear-gradient(0deg, rgba(0, 0, 0, 0.00) 58.32%, rgba(0, 0, 0, 0.32) 78.61%, rgba(0, 0, 0, 0.52) 87.74%, rgba(0, 0, 0, 0.72) 95.02%, rgba(0, 0, 0, 0.82) 100%), linear-gradient(0deg, rgba(148, 147, 145, 0.00) 50%, rgba(148, 147, 145, 0.32) 74.34%, rgba(148, 147, 145, 0.52) 85.29%, rgba(148, 147, 145, 0.72) 94.03%, rgba(148, 147, 145, 0.82) 100%), url(../imgs/batterybanner.jpg) lightgray center / cover no-repeat;
     }
 
-    /* Dark blur on BOTTOM */
-    .battery_herobanner::after {
+
+
+    .feature_section_mobile {
+        display: none;
+    }
+
+    .batteries_herosection .content {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 120px 0px 32px 0px;
+        gap: 100px;
+    }
+
+    .stackable_battery_herobanner::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -1040,9 +1059,11 @@
         width: 100%;
         height: 30%;
         z-index: -1;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        background: none;
         pointer-events: none;
     }
+
+
 
     .mobile_details_section {
         display: block;
@@ -1344,6 +1365,17 @@
         margin: 0px auto;
     }
 
+    .whatsapp_icon img {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+
+    .whatsapp_icon {
+        width: 50px;
+        height: 50px;
+    }
+
     .nav-bar .collapsible-content .item span {
         font-size: 14px;
     }
@@ -1386,7 +1418,7 @@
         margin: auto;
         min-height: fit-content;
         padding-top: 100px;
-        padding-bottom: 30px;
+        padding-bottom: 80px;
     }
 
     .left_panel ul li {
@@ -1910,7 +1942,34 @@
         padding-top: 10px;
         background-image: url(../imgs/3phaseinverter/herobanner.jpg);
         background-size: cover;
-        background-position: -242px 1px;
+        background-position:center;
+    }
+
+    .onephase_herobanner {
+        width: 100%;
+        height: 87vh;
+        min-height: 87vh;
+        background: linear-gradient(180deg, rgba(82, 103, 124, 0.80) 0%, rgba(82, 103, 124, 0.00) 44.85%), lightgray -11.759px -42.979px / 101.984% 131.496% no-repeat;
+        background-image: url(../imgs/1phaseinverter/onephasebanner.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
+
+    .onephase_herobanner .content {
+        padding: 0px;
+        height: 87vh;
+        display: flex;
+        justify-content: start;
+        padding-top: 100px;
+        align-items: start;
+        flex-direction: column;
     }
 
     .heading_section p {
@@ -2004,7 +2063,7 @@
         margin: auto;
         min-height: fit-content;
         padding-top: 100px;
-        padding-bottom: 30px;
+        padding-bottom: 80px;
     }
 
     .hero_content .upper_section h3 {
@@ -2131,6 +2190,32 @@
     .onephase_herobanner .content .upper_content p {
         font-size: 12px;
     }
+    .onephase_herobanner {
+        width: 100%;
+        height: 65vh;
+        min-height: 65vh;
+        background: linear-gradient(180deg, rgba(82, 103, 124, 0.80) 0%, rgba(82, 103, 124, 0.00) 44.85%), lightgray -11.759px -42.979px / 101.984% 131.496% no-repeat;
+        background-image: url(../imgs/1phaseinverter/onephasebanner.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
+
+    .onephase_herobanner .content {
+        padding: 0px;
+        height: 65vh;
+        display: flex;
+        justify-content: start;
+        padding-top: 100px;
+        align-items: start;
+        flex-direction: column;
+    }
 
     .feature_cards .mid_line.third {
         display: block;
@@ -2152,7 +2237,7 @@
         margin: auto;
         min-height: fit-content;
         padding-top: 100px;
-        padding-bottom: 30px;
+        padding-bottom: 80px;
     }
 
     .hero_content .upper_section h3 {
