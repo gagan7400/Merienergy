@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dropdownMenu.classList.toggle('show');
             langdropicon.classList.toggle('rotate');
         }
-
     });
 
     // Change language text on click

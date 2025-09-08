@@ -1633,7 +1633,7 @@
 
     .battery_slider_section {
         width: 100%;
-        height: 80vh;
+        height: 65vh;
         min-height: fit-content;
         background: grey;
     }
@@ -1938,7 +1938,7 @@
         font-size: 32px;
     }
 
-        .threephase_herobanner {
+    .threephase_herobanner {
         padding-top: 10px;
         background-image: url(../imgs/3phaseinverter/herobanner.jpg);
         background-size: 237% 100%;
@@ -2190,6 +2190,7 @@
     .onephase_herobanner .content .upper_content p {
         font-size: 12px;
     }
+
     .onephase_herobanner {
         width: 100%;
         height: 65vh;
