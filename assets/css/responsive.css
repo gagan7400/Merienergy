@@ -3,6 +3,21 @@
         max-width: 1576px;
         margin: 0px auto;
     }
+    .hero_content {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    padding-top: 150px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+
 
     .details_section {
         display: flex;
@@ -632,7 +647,7 @@
     }
 
     .hero_content {
-        padding-top: 100px;
+        padding-top: 130px;
     }
 
     .details_card p {
