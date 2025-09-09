@@ -2207,7 +2207,7 @@ a.btn_plain {
 }
 
 /* Dark blur on BOTTOM */
-.threephase_herobanner::after {
+/* .threephase_herobanner::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -2217,7 +2217,7 @@ a.btn_plain {
     z-index: -1;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     pointer-events: none;
-}
+} */
 
 .threephase_herobanner .content p {
     color: var(--White, #FFF);
