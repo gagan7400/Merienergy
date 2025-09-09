@@ -1318,7 +1318,7 @@ a.btn_plain {
 
 .inner-accordian span,
 .inner-accordian p {
-    font-size: 10px;
+    font-size: 12px;
 }
 
 .assumption-icon {
@@ -1331,7 +1331,19 @@ a.btn_plain {
 .testimonial-section {
     padding: 96px 0;
     text-align: center;
-    border-bottom: 1px solid rgba(221, 221, 221, 0.3);
+    position: relative;
+     /* border-bottom: 1px solid;  
+  border-image: linear-gradient(to left ,rgba(221, 221, 221, 0),rgba(181, 181, 181, 1),rgba(221, 221, 221, 0)); */
+    /* border-bottom: 1px solid ; */
+}
+.testimonial-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px; /* thickness of border */
+  width: 100%;
+  background: linear-gradient(to right,rgba(221, 221, 221, 0),rgba(181, 181, 181, 1),rgba(221, 221, 221, 0));
 }
 
 .testimonial-card {
@@ -1505,6 +1517,7 @@ a.btn_plain {
 
 .testimonial-section .owl-carousel .owl-nav img.owl-prev-custom.disabled {
     filter: invert(0);
+    opacity: 0.5;
     background: #FFF !important;
 }
 
