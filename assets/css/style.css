@@ -2265,14 +2265,14 @@ a.btn_plain {
     min-width: fit-content;
     justify-content: center;
     align-items: stretch;
-    background-color: #fff;
+    background: var(--Gray-gray--3, #F5F5F6);
     margin: 100px 0px 50px;
     flex-wrap: wrap;
 }
 
 .contact-left {
     background: url('../imgs/contactimage.jpg') no-repeat center center/cover;
-    width: 50%;
+    width: 55%;
     min-width: 700px;
     height: auto;
     /* min-width: fit-content; */
@@ -2313,7 +2313,7 @@ a.btn_plain {
     width: calc(100% - 40px);
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.14);
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(40px);
 }
 
 .contact-info-box .contact_data {
@@ -2405,13 +2405,18 @@ a.btn_plain {
     border-radius: 0px;
     outline: none;
     color: #161925;
+    background: transparent;
     border-bottom: 1px solid var(--Gray-gray--6, #C1C3C4);
 }
 
 .contact-section #installerSelect option,
 .contact-section .contact_form .form-select {
     padding: 10px;
-    margin-bottom: 6px;
+    background: transparent;
+    border: none;
+    border-radius: 0px;
+    outline: none;
+    border-bottom: 1px solid var(--Gray-gray--6, #C1C3C4)
 }
 
 .contact-section .contact_form .form-control:focus {
@@ -2433,7 +2438,7 @@ a.btn_plain {
     padding: 10px;
     cursor: pointer;
     color: #161925;
-    background: #fff;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
