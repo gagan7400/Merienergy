@@ -3,19 +3,20 @@
         max-width: 1576px;
         margin: 0px auto;
     }
+
     .hero_content {
-    width: 100%;
-    height: 100vh;
-    max-height: 100vh;
-    padding-top: 150px;
-    padding-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    z-index: 2;
-}
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        padding-top: 150px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+    }
 
 
 
@@ -1938,10 +1939,12 @@
         font-size: 14px;
 
     }
+
     .contact-section {
         margin: 100px 0px 50px;
         padding: 10px;
     }
+
     .contact-info-box .contact_data {
         gap: 20px;
     }
@@ -1953,19 +1956,24 @@
     .contact_data .bottom {
         gap: 20px;
     }
+
     .contact-right h2 {
         font-size: 28px;
-}
-.contact-section .form-text.normal_text {
- 
-    font-size: 12px;
-}
+    }
+
+    .contact-section .form-text.normal_text {
+
+        font-size: 12px;
+    }
+
     .contact_data p {
         font-size: 12px;
     }
+
     .contact_data h3 {
         font-size: 16px;
     }
+
     .footer {
         padding: 30px 15px;
         margin: 0px;
@@ -2120,6 +2128,22 @@
         font-family: "Rethink Sans";
         font-size: 12px;
         text-align: center;
+    }
+
+    .stackable_battery_features .mid_line.third {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(200, 200, 200, 0.6) 40%,
+                rgba(200, 200, 200, 0.6) 60%,
+                rgba(255, 255, 255, 0) 100%);
+    }
+
+    .stackable_battery_features .mid_line.second {
+        width: 350px;
+        height: 1px;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
     }
 
     .mid_line.third {

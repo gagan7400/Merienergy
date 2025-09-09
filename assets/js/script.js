@@ -318,7 +318,7 @@ $(document).ready(function () {
         dots: false,
         navText: [
             "<img class='owl-prev-custom' src='./assets/icons/chevron-left_disabled.svg'/>",
-            "<img class='owl-next-custom' src='../../chevron-right.svg'/>"
+            "<img class='owl-next-custom' src='./assets/icons/chevron-right-new.svg'/>"
         ], responsive: {
             0: {        // Mobile
                 items: 1

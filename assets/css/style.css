@@ -1827,6 +1827,11 @@ a.btn_plain {
 }
 
 
+.stackable_battery_herobanner.batteries_herosection .feature_highlights {
+    margin-top: 4rem;
+    width: 80%;
+}
+
 .batteries_herosection .feature_highlights {
     margin-top: 4rem;
     width: 100%;
